@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>摄像头</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 8.00.7601.19104"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>摄像头</H1></DIV></DIV>
+<DIV id=nstext>using UnityEngine;<BR>using System.Collections;<BR>public class 
+C_摄像头 : MonoBehaviour {<BR>&nbsp;&nbsp;&nbsp; WebCamTexture 
+z摄像图;<BR>&nbsp;&nbsp;&nbsp; string z摄像图名称="";<BR>&nbsp;&nbsp;&nbsp; bool 
+isPlay=false;<BR>&nbsp;&nbsp;&nbsp; void Start() 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+StartCoroutine(Test());<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; 
+IEnumerator Test() {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; yield return 
+Application.RequestUserAuthorization(UserAuthorization.WebCam);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(Application.HasUserAuthorization(UserAuthorization.WebCam)) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+WebCamDevice[] 
+z摄像图组=WebCamTexture.devices;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+z摄像图名称=z摄像图组[0].name;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+z摄像图=new WebCamTexture(z摄像图名称, 400, 300, 15);&nbsp;&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+z摄像图.Play();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+isPlay=true;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; }</DIV>
+<DIV>&nbsp;&nbsp;&nbsp; void OnGUI() 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(isPlay) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+GUI.DrawTexture(new Rect(0, 0, 400, 300), z摄像图, 
+ScaleMode.ScaleToFit);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; }<BR>}</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV><BR>
+<P>Write here...&nbsp;</P></DIV>
+<DIV id=nstext>
+<HR>
+</DIV>
+<DIV class=footer>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy;2017 <A href="" target=_blank></A>. 
+All Rights Reserved. </P></DIV></BODY></HTML>

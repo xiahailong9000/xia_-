@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>新主题</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.10570.1001"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>新主题</H1></DIV></DIV>
+<DIV id=nstext><BR>
+<P><FONT color=#ff0000 size=3 
+face=微软雅黑>//-----------标准AndroidManifest.xml--------------------------</FONT></P>
+<P><FONT size=3 face=微软雅黑>&lt;manifest package="nn.cn.uj_002" 
+xmlns:android="</FONT><A href="http://schemas.android.com/apk/res/android"><FONT 
+size=3 face=微软雅黑>http://schemas.android.com/apk/res/android</FONT></A><FONT 
+size=3 face=微软雅黑>"&gt;<BR>&nbsp;&nbsp;&nbsp; 
+&lt;application&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &lt;activity 
+android:name="nn.cn.uj_002.C_main"&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;intent-filter&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;action 
+android:name="android.intent.action.MAIN"/&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;category 
+android:name="android.intent.category.LAUNCHER"/&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;/intent-filter&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&lt;/activity&gt;<BR>&nbsp;&nbsp;&nbsp; 
+&lt;/application&gt;<BR>&lt;/manifest&gt;</FONT></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P><FONT color=#ff0000 size=3 face=微软雅黑>///---------添加arr包----设置的 
+build.gradle----------------------------</FONT></P>
+<P><FONT size=3><FONT face=微软雅黑>apply plugin: 'com.android.library'<BR>android 
+{<BR>&nbsp;&nbsp;&nbsp; compileSdkVersion 24<BR>&nbsp;&nbsp;&nbsp; 
+buildToolsVersion "24.0.1"<BR>&nbsp;&nbsp;&nbsp; defaultConfig 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; minSdkVersion 
+14<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; targetSdkVersion 
+24<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; versionCode 
+1<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; versionName 
+"1.0"<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; testInstrumentationRunner 
+"android.support.test.runner.AndroidJUnitRunner"<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; buildTypes 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; release 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+minifyEnabled 
+false<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+proguardFiles getDefaultProguardFile('proguard-android.txt'), 
+'proguard-rules.pro'<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; }<BR></FONT><FONT face=微软雅黑><FONT 
+color=#0000ff>&nbsp;&nbsp;&nbsp; repositories 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flatDir 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; dirs 
+'libs'<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; 
+}</FONT><BR>}<BR>dependencies {<BR>&nbsp;&nbsp;&nbsp; compile fileTree(include: 
+['*.jar'], dir: 'libs')<BR>&nbsp;&nbsp;&nbsp; 
+androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; exclude group: 
+'com.android.support', module: 'support-annotations'<BR>&nbsp;&nbsp;&nbsp; 
+})<BR>&nbsp;&nbsp;&nbsp; compile 
+'com.android.support:appcompat-v7:24.+'<BR>&nbsp;&nbsp;&nbsp; testCompile 
+'junit:junit:4.12'<BR>&nbsp;&nbsp;&nbsp; compile 
+files('libs/classes2.jar')<BR>&nbsp;&nbsp;&nbsp; compile(name: 'js_sdk_2.0.0', 
+ext: 'aar')<BR><FONT color=#0000ff>&nbsp;&nbsp;&nbsp; implementation 
+files('libs/classes2.jar')</FONT><BR>}<BR></FONT></FONT></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P><FONT color=#ff0000 size=3 
+face=微软雅黑>///--------------按钮弹框事件----------------------------------------------------------</FONT></P><PRE style="FONT-SIZE: 15pt; FONT-FAMILY: '宋体'; COLOR: #a9b7c6; BACKGROUND-COLOR: #2b2b2b"><SPAN style="COLOR: #cc7832">void </SPAN><SPAN style="COLOR: #ffc66d">S_Init</SPAN>(){<BR>    <SPAN style="COLOR: #9876aa">o_Button </SPAN>=(Button)findViewById(R.id.<SPAN style="COLOR: #9876aa; FONT-STYLE: italic">button_05</SPAN>)<SPAN style="COLOR: #cc7832">;<BR></SPAN><SPAN style="COLOR: #cc7832">    </SPAN><SPAN style="COLOR: #9876aa">o_Text</SPAN>=(TextView)findViewById(R.id.<SPAN style="COLOR: #9876aa; FONT-STYLE: italic">ss_004</SPAN>)<SPAN style="COLOR: #cc7832">;<BR></SPAN><SPAN style="COLOR: #cc7832">    </SPAN><SPAN style="COLOR: #9876aa">o_Button</SPAN>.setOnClickListener(<SPAN style="COLOR: #cc7832">new </SPAN>View.OnClickListener(){<BR>        <SPAN style="COLOR: #bbb529">@Override<BR></SPAN><SPAN style="COLOR: #bbb529">        </SPAN><SPAN style="COLOR: #cc7832">public void </SPAN><SPAN style="COLOR: #ffc66d">onClick</SPAN>(View view) {<BR>            <SPAN style="COLOR: #cc7832">if</SPAN>(<SPAN style="COLOR: #9876aa">o_Text</SPAN>.getText().length()&gt;<SPAN style="COLOR: #6897bb">5</SPAN>){<BR>                <SPAN style="COLOR: #9876aa">o_Text</SPAN>.setText(<SPAN style="COLOR: #6a8759">"dd"</SPAN>)<SPAN style="COLOR: #cc7832">;<BR></SPAN><SPAN style="COLOR: #cc7832">            </SPAN>}<SPAN style="COLOR: #cc7832">else </SPAN>{<BR>                <SPAN style="COLOR: #9876aa">o_Text</SPAN>.setText(<SPAN style="COLOR: #6a8759">"dddd____________ddddd"</SPAN>)<SPAN style="COLOR: #cc7832">;<BR></SPAN><SPAN style="COLOR: #cc7832">                </SPAN>S_弹框(<SPAN style="COLOR: #9876aa">o_Button</SPAN>)<SPAN style="COLOR: #cc7832">;<BR></SPAN><SPAN style="COLOR: #cc7832">            </SPAN>}<BR>        }<BR>    })<SPAN style="COLOR: #cc7832">;<BR></SPAN>}<BR><SPAN style="COLOR: #cc7832">public void </SPAN><SPAN style="COLOR: #ffc66d">S_弹框</SPAN>(Button but){<BR>    but.setOnClickListener(<SPAN style="COLOR: #cc7832">new </SPAN>View.OnClickListener() {<SPAN style="COLOR: #808080">//按键单击事件<BR></SPAN><SPAN style="COLOR: #808080">        </SPAN><SPAN style="COLOR: #bbb529">@Override<BR></SPAN><SPAN style="COLOR: #bbb529">        </SPAN><SPAN style="COLOR: #cc7832">public void </SPAN><SPAN style="COLOR: #ffc66d">onClick</SPAN>(View v) {<BR>            <SPAN style="COLOR: #cc7832">new </SPAN>AlertDialog.Builder(MainActivity.<SPAN style="COLOR: #cc7832">this</SPAN>).setTitle(<SPAN style="COLOR: #6a8759">"系统提示"</SPAN>)<SPAN style="COLOR: #808080">//设置对话框标题<BR></SPAN><SPAN style="COLOR: #808080">                    </SPAN>.setMessage(<SPAN style="COLOR: #6a8759">"请确认所有数据都保存后再推出系统！"</SPAN>)<SPAN style="COLOR: #808080">//设置显示的内容<BR></SPAN><SPAN style="COLOR: #808080">                    </SPAN>.setPositiveButton(<SPAN style="COLOR: #6a8759">"确定"</SPAN><SPAN style="COLOR: #cc7832">,new </SPAN>DialogInterface.OnClickListener() {<SPAN style="COLOR: #808080">//添加确定按钮<BR></SPAN><SPAN style="COLOR: #808080">                        </SPAN><SPAN style="COLOR: #bbb529">@Override<BR></SPAN><SPAN style="COLOR: #bbb529">                        </SPAN><SPAN style="COLOR: #cc7832">public void </SPAN><SPAN style="COLOR: #ffc66d">onClick</SPAN>(DialogInterface dialog<SPAN style="COLOR: #cc7832">, int </SPAN>which) {<SPAN style="COLOR: #808080">//确定按钮的响应事件<BR></SPAN><SPAN style="COLOR: #808080">                            </SPAN>finish()<SPAN style="COLOR: #cc7832">;<BR></SPAN><SPAN style="COLOR: #cc7832">                        </SPAN>}<BR>                    }).setNegativeButton(<SPAN style="COLOR: #6a8759">"返回"</SPAN><SPAN style="COLOR: #cc7832">,new </SPAN>DialogInterface.OnClickListener() {<SPAN style="COLOR: #808080">//添加返回按钮<BR></SPAN><SPAN style="COLOR: #808080">                </SPAN><SPAN style="COLOR: #bbb529">@Override<BR></SPAN><SPAN style="COLOR: #bbb529">                </SPAN><SPAN style="COLOR: #cc7832">public void </SPAN><SPAN style="COLOR: #ffc66d">onClick</SPAN>(DialogInterface dialog<SPAN style="COLOR: #cc7832">, int </SPAN>which) {<SPAN style="COLOR: #808080">//响应事件<BR></SPAN><SPAN style="COLOR: #808080">                    </SPAN>Log.<SPAN style="FONT-STYLE: italic">i</SPAN>(<SPAN style="COLOR: #6a8759">"alertdialog"</SPAN><SPAN style="COLOR: #cc7832">,</SPAN><SPAN style="COLOR: #6a8759">" 请保存数据！"</SPAN>)<SPAN style="COLOR: #cc7832">;<BR></SPAN><SPAN style="COLOR: #cc7832">                </SPAN>}<BR>            }).show()<SPAN style="COLOR: #cc7832">;</SPAN><SPAN style="COLOR: #808080">//在按键响应事件中显示此对话框<BR></SPAN><SPAN style="COLOR: #808080">        </SPAN>}<BR>    })<SPAN style="COLOR: #cc7832">;<BR></SPAN>}</PRE>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P><FONT color=#ff0000 size=3>五大布局----RelativeLayout------相对布局</FONT></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>Write here...&nbsp;</P></DIV>
+<DIV id=nstext>
+<HR>
+</DIV>
+<DIV class=footer>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy;2018 <A href="" target=_blank></A>. 
+All Rights Reserved. </P></DIV></BODY></HTML>

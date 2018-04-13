@@ -1,0 +1,304 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns:o = 
+"urn:schemas-microsoft-com:office:office"><HEAD><TITLE>Topic 1</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.10570.1001"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=bannerrow1><FONT face=微软雅黑>&nbsp; </FONT>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap><FONT 
+face=微软雅黑>wwwwww</FONT></TD></TR></TBODY></TABLE></DIV>
+<DIV><FONT size=3><FONT face=微软雅黑>1:使用SHOW语句找出在服务器上当前存在什么数据库：<BR>show 
+databases;&nbsp;&nbsp; <FONT 
+color=#ff0000>//查询库----------------------------------</FONT></FONT></FONT></DIV>
+<DIV><FONT size=3><FONT face=微软雅黑>2:2、</FONT><FONT face=微软雅黑><FONT 
+color=#000000>创建一个数据库dd--------------------------<BR></FONT>create database 
+dd;&nbsp; <FONT 
+color=#ff0000>//创建库---------------------------</FONT></FONT></FONT></DIV>
+<DIV><FONT color=#0000ff size=3 face=微软雅黑>CREATE DATABASE test5 DEFAULT 
+CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci</FONT></DIV>
+<DIV><FONT color=#ff0000 size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑>3:选择你所创建的数据库<BR>mysql&gt;&nbsp; use 
+dd;(按回车键出现Database changed 时说明操作成功！)</FONT></DIV>
+<DIV><FONT size=3><FONT face=微软雅黑>4:查看现在的数据库中存在什么表<BR>mysql&gt; <FONT 
+color=#008000>show tables;</FONT></FONT></FONT></DIV>
+<DIV><FONT color=#008000 size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<P><FONT size=3 face=微软雅黑></FONT>&nbsp;</P>
+<P><FONT size=3 face=微软雅黑>use 002&nbsp; //使用库--</FONT></P>
+<P><FONT size=3><FONT face=微软雅黑>show tables WHERE Tables_in_s002 like&nbsp; 
+'tb_%001%'<FONT color=#ff0000> //模糊查询表名-----------------</FONT></FONT></P>
+<DIV><BR><FONT face=微软雅黑><FONT color=#ff0000><FONT color=#000000>create table 
+t表名(Id varchar(63) primary key,Kee varchar(255)) CHARSET=utf8;</FONT>&nbsp; 
+</FONT><FONT color=#ff0000>&nbsp;//5:创</FONT><FONT 
+color=#ff0000>建一个数据库表ss---------------------------</FONT></FONT></DIV>
+<DIV><FONT color=#ff0000 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV>CREATE TABLE author (<BR>&nbsp;&nbsp;&nbsp; authorid 
+char(20),<BR>&nbsp;&nbsp;&nbsp; name char(20) ,<BR>&nbsp;&nbsp;&nbsp; age 
+char(20) ,<BR>&nbsp;&nbsp;&nbsp; country char(20) <BR>) ENGINE=InnoDB&nbsp; 
+DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;</FONT></DIV>
+<DIV><FONT color=#ff0000 size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT color=#ff0000 size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3><FONT face=微软雅黑>alter table name01 rename name02; <FONT 
+color=#ff0000>//修改表名--------------------</FONT></FONT></FONT></DIV>
+<DIV><FONT color=#ff0000 size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑>6:显示表ss的结构：<BR>mysql&gt; describe ss;</FONT></DIV>
+<DIV><FONT size=3><FONT face=微软雅黑>7:往表ss中加入记录<BR>mysql&gt;<FONT color=#008000> 
+insert into ss values (”hyq”,”M”);</FONT></FONT></FONT></DIV>
+<DIV><FONT size=3 face=微软雅黑>8:用文本方式将数据装入数据库表中（例如D:/mysql.txt）<BR>mysql&gt; LOAD 
+DATA LOCAL INFILE “D:/mysql.txt” INTO TABLE MYTABLE;</FONT></DIV>
+<DIV><FONT size=3 face=微软雅黑>9:导入.sql文件命令（例如D:/mysql.sql）<BR>mysql&gt;use 
+database;<BR>mysql&gt;source d:/mysql.sql;</FONT></DIV>
+<DIV><FONT size=3 face=微软雅黑>10:删除表<BR>mysql&gt;drop TABLE MYTABLE;</FONT></DIV>
+<DIV><FONT size=3 face=微软雅黑>11:清空表<BR>mysql&gt;delete from MYTABLE;</FONT></DIV>
+<DIV><FONT size=3><FONT face=微软雅黑><FONT 
+color=#008000>12:更新表中数据</FONT><BR>mysql&gt;update MYTABLE set sex=”f” where 
+name=’hyq’;</FONT></FONT></DIV>
+<DIV><FONT size=3 
+face=微软雅黑>以下是无意中在网络看到的使用MySql的管理心得,<BR>在windows中MySql以服务形式存在，在使用前应确保此服务已经启动，未启动可用net 
+start mysql命令启动。而Linux中启动时可用“/etc/rc.d/init.d/mysqld 
+start”命令，注意启动者应具有管理员权限。<BR>刚安装好的MySql包含一个含空密码的root帐户和一个匿名帐户，这是很大的安全隐患，对于一些重要的应用我们应将安全性尽可能提高，在这里应把匿名帐户删除、 
+root帐户设置密码，可用如下命令进行：<BR>use mysql;<BR>delete from User where User=”";<BR>update 
+User set Password=PASSWORD(’newpassword’) where 
+User=’root’;<BR>如果要对用户所用的登录终端进行限制，可以更新User表中相应用户的Host字段，在进行了以上更改后应重新启动数据库服务，此时登录时可用如下类似命令：<BR>mysql 
+-uroot -p;<BR>mysql -uroot -pnewpassword;<BR>mysql mydb -uroot -p;<BR>mysql mydb 
+-uroot -pnewpassword;<BR>上面命令参数是常用参数的一部分，详细情况可参考文档。此处的mydb是要登录的数据库的名称。<BR>在 
+进行开发和实际应用中，用户不应该只用root用户进行连接数据库，虽然使用root用户进行测试时很方便，但会给系统带来重大安全隐患，也不利于管理技 
+术的提高。我们给一个应用中使用的用户赋予最恰当的数据库权限。如一个只进行数据插入的用户不应赋予其删除数据的权限。MySql的用户管理是通过 
+User表来实现的，添加新用户常用的方法有两个，一是在User表插入相应的数据行，同时设置相应的权限；二是通过GRANT命令创建具有某种权限的用 
+户。其中GRANT的常用用法如下：<BR>grant all on mydb.* to </FONT><A 
+href="mailto:NewUserName@HostName"><FONT size=3 
+face=微软雅黑>NewUserName@HostName</FONT></A><FONT size=3 face=微软雅黑> identified by 
+“password” ;<BR>grant usage on *.* to </FONT><A 
+href="mailto:NewUserName@HostName"><FONT size=3 
+face=微软雅黑>NewUserName@HostName</FONT></A><FONT size=3 face=微软雅黑> identified by 
+“password”;<BR>grant select,insert,update on mydb.* to </FONT><A 
+href="mailto:NewUserName@HostName"><FONT size=3 
+face=微软雅黑>NewUserName@HostName</FONT></A><FONT size=3 face=微软雅黑> identified by 
+“password”;<BR>grant update,delete on mydb.TestTable to </FONT><A 
+href="mailto:NewUserName@HostName"><FONT size=3 
+face=微软雅黑>NewUserName@HostName</FONT></A><FONT size=3 face=微软雅黑> identified by 
+“password”;<BR>若 要给此用户赋予他在相应对象上的权限的管理能力，可在GRANT后面添加WITH GRANT 
+OPTION选项。而对于用插入User表添加的用户，Password字段应用PASSWORD 
+函数进行更新加密，以防不轨之人窃看密码。对于那些已经不用的用户应给予清除，权限过界的用户应及时回收权限，回收权限可以通过更新User表相应字段， 
+也可以使用REVOKE操作。<BR>下面给出本人从其它资料(</FONT><A href="http://www.cn-java.com"><FONT 
+size=3 face=微软雅黑>www.cn-java.com</FONT></A><FONT size=3 
+face=微软雅黑>)获得的对常用权限的解释：<BR>全局管理权限：<BR>FILE: 在MySQL服务器上读写文件。<BR>PROCESS: 
+显示或杀死属于其它用户的服务线程。<BR>RELOAD: 重载访问控制表，刷新日志等。<BR>SHUTDOWN: 
+关闭MySQL服务。<BR>数据库/数据表/数据列权限：<BR>ALTER: 修改已存在的数据表(例如增加/删除列)和索引。<BR>CREATE: 
+建立新的数据库或数据表。<BR>DELETE: 删除表的记录。<BR>DROP: 删除数据表或数据库。<BR>INDEX: 
+建立或删除索引。<BR>INSERT: 增加表的记录。<BR>SELECT: 显示/搜索表的记录。<BR>UPDATE: 
+修改表中已存在的记录。<BR>特别的权限：<BR>ALL: 允许做任何事(和root一样)。<BR>USAGE: 
+只允许登录–其它什么也不允许做。</FONT></DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT color=#ff0000 size=3 face=微软雅黑>//cmd 登录&nbsp; 
+mysql命令--------------------</FONT></DIV>
+<DIV><FONT size=3>
+<P 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; TEXT-ALIGN: justify; PADDING-TOP: 0px; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; PADDING-LEFT: 0px; WIDOWS: 1; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><STRONG>//cmd 
+本地登录</STRONG></P>
+<P 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; TEXT-ALIGN: justify; PADDING-TOP: 0px; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; PADDING-LEFT: 0px; WIDOWS: 1; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">而且用默认的端口&nbsp;3306&nbsp;直接输入&nbsp;<STRONG>mysql&nbsp;-u&nbsp;root&nbsp;-p</STRONG>&nbsp;即可</P>
+<P 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; TEXT-ALIGN: justify; PADDING-TOP: 0px; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; PADDING-LEFT: 0px; WIDOWS: 1; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><STRONG>//cmd 
+远程登录</STRONG></P>
+<P 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; TEXT-ALIGN: justify; PADDING-TOP: 0px; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; PADDING-LEFT: 0px; WIDOWS: 1; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><STRONG>Mysql&nbsp;&nbsp;-P&nbsp;端口号&nbsp;&nbsp;-h&nbsp;&nbsp;mysql主机名\ip&nbsp;-u&nbsp;root&nbsp;（用户）&nbsp;&nbsp;-p</STRONG></P>
+<P 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; TEXT-ALIGN: justify; PADDING-TOP: 0px; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; PADDING-LEFT: 0px; WIDOWS: 1; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><STRONG></STRONG>&nbsp;</P>
+<P 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; TEXT-ALIGN: justify; PADDING-TOP: 0px; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; PADDING-LEFT: 0px; WIDOWS: 1; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><STRONG></STRONG>&nbsp;</P>
+<DIV><FONT color=#808000 size=4><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><STRONG><FONT 
+color=#ff0000>//</FONT><FONT color=#ff0000>mysql ----命令行登陆</FONT><FONT 
+color=#ff0000>----------------------</FONT></STRONG></SPAN></FONT></DIV>
+<DIV><FONT color=#808000 size=4><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"></SPAN></FONT><FONT 
+size=3><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">PS 
+C:\Users\Administrator&gt; <FONT color=#ff0000>mysql -u root 
+-p</FONT></SPAN></FONT></DIV>
+<DIV><FONT size=3><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">Enter 
+password:<FONT color=#ff0000> ******<BR></FONT>Welcome to the MySQL 
+monitor.&nbsp; Commands end with ; or \g.<BR>Your MySQL connection id is 
+17<BR>Server version: 5.0.45-community-nt-log MySQL Community Edition 
+(GPL)</SPAN></FONT></DIV>
+<DIV><FONT size=3><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">Type 
+'help;' or '\h' for help. Type '\c' to clear the buffer.</SPAN></FONT></DIV>
+<DIV><FONT size=3><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">mysql&gt;</SPAN></FONT></DIV></FONT></DIV>
+<DIV><FONT size=3 
+face=微软雅黑>//远程命令行登陆---------------------------------</FONT></DIV>
+<DIV><FONT size=3 face=微软雅黑>
+<DIV><FONT color=#808000 size=4><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"></SPAN></FONT><FONT 
+size=3><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">PS 
+C:\Users\Administrator&gt; <FONT color=#ff0000>mysql -h 192.168.1.138 -uroot 
+-p</FONT></SPAN></FONT></DIV>
+<DIV><FONT size=3><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">Enter 
+password:<FONT color=#ff0000> ******</FONT></SPAN></FONT></DIV>
+<DIV><FONT color=#ff0000 size=3><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"></SPAN></FONT>&nbsp;</DIV></FONT></DIV>
+<DIV><FONT color=#ff0000 size=3 
+face=微软雅黑><STRONG>///修改密码=====================</STRONG></FONT></DIV>
+<DIV><FONT size=4 face=微软雅黑>这种方式也需要先用root命令登入cmd--mysql，然后执行：</FONT></DIV>
+<DIV><FONT size=4 face=微软雅黑>------------1--------</FONT></DIV>
+<DIV>
+<P class=MsoNormal 
+style="BACKGROUND: #f0f0f0; TEXT-ALIGN: left; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 12pt; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US 
+style='FONT-SIZE: 10pt; FONT-FAMILY: "Courier New"; COLOR: #000033; mso-font-kerning: 0pt; mso-fareast-font-family: 宋体'><FONT 
+size=4><FONT color=#008000><FONT face=微软雅黑>SET PASSWORD FOR 
+root=PASSWORD('ASDfgh132');</FONT></FONT></FONT></SPAN></P>
+<P class=MsoNormal 
+style="BACKGROUND: #f0f0f0; TEXT-ALIGN: left; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 12pt; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US 
+style='FONT-SIZE: 10pt; FONT-FAMILY: "Courier New"; COLOR: #000033; mso-font-kerning: 0pt; mso-fareast-font-family: 宋体'><FONT 
+color=#008000 size=4 face=微软雅黑>-------------2--------------</FONT></SPAN></P>
+<P class=MsoNormal 
+style="BACKGROUND: #f0f0f0; TEXT-ALIGN: left; MARGIN: 0cm 0cm 0pt; LINE-HEIGHT: 12pt; mso-pagination: widow-orphan" 
+align=left><SPAN lang=EN-US 
+style='FONT-SIZE: 10pt; FONT-FAMILY: "Courier New"; COLOR: #000033; mso-font-kerning: 0pt; mso-fareast-font-family: 宋体'><SPAN 
+style='FONT-SIZE: 16px; FONT-FAMILY: "Microsoft Yahei", 微软雅黑, arial, 宋体, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(51,51,51); FONT-STYLE: normal; TEXT-ALIGN: justify; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px; font-variant-ligatures: normal; font-variant-caps: normal'><FONT 
+color=#800000><SPAN 
+style="FONT-SIZE: 14px; FONT-FAMILY: tahoma, arial, 宋体; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; TEXT-ALIGN: left; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px; font-variant-ligatures: normal; font-variant-caps: normal"></SPAN></FONT></SPAN></SPAN><FONT 
+size=3 face=微软雅黑></FONT>&nbsp;</P></DIV>
+<DIV><FONT size=3 face=微软雅黑>&nbsp;&nbsp;&nbsp; MySQL&gt; update MySQL.user set 
+password=PASSWORD('ASDfgh132') where User='root';&nbsp; <BR>&nbsp;&nbsp;&nbsp; 
+MySQL&gt; flush privileges;&nbsp; <BR>&nbsp;&nbsp;&nbsp; MySQL&gt; quit 
+</FONT></DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT color=#000000 size=3><FONT face=微软雅黑><FONT 
+color=#ff0000>//root添加远程访问==================================</FONT><BR><FONT 
+color=#000080>Grant all privileges on *.* to </FONT></FONT></FONT><A 
+href="mailto:'root'@'%'"><FONT color=#000080 size=3 
+face=微软雅黑>'root'@'%'</FONT></A><FONT color=#000000 size=3><FONT face=微软雅黑><FONT 
+color=#000080> identified by 'Abc132' with grant option;</FONT><BR><FONT 
+color=#000080>flush privileges;</FONT>&nbsp;&nbsp; 
+//(运行此句才生效，或者重启MySQL)</FONT></FONT></DIV>
+<DIV><FONT color=#000000 size=3><BR><FONT face=微软雅黑>Database 
+changed;&nbsp;&nbsp; //-- 查看现有用户,密码及允许连接的主机<BR><FONT color=#008000>mysql&gt; 
+SELECT User, Password, Host FROM user;</FONT></FONT></FONT></DIV>
+<DIV><PRE style="FONT-SIZE: 16px; FONT-VARIANT: normal; WHITE-SPACE: pre-wrap; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: normal; COLOR: rgb(51,51,51); FONT-STYLE: normal; TEXT-ALIGN: left; LETTER-SPACING: normal; LINE-HEIGHT: 28px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><FONT color=#0000ff size=4><FONT color=#000000 face=微软雅黑></FONT></FONT></PRE><PRE style="FONT-SIZE: 16px; FONT-VARIANT: normal; WHITE-SPACE: pre-wrap; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: normal; COLOR: rgb(51,51,51); FONT-STYLE: normal; TEXT-ALIGN: left; LETTER-SPACING: normal; LINE-HEIGHT: 28px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><FONT color=#000000 size=4></FONT><FONT face=微软雅黑>&nbsp;</FONT></PRE></DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT color=#000000 size=3 face=微软雅黑>//登录出错---Access denied for user 
+</FONT><A href="mailto:'root'@'localhost'"><FONT color=#000000 size=3 
+face=微软雅黑>'root'@'localhost'</FONT></A><FONT color=#000000 size=3 face=微软雅黑> 
+(using password: YES)</FONT></DIV>
+<DIV><PRE id=best-content-1690646415 class="best-text mb-10" style="WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; PADDING-LEFT: 0px; WIDOWS: 1; MARGIN: 0px 0px 10px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px" accuse="aContent"><FONT color=#000000 size=3 face=微软雅黑>未给localhost root用户授权，新建一个localhost root用户，然后授权给他<BR>create user 'root'@'localhost' identified by '你的密码';<BR>grant all privileges on *.* to root@'localhost';<BR>运行这两句</FONT><A class=baidu-highlight style="TEXT-DECORATION: none; COLOR: rgb(45,100,179)" href="https://www.baidu.com/s?wd=sql%E8%AF%AD%E5%8F%A5&amp;tn=44039180_cpr&amp;fenlei=mv6quAkxTZn0IZRqIHckPjm4nH00T1Y4rjuWuW9bn16Ym1PBnvR40ZwV5Hcvrjm3rH6sPfKWUMw85HfYnjn4nH6sgvPsT6KdThsqpZwYTjCEQLGCpyw9Uz4Bmy-bIi4WUvYETgN-TLwGUv3EP1fYPHDsnHDYnHnLPHmLrjDz" rel=nofollow target=_blank><FONT color=#000000 size=3 face=微软雅黑>sql语句</FONT></A><FONT color=#000000 size=3 face=微软雅黑>后试下</FONT></PRE></DIV>
+<DIV><FONT size=3>
+<H1 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; POSITION: relative; TEXT-TRANSFORM: none; WORD-BREAK: break-all; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: 700 16px/26px 'Microsoft YaHei', SimHei, arial; PADDING-LEFT: 0px; WIDOWS: 1; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px; font-stretch: normal" 
+accuse="qTitle"></FONT><FONT size=3></FONT>&nbsp;</H1>
+<H1 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; POSITION: relative; TEXT-TRANSFORM: none; WORD-BREAK: break-all; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: 700 16px/26px 'Microsoft YaHei', SimHei, arial; PADDING-LEFT: 0px; WIDOWS: 1; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px; font-stretch: normal" 
+accuse="qTitle"><FONT size=3>//-------创建表失败------------提示“<FONT 
+color=#008000>我们”功能被禁用；你需要MySQL的InnoDB的去工作了----------</FONT></FONT></H1>
+<P 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; POSITION: relative; TEXT-TRANSFORM: none; WORD-BREAK: break-all; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: 700 16px/26px 'Microsoft YaHei', SimHei, arial; PADDING-LEFT: 0px; WIDOWS: 1; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px; font-stretch: normal" 
+accuse="qTitle">The 'InnoDB' feature is disabled; you need MySQL built with 
+'InnoDB' to have it working</P>
+<P 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; POSITION: relative; TEXT-TRANSFORM: none; WORD-BREAK: break-all; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: 700 16px/26px 'Microsoft YaHei', SimHei, arial; PADDING-LEFT: 0px; WIDOWS: 1; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px; font-stretch: normal" 
+accuse="qTitle"><SPAN 
+style="FONT-SIZE: 12px; FONT-FAMILY: tahoma, arial, 宋体; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: normal; COLOR: rgb(255,0,0); FONT-STYLE: normal; TEXT-ALIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; LINE-HEIGHT: 21px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px; font-variant-ligatures: normal; font-variant-caps: normal"><STRONG>查看my.ini文件，发现skip-innodb 
+这个属性被开启了，只要屏蔽掉就可以了，在前面加上#号</STRONG></SPAN><SPAN 
+style="FONT-SIZE: 14px; FONT-FAMILY: tahoma, arial, 宋体; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; TEXT-ALIGN: left; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px; font-variant-ligatures: normal; font-variant-caps: normal">。（</SPAN><STRONG 
+style="FONT-SIZE: 14px; FONT-FAMILY: tahoma, arial, 宋体; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); FONT-STYLE: normal; TEXT-ALIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px; font-variant-ligatures: normal; font-variant-caps: normal">注意</STRONG><SPAN 
+style="FONT-SIZE: 14px; FONT-FAMILY: tahoma, arial, 宋体; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; TEXT-ALIGN: left; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px; font-variant-ligatures: normal; font-variant-caps: normal">：</SPAN><SPAN 
+style="FONT-SIZE: 12px; FONT-FAMILY: tahoma, arial, 宋体; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FONT-WEIGHT: normal; COLOR: rgb(255,0,0); FONT-STYLE: normal; TEXT-ALIGN: left; ORPHANS: 2; WIDOWS: 2; LETTER-SPACING: normal; LINE-HEIGHT: 21px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px; font-variant-ligatures: normal; font-variant-caps: normal">此处需要在skip-innodb前面加上#号，而不是去掉#</SPAN><SPAN 
+style="FONT-SIZE: 14px; FONT-FAMILY: tahoma, arial, 宋体; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; TEXT-ALIGN: left; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px; font-variant-ligatures: normal; font-variant-caps: normal">）</SPAN></P>
+<H1 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; POSITION: relative; TEXT-TRANSFORM: none; WORD-BREAK: break-all; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: 700 16px/26px 'Microsoft YaHei', SimHei, arial; PADDING-LEFT: 0px; WIDOWS: 1; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px; font-stretch: normal" 
+accuse="qTitle"><FONT size=3></FONT>&nbsp;</H1>
+<H1 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; POSITION: relative; TEXT-TRANSFORM: none; WORD-BREAK: break-all; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: 700 16px/26px 'Microsoft YaHei', SimHei, arial; PADDING-LEFT: 0px; WIDOWS: 1; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px; font-stretch: normal" 
+accuse="qTitle"><FONT size=3>&nbsp;</H1></DIV></FONT>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT color=#ff0000 size=3 
+face=微软雅黑><STRONG>//模糊查询-------------------------------</STRONG></FONT></DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3><FONT face=微软雅黑><FONT 
+color=#ff0000>1，%：</FONT>表示任意0个或多个字符。可匹配任意类型和长度的字符，有些情况下若是中文，请使用两个百分号（%%）表示。 
+<BR>比如 SELECT * FROM [user] WHERE u_name LIKE '%三%' </FONT></FONT></DIV>
+<DIV><FONT face=微软雅黑><FONT color=#000000 
+size=3>将会把u_name为“张三”，“张猫三”、“三脚猫”，“唐三藏”等等有“三”的记录全找出来。 
+<BR>另外，如果需要找出u_name中既有“三”又有“猫”的记录，请使用and条件 <BR>SELECT * FROM [user] WHERE u_name 
+LIKE '%三%' AND u_name LIKE '%猫%'</FONT> </FONT></DIV>
+<DIV><FONT face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3><FONT face=微软雅黑><FONT color=#ff0000>2，_：</FONT> 
+表示任意单个字符。匹配单个任意字符，它常用来限制表达式的字符长度语句： <BR>比如 SELECT * FROM [user] WHERE u_name 
+LIKE '_三_' <BR>只找出“唐三藏”这样u_name为三个字且中间一个字是“三”的； </FONT></FONT></DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3><FONT face=微软雅黑><FONT color=#ff0000>3，[ 
+]：</FONT>表示括号内所列字符中的一个（类似正则表达式）。指定一个字符、字符串或范围，要求所匹配对象为它们中的任一个。 <BR>比如 SELECT * 
+FROM [user] WHERE u_name LIKE '[张李王]三' 将找出“张三”、“李三”、“王三”（而不是“张李王三”）； <BR>如 [ ] 
+内有一系列字符（01234、abcde之类的）则可略写为“0-4”、“a-e” <BR>SELECT * FROM [user] WHERE u_name 
+LIKE '老[1-9]' 将找出“老1”、“老2”、……、“老9”； </FONT></FONT></DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT face=微软雅黑><FONT size=3><FONT color=#ff0000>4，[^ ]</FONT> 
+：表示不在括号所列之内的单个字符。其取值和 [] 相同，但它要求所匹配对象为指定字符以外的任一个字符。 <BR>比如 SELECT * FROM [user] 
+WHERE u_name LIKE '[^张李王]三' 将找出不姓“张”、“李”、“王”的“赵三”、“孙三”等； <BR>SELECT * FROM 
+[user] WHERE u_name LIKE '老[^1-4]'; 将排除“老1”到“老4”，寻找“老5”、“老6”、……</FONT> 
+</FONT></DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT color=#ff0000 size=3 
+face=微软雅黑>//------------------mysql库名大写----------------------------------------------</FONT></DIV>
+<DIV><PRE class="best-text mb-10" style="WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: 16px/29px 'Microsoft YaHei', arial, 'courier new', courier, 宋体, monospace; PADDING-LEFT: 0px; MIN-HEIGHT: 55px; WIDOWS: 1; MARGIN: 10px 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px" accuse="aContent"><FONT color=#000000>　在MySQL的配置文件中my.ini [mysqld]<BR>中增加一行<BR>　　<FONT color=#008000>lower_case_table_names = 0</FONT></FONT></PRE><PRE class="best-text mb-10" style="WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(51,51,51); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; FONT: 16px/29px 'Microsoft YaHei', arial, 'courier new', courier, 宋体, monospace; PADDING-LEFT: 0px; MIN-HEIGHT: 55px; WIDOWS: 1; MARGIN: 10px 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px" accuse="aContent"><FONT color=#000000>　　参数解释：<BR>　　0：区分大小写<BR>　　1：不区分大小写在 MySQL</FONT></PRE></DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT color=#ff0000 size=3 
+face=微软雅黑>//Server2012添加我的电脑桌面图标------------------------------</FONT></DIV>
+<DIV><FONT color=#000000 size=3 face=微软雅黑>Win+R 打开运行窗口 输入</FONT></DIV>
+<DIV><FONT size=3><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">rundll32.exe 
+shell32.dll,Control_RunDLL desk.cpl,,0</SPAN></FONT></DIV>
+<DIV><FONT size=3><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"></SPAN></FONT>&nbsp;</DIV>
+<DIV><FONT size=3><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"></SPAN></FONT>&nbsp;</DIV>
+<DIV><FONT size=3><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"></SPAN></FONT>&nbsp;</DIV>
+<DIV><FONT size=3><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><BR></SPAN></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"></SPAN></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"></SPAN></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"></SPAN></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"></SPAN></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(51,51,51); TEXT-ALIGN: justify; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WIDOWS: 1; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"></SPAN></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV><FONT size=3 face=微软雅黑></FONT>&nbsp;</DIV>
+<DIV class=footer>
+<P><FONT face=微软雅黑></FONT></P></DIV></BODY></HTML>

@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>鼠标旋转视图_产品交互</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17924"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>鼠标旋转视图_产品交互</H1></DIV></DIV>
+<DIV id=nstext><BR>using UnityEngine;&nbsp; <BR>public class camera : 
+MonoBehaviour {&nbsp; <BR>&nbsp;public Transform 
+target;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<BR>&nbsp;public float xSpeed=400, ySpeed=400, mSpeed=20;&nbsp; <BR>&nbsp;public 
+float yMinLimit=10, yMaxLimit=50;&nbsp; <BR>&nbsp;public float distance=7, 
+minDistance=10, maxDistance=100;&nbsp; <BR>&nbsp;public bool needDamping 
+=true;&nbsp;&nbsp; <BR>&nbsp;float damping = 5.0f;&nbsp; &nbsp;<BR>&nbsp;public 
+float x = 0.0f;&nbsp; <BR>&nbsp;public float y = 0.0f;&nbsp; <BR>&nbsp;public 
+void SetTarget( GameObject go )&nbsp; &nbsp;{&nbsp; <BR>&nbsp;&nbsp;target = 
+go.transform;&nbsp; <BR>&nbsp;}&nbsp; <BR>&nbsp;void Start () {&nbsp; 
+<BR>&nbsp;&nbsp;Vector3 angles = transform.eulerAngles;&nbsp; <BR>&nbsp;&nbsp;x 
+= angles.y;&nbsp; <BR>&nbsp;&nbsp;y = angles.x;&nbsp; <BR>&nbsp;}&nbsp; 
+<BR>&nbsp;void LateUpdate ()&nbsp;&nbsp; {&nbsp; <BR>&nbsp;&nbsp;if 
+(target)&nbsp;&nbsp; {&nbsp; <BR>&nbsp;&nbsp;&nbsp;if( Input.GetMouseButton(1) 
+)&nbsp; {&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;x += Input.GetAxis("Mouse X") * 
+xSpeed * 0.02f;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;y -= Input.GetAxis("Mouse Y") 
+* ySpeed * 0.02f;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;y = 
+ClampAngle(y, yMinLimit, yMaxLimit);&nbsp; <BR>&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;distance -= Input.GetAxis("Mouse 
+ScrollWheel")*mSpeed;&nbsp; <BR>&nbsp;&nbsp;&nbsp;distance = 
+Mathf.Clamp(distance, minDistance, maxDistance);&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;Quaternion rotation = Quaternion.Euler(y, x, 0.0f);&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;Vector3 disVector = new Vector3( 0.0f, 0.0f, -distance 
+);&nbsp; <BR>&nbsp;&nbsp;&nbsp;Vector3 position = rotation * disVector + 
+target.position;&nbsp; <BR>&nbsp;&nbsp;&nbsp;if( needDamping )&nbsp; {&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;transform.rotation = 
+Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime*damping);&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;transform.position = 
+Vector3.Lerp(transform.position, position, Time.deltaTime*damping);&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;}else{&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;transform.rotation = rotation;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;transform.position = position;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;}&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;}&nbsp; <BR>&nbsp;}&nbsp; 
+&nbsp;<BR>&nbsp;static float ClampAngle (float angle, float min, float 
+max)&nbsp;&nbsp; {&nbsp; <BR>&nbsp;&nbsp;if (angle &lt; -360)&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;angle += 360;&nbsp; <BR>&nbsp;&nbsp;if (angle &gt; 
+360)&nbsp; <BR>&nbsp;&nbsp;&nbsp;angle -= 360;&nbsp; <BR>&nbsp;&nbsp;return 
+Mathf.Clamp (angle, min, max);&nbsp; <BR>&nbsp;}&nbsp; <BR>}&nbsp; 
+</DIV></BODY></HTML>

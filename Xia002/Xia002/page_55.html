@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>射线函数</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.18315"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>射线函数</H1></DIV></DIV>
+<DIV id=nstext><BR>
+<P><FONT size=4><FONT 
+color=#ff0000><STRONG>//从屏幕发出射线到平面</STRONG>-------------------------------------------------------------------------------</FONT></FONT></P>
+<P><FONT size=3>if(Input.GetMouseButton(0)){<BR>&nbsp;&nbsp;&nbsp; Ray mRay = 
+Camera.main.ScreenPointToRay(Input.mousePosition); //定义射线<BR>&nbsp;&nbsp;&nbsp; 
+RaycastHit mHit;<BR>&nbsp;&nbsp;&nbsp; if (Physics.Raycast(mRay, out mHit)){ 
+//判断射线是否击中地面<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(mHit.collider.gameObject.tag=="xxx"){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+gg.transform .position&nbsp; = 
+mHit.point;//获取目标坐标<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; }<BR>}</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<DIV><FONT size=2></FONT>&nbsp;</DIV>
+<DIV><FONT 
+size=3>/////射线函数-------Physics.Raycast(射线发出的位置，射线发出的方向,接受物体，射线长度）；----------------------------------<BR>&nbsp;&nbsp;&nbsp; 
+var hit:RaycastHit;<BR>&nbsp;&nbsp;&nbsp; 
+Physics.Raycast（transfrom.position,transform,forward,hit,8);</FONT></DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT size=3>if (Input.GetButtonDown("Fire1")) 
+{//-------------------------------------------------------------------<BR>&nbsp;&nbsp;&nbsp; 
+var ray = 
+Camera.main.ScreenPointToRay(Input.mousePosition);<BR>&nbsp;&nbsp;&nbsp; 
+RaycastHit hit;<BR>&nbsp;&nbsp;&nbsp; if (Physics.Raycast(ray,out hit)) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gameObject obj02 = 
+hit.collider.gameObject;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp; }<BR>}</FONT></DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT color=#ff0000 
+size=3>//两点之间绘制线-----------------------------------------</FONT></DIV>
+<DIV><FONT color=#000000 size=3 face=微软雅黑>&nbsp;void Start () 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RaycastHit 
+hit;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(Physics.Linecast(o_tt1.position,o_tt2.position,out hit)) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Debug.DrawLine(o_tt1.position,hit.point,Color.red,10);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;}</FONT></DIV>
+<DIV>&nbsp;</DIV>
+<DIV><FONT size=3>RaycastHit hit; 
+//------------------------------------------------------------------<BR>LayerMask 
+mask = 1 &lt;&lt; 8;<BR>void testRay(){<BR>&nbsp;&nbsp;&nbsp;<FONT 
+color=#ff00ff> if (Physics.Raycast(transform.position, Vector3.right, out hit, 
+100, mask.value)){<BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Debug.DrawLine(transform.position, hit.point, Color.red, 
+1);<BR>&nbsp;&nbsp;&nbsp; }<BR>}</FONT></DIV>
+<DIV><FONT 
+size=3>//上面的例子是从当前脚本所绑定的物体做标点向右发射长度100的射线，射线碰撞层级为8，其他层级忽略。<BR>//为了测试，我们在碰撞到物体后画一条红色线条，表示射线，停留一秒钟。<BR>//上面这些是射线的一些基本操作。</FONT></DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT color=#ff0000 
+size=3>//两点之间的连线监测------------------------------------</FONT></DIV>
+<DIV><FONT size=3>&nbsp;RaycastHit hit;<BR>&nbsp;void S_004() {<BR><FONT 
+color=#ff00ff>&nbsp;&nbsp;if(Physics.Linecast(transform.position,o_目标点y.transform.position,out 
+hit,512)) {</FONT><FONT 
+color=#008000><BR></FONT>&nbsp;&nbsp;&nbsp;Debug.DrawLine(transform.position,hit.point,Color.red,Time.deltaTime);<BR>&nbsp;&nbsp;}<BR>&nbsp;}</FONT></DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT size=3><FONT size=4><FONT 
+color=#ff0000><STRONG>//从物体到屏幕UI</STRONG>-------------------------------------------------------------------------------</FONT></FONT></FONT></DIV>
+<DIV><FONT size=3>&nbsp;Vector3 vv2;<BR>&nbsp;float 
+o_角度,o_距离,o_缩放系数;<BR>&nbsp;void S_追踪点(GameObject vUI,GameObject v目标,float v最佳距离) 
+{<BR>&nbsp;&nbsp;vv2=Camera.main.WorldToScreenPoint(v目标.transform.position);<BR>&nbsp;&nbsp;o_角度=Vector3.Angle(v目标.transform.position-Camera.main.transform.position,Camera.main.transform.TransformDirection(new 
+Vector3(0,0,10)));<BR>&nbsp;&nbsp;if(o_角度&lt;80) 
+{<BR>&nbsp;&nbsp;&nbsp;if(vUI.activeSelf==false) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;vUI.SetActive(true);<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;o_距离=Vector3.Distance(Camera.main.transform.position,v目标.transform.position);<BR>&nbsp;&nbsp;&nbsp;o_缩放系数=1;<BR>&nbsp;&nbsp;&nbsp;if(o_距离&gt;v最佳距离) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;o_缩放系数=v最佳距离/o_距离;<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;vUI.transform.localScale=new 
+Vector3(1,1,1)*o_缩放系数*o_缩放系数;<BR>&nbsp;&nbsp;&nbsp;vUI.transform.position=new 
+Vector3(vv2.x,vv2.y,0);<BR>&nbsp;&nbsp;}else 
+{<BR>&nbsp;&nbsp;&nbsp;if(vUI.activeSelf==true) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;vUI.SetActive(false);<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;}<BR>&nbsp;}</FONT></DIV></DIV></BODY></HTML>

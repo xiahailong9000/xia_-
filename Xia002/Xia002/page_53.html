@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>在编辑模式下监测</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17937"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>在编辑模式下监测</H1></DIV></DIV>
+<DIV id=nstext><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(69,69,69); FONT: 16px/30px Verdana, 'Microsoft YaHei'; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">TestInspector.cs放在Editor目录下</SPAN></DIV><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(69,69,69); FONT: 16px/30px Verdana, 'Microsoft YaHei'; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">
+<P align=left><BR><FONT size=2 face=微软雅黑>using UnityEngine;<BR>using 
+UnityEditor;<BR>using 
+System.Collections.Generic;<BR>&nbsp;<BR>[CustomEditor(typeof(Test))]<BR>public 
+class TestInspector : Editor {<BR>&nbsp;Test model;<BR>&nbsp;public override 
+void OnInspectorGUI(){<BR>&nbsp;&nbsp;model=target as Test;<BR>&nbsp;&nbsp;int 
+width=EditorGUILayout.IntField("Width",model.width);<BR>&nbsp;&nbsp;if(model.width!=width){<BR>&nbsp;&nbsp;&nbsp;model.width=width;<BR>&nbsp;&nbsp;}<BR>&nbsp;&nbsp;base.DrawDefaultInspector();<BR>&nbsp;}<BR>}</FONT></SPAN></P><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(69,69,69); FONT: 16px/30px Verdana, 'Microsoft YaHei'; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">
+<DIV>
+<TABLE class=crayon-table 
+style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; WIDTH: auto !important; BACKGROUND-IMAGE: none; WHITE-SPACE: normal; WORD-SPACING: 0px; BORDER-COLLAPSE: collapse !important; TABLE-LAYOUT: auto !important; BORDER-BOTTOM: medium none; TEXT-TRANSFORM: none; COLOR: rgb(69,69,69); PADDING-BOTTOM: 0px !important; TEXT-ALIGN: left; PADDING-TOP: 0px !important; FONT: 12px/15px Monaco, MonacoRegular, 'Courier New', monospace; PADDING-LEFT: 0px !important; MARGIN: 0px; BORDER-SPACING: 0px !important; BORDER-LEFT: medium none; LETTER-SPACING: normal; PADDING-RIGHT: 0px !important; BACKGROUND-COLOR: rgb(253,253,253); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">
+  <TBODY 
+  style="FONT-FAMILY: Monaco, MonacoRegular, 'Courier New', monospace !important">
+  <TR class=crayon-row 
+  style="BORDER-TOP: medium none; FONT-FAMILY: Monaco, MonacoRegular, 'Courier New', monospace !important; BORDER-RIGHT: medium none; VERTICAL-ALIGN: top !important; BORDER-BOTTOM: medium none; BACKGROUND-POSITION: 0px 50%; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; PADDING-LEFT: 0px !important; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px !important">
+    <TD class="crayon-nums " 
+    style="BORDER-TOP: 0px; FONT-FAMILY: Monaco, MonacoRegular, 'Courier New', monospace !important; BORDER-RIGHT: 0px; VERTICAL-ALIGN: top !important; BORDER-BOTTOM: 0px; FONT-WEIGHT: normal; COLOR: rgb(84,153,222) !important; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; PADDING-LEFT: 0px !important; MARGIN: 0px; BORDER-LEFT: 0px; PADDING-RIGHT: 0px !important; BACKGROUND-COLOR: rgb(223,239,255)" 
+    data-settings="show">
+      <DIV class="crayon-num crayon-striped-num" 
+      style="FONT-SIZE: 12px !important; BORDER-TOP: 0px; FONT-FAMILY: inherit; BORDER-RIGHT: 0px; WHITE-SPACE: nowrap; BORDER-BOTTOM: 0px; FONT-WEIGHT: normal; COLOR: rgb(49,124,197) !important; PADDING-BOTTOM: 0px; TEXT-ALIGN: center; PADDING-TOP: 0px; PADDING-LEFT: 5px; MARGIN: 0px; BORDER-LEFT: 0px; LINE-HEIGHT: 15px !important; PADDING-RIGHT: 5px; BACKGROUND-COLOR: rgb(200,225,250)" 
+      data-line="crayon-55d5df7a4a4d6134274614-2">&nbsp;</DIV></TD>
+    <TD class=crayon-code 
+    style="BORDER-TOP: 0px; FONT-FAMILY: Monaco, MonacoRegular, 'Courier New', monospace !important; BORDER-RIGHT: 0px; WIDTH: 1183px; VERTICAL-ALIGN: top !important; BORDER-BOTTOM: 0px; BACKGROUND-POSITION: 0px 50%; FONT-WEIGHT: normal; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; PADDING-LEFT: 0px !important; MARGIN: 0px; BORDER-LEFT: 0px; PADDING-RIGHT: 0px !important">
+      <DIV class=crayon-pre 
+      style="OVERFLOW: visible; FONT-SIZE: 12px !important; BORDER-TOP: medium none; FONT-FAMILY: Monaco, MonacoRegular, 'Courier New', monospace !important; BORDER-RIGHT: medium none; BACKGROUND-IMAGE: none; WHITE-SPACE: pre; BORDER-BOTTOM: medium none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; LINE-HEIGHT: 15px !important; PADDING-RIGHT: 0px; tab-size: 4">
+      <DIV id=crayon-55d5df7a4a4d6134274614-1 class=crayon-line 
+      style="BORDER-TOP: 0px; FONT-FAMILY: inherit; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; BACKGROUND-POSITION: 0px 50%; PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 5px; MARGIN: 0px; BORDER-LEFT: 0px; PADDING-RIGHT: 5px"><SPAN 
+      class=crayon-sy 
+      style="FONT-FAMILY: inherit; COLOR: rgb(51,51,51) !important"></SPAN>&nbsp;</DIV>
+      <DIV class=crayon-line 
+      style="BORDER-TOP: 0px; FONT-FAMILY: inherit; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; BACKGROUND-POSITION: 0px 50%; PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 5px; MARGIN: 0px; BORDER-LEFT: 0px; PADDING-RIGHT: 5px"><SPAN 
+      class=crayon-sy 
+      style="FONT-FAMILY: inherit; COLOR: rgb(51,51,51) !important"><SPAN 
+      style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(69,69,69); FONT: 16px/30px Verdana, 'Microsoft YaHei'; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">Test挂在任意游戏对象上。</SPAN></SPAN></DIV></DIV></TD></TR></TBODY></TABLE></DIV></SPAN>
+<TABLE class=crayon-table 
+style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; WIDTH: auto !important; BACKGROUND-IMAGE: none; WHITE-SPACE: normal; WORD-SPACING: 0px; BORDER-COLLAPSE: collapse !important; TABLE-LAYOUT: auto !important; BORDER-BOTTOM: medium none; TEXT-TRANSFORM: none; COLOR: rgb(69,69,69); PADDING-BOTTOM: 0px !important; TEXT-ALIGN: left; PADDING-TOP: 0px !important; FONT: 12px/15px Monaco, MonacoRegular, 'Courier New', monospace; PADDING-LEFT: 0px !important; MARGIN: 0px; BORDER-SPACING: 0px !important; BORDER-LEFT: medium none; LETTER-SPACING: normal; PADDING-RIGHT: 0px !important; BACKGROUND-COLOR: rgb(253,253,253); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">
+  <TBODY 
+  style="FONT-FAMILY: Monaco, MonacoRegular, 'Courier New', monospace !important">
+  <TR class=crayon-row 
+  style="BORDER-TOP: medium none; FONT-FAMILY: Monaco, MonacoRegular, 'Courier New', monospace !important; BORDER-RIGHT: medium none; VERTICAL-ALIGN: top !important; BORDER-BOTTOM: medium none; BACKGROUND-POSITION: 0px 50%; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; PADDING-LEFT: 0px !important; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px !important">
+    <TD class="crayon-nums " 
+    style="BORDER-TOP: 0px; FONT-FAMILY: Monaco, MonacoRegular, 'Courier New', monospace !important; BORDER-RIGHT: 0px; VERTICAL-ALIGN: top !important; BORDER-BOTTOM: 0px; FONT-WEIGHT: normal; COLOR: rgb(84,153,222) !important; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; PADDING-LEFT: 0px !important; MARGIN: 0px; BORDER-LEFT: 0px; PADDING-RIGHT: 0px !important; BACKGROUND-COLOR: rgb(223,239,255)" 
+    data-settings="show">
+      <DIV class=crayon-nums-content 
+      style="FONT-SIZE: 12px !important; BORDER-TOP: 0px; FONT-FAMILY: Monaco, MonacoRegular, 'Courier New', monospace !important; BORDER-RIGHT: 0px; WHITE-SPACE: nowrap; BORDER-BOTTOM: 0px; BACKGROUND-POSITION: 0px 50%; FONT-WEIGHT: normal; PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: 0px; LINE-HEIGHT: 15px !important; PADDING-RIGHT: 0px">
+      <DIV class="crayon-num crayon-striped-num" 
+      style="BORDER-TOP: 0px; FONT-FAMILY: inherit; BORDER-RIGHT: 0px; BORDER-BOTTOM: 0px; COLOR: rgb(49,124,197) !important; PADDING-BOTTOM: 0px; TEXT-ALIGN: center; PADDING-TOP: 0px; PADDING-LEFT: 5px; MARGIN: 0px; BORDER-LEFT: 0px; PADDING-RIGHT: 5px; BACKGROUND-COLOR: rgb(200,225,250)" 
+      data-line="crayon-55d5df7a4a4dd136050957-2"><BR 
+      class=Apple-interchange-newline>&nbsp;</DIV></DIV></TD>
+    <TD class=crayon-code 
+    style="BORDER-TOP: 0px; FONT-FAMILY: Monaco, MonacoRegular, 'Courier New', monospace !important; BORDER-RIGHT: 0px; WIDTH: 1183px; VERTICAL-ALIGN: top !important; BORDER-BOTTOM: 0px; BACKGROUND-POSITION: 0px 50%; FONT-WEIGHT: normal; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; PADDING-LEFT: 0px !important; MARGIN: 0px; BORDER-LEFT: 0px; PADDING-RIGHT: 0px !important">
+      <DIV class=crayon-pre 
+      style="OVERFLOW: visible; FONT-SIZE: 12px !important; BORDER-TOP: medium none; FONT-FAMILY: Monaco, MonacoRegular, 'Courier New', monospace !important; BORDER-RIGHT: medium none; BACKGROUND-IMAGE: none; WHITE-SPACE: pre; BORDER-BOTTOM: medium none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; LINE-HEIGHT: 15px !important; PADDING-RIGHT: 0px; tab-size: 4">&nbsp;</DIV></TD></TR></TBODY></TABLE><FONT 
+size=2>using UnityEngine;<BR>using System.Collections;<BR>&nbsp;<BR>public class 
+Test : MonoBehaviour {<BR>&nbsp;public int width{<BR>&nbsp;&nbsp;get 
+{<BR>&nbsp;&nbsp;&nbsp;return _width; <BR>&nbsp;&nbsp;}<BR>&nbsp;&nbsp;set 
+{<BR>&nbsp;&nbsp;&nbsp;Debug.Log("set :" + value);<BR>&nbsp;&nbsp;&nbsp;_width = 
+value; <BR>&nbsp;&nbsp;}<BR>&nbsp;}<BR>&nbsp;private int _width;<BR>}</FONT> 
+</BODY></HTML>

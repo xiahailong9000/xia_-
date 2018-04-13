@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>unity3d_反编译</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17963"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>unity3d_反编译</H1></DIV></DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT size=3>//注意事项</FONT></DIV>
+<DIV><FONT size=3>1.被访问的属性要加&nbsp;//&nbsp;&nbsp;&nbsp; {get;set;}</FONT></DIV>
+<DIV><FONT size=3>2.被编译的脚本不能添加注释</FONT></DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT size=3>using UnityEngine;<BR>using System.Collections;<BR>using 
+System.Reflection;<BR>using System;</FONT></DIV>
+<DIV><FONT size=3>public class C_002man : MonoBehaviour {<BR>&nbsp;void Start () 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GameObject gg =&nbsp; 
+GameObject.Find("物体");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Component 
+cc = gg.GetComponent("脚本");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Type 
+type =cc.GetType();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PropertyInfo 
+ff = type.GetProperty("ii"); 
+//获取指定名称的属性<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int ii = 
+(int)ff.GetValue(cc, null); 
+//获取属性值<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print(ii + "&nbsp;&nbsp; 
+ddd");</FONT></DIV>
+<DIV><FONT size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MethodInfo mm = 
+type.GetMethod("S_002");//获取当前C_ff类的S_002方法<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string ss = mm.Invoke(cc, null).ToString();&nbsp;&nbsp; //调用对象cc的S_002方法&nbsp; 
+S_002无参数<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+print(ss);<BR>&nbsp;}<BR>}</FONT></DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT size=3>using UnityEngine;<BR>using System.Collections;</FONT></DIV>
+<DIV><FONT size=3>public class 脚本 : MonoBehaviour {<BR>&nbsp;&nbsp;&nbsp; public 
+int ii { get; set; }<BR>&nbsp;void Start () 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ii = 5365;<BR>&nbsp;&nbsp;&nbsp; 
+}&nbsp;<BR>&nbsp;void Update () {}<BR>&nbsp;&nbsp;&nbsp; public string 
+S_002(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+print("gggggggggggggggggg的发的发的发的发");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return "ddd是的是的是的";<BR>&nbsp;&nbsp;&nbsp; }<BR>}</FONT></DIV></BODY></HTML>

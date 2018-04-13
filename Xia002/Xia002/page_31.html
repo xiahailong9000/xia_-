@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>反射</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.10570.1001"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>反射</H1></DIV></DIV>
+<DIV id=nstext><BR>
+<P>using System;<BR>using System.Reflection;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; C_fff c1 = new 
+C_fff();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//--------------------------------反射获取<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Assembly aa = GetType().Assembly; 
+//获取当前正在运行的程序集<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Type type = 
+aa.GetType("C_fff");//获取当前程序集C_fff的类<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Type type2 = typeof(C_fff); 
+//通过类直接获取类型对象<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Type[] types = 
+aa.GetTypes(); //获取当前程序集的所以类<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Type[] types2 = 
+aa.GetExportedTypes();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <FONT 
+color=#ff0000>FieldInfo</FONT> ff = 
+type.GetField("o_name");//获取当C_fff类的o_name<FONT 
+color=#ff0000>变量</FONT>&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MethodInfo mm = 
+type.GetMethod("S_002");//获取当前C_ff类的S_002方法<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//---------------------------------反射创建<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+C_fff cc = Activator.CreateInstance(type) as C_fff; 
+//根据类型创建对象<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ff.SetValue(cc, "小白"); 
+//给对象cc的o_name赋值"小白";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string ss = 
+mm.Invoke(cc, null).ToString();&nbsp;&nbsp; //调用对象cc的S_002方法&nbsp; 
+S_002无参数<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//----------------------------------------------------------<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+type.Assembly; //获取type所在的程序集对象<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+type.FullName; //获取type对象对应的类的全名称<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+type.Name;&nbsp; //获取type对象对应类的名称<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+type.IsArray; //判断type是否为一个数组类<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+type.IsEnum; //判断type是否为一个枚举<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //&nbsp; 
+----<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type.IsAssignableFrom(Type 
+i); //判断type是否实现了接口i<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+type.IsSubclassOf(type father); 
+//判断type是否继承了father<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+type.IsInstanceOfType(object o); 
+//判断o师傅为type类的实例<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//---<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; type.GetField("gender"); 
+//获取type中名为gender的字段对象<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+type.GetMethod("SayHi"); 
+//获取type中名为SayHi的方法对象<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+type.GetProperty("Age");//获取type中名为Age的属性对象<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//------------------------------------------------------<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Assembly[] aaa =&nbsp; 
+AppDomain.CurrentDomain.GetAssemblies();//获取当前程序域中所在的Assembly<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Assembly aa2 = 
+this.GetType().Assembly;//获取当前对象所在的Assembly<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Assembly aa3 = 
+Assembly.LoadFrom(@"C:\bb.exe");//根据路径加载Assembly_________加载另一个程序集<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//-------------------------------------------------------&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<BR>&nbsp;}<BR>&nbsp;&nbsp;&nbsp; void 
+S_插件(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string path = 
+@"C:\d";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string[] paths = 
+System.IO.Directory.GetFiles(path, 
+"*.dll");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach (string ss in 
+paths){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Assembly aa = 
+Assembly.LoadFrom(ss);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Type[] types = 
+aa.GetExportedTypes();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Type plug01 = 
+typeof(CC_接口.I_插件001);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+foreach (Type t in 
+types){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if 
+(plug01.IsAssignableFrom(t)){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+CC_接口.I_插件001 iplug = Activator.CreateInstance(t) as CC_接口.I_插件001; 
+//获取插件类的实例对象<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//创建插件按钮<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; }</P>
+<P></P></DIV></BODY></HTML>

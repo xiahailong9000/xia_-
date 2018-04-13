@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>数据结构与算法</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 8.00.7601.19104"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>数据结构与算法</H1></DIV></DIV>
+<DIV id=nstext>位运算</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>位运算是直接对整数在内存中的二进制位进行的操作.</DIV>
+<DIV>&nbsp;</DIV>
+<DIV><FONT 
+color=#ff0000>与：A&amp;B；//-----------------且-&amp;&amp;---</FONT></DIV>
+<DIV><FONT color=#ff0000>或：A|B；//------------------或-----</FONT></DIV>
+<DIV><FONT color=#ff0000>取反：~A: //matlab中是逻辑非</FONT></DIV>
+<DIV><FONT color=#ff0000>异或：A^B; //matlab中表示幂运算</FONT></DIV>
+<DIV><FONT 
+color=#ff0000>左移：A&lt;&lt;B;&nbsp;//----------------将A左移B位</FONT></DIV>
+<DIV><FONT color=#ff0000>右移：A&gt;&gt;B;</FONT></DIV>
+<DIV><FONT color=#ff0000>无符号右移：A&gt;&gt;&gt;B; //java语法</FONT></DIV>
+<DIV>&nbsp;</DIV>
+<DIV>与：1，指定位清零：void clr(int&amp; a,int i){a&amp;=~(1&lt;&lt;i);}</DIV>
+<DIV>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2, 获取指定位的值: int get(int a,int t){return 
+a&amp;(1&lt;&lt;i);}</DIV>
+<DIV>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3,保留某些位不变&nbsp; a=a&amp;oxFF;</DIV>
+<DIV>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4,判断一个数是否是2的幂：bool isPow2(int a){return 
+(a&amp;(a-1))==0&amp;&amp;a!=0;}</DIV>
+<DIV>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 5,奇偶性判断： bool isOdd(int a){return 
+a&amp;1==1;}</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>或：1设置指定位的值：void set(int&amp; a,int i){a|=(1&lt;&lt;i);}</DIV>
+<DIV>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2,相反数： int opposite(int a){return 
+~a+1;}</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>异或：1交换两个数 void swap(int&amp; a,int&amp; 
+b){a=a^b;b=a^b;a=a^b;}//不通过第三个数交换值</DIV>
+<DIV>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2:指定位取反 void reverse(int&amp; 
+a,int i){a^=(1&lt;&lt;i)};</DIV>
+<DIV>移位：1，2的次幂：a&lt;&lt;2&nbsp;&nbsp; //--将a扩大4倍</DIV>
+<DIV>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2，循环移位&nbsp; void 
+rol(int&amp; a,int k){a=a&lt;&lt;k|a&gt;&gt;32-k};&nbsp; 
+//--不丢失信息的移位--将移出去的数据在放到高位</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>位运算的简单应用</DIV>
+<DIV>average函数//平均值-----int average =(x&amp;y)+((x^y)&gt;&gt;1);</DIV>
+<DIV>abs函数//绝对值------int abs(int x){int y=x&gt;&gt;31; return (x+y)^y;}</DIV>
+<DIV>max函数//两者中较大值-------int max(int x,int y){return 
+x^((x^y)&amp;((x-y)&gt;&gt;31));}</DIV>
+<DIV>常整数乘法</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV>&nbsp;</DIV>
+<DIV><BR>
+<P>Write here...&nbsp;</P></DIV>
+<DIV id=nstext>
+<HR>
+</DIV>
+<DIV class=footer>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy;2018 <A href="" target=_blank></A>. 
+All Rights Reserved. </P></DIV></BODY></HTML>

@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>指针操作</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 8.00.7601.19104"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>指针操作</H1></DIV></DIV>
+<DIV id=nstext><BR>
+<P>&nbsp;</P>
+<P><FONT 
+size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C_对象类 
+z对象A=new C_对象类(2);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT 
+color=#008000>&nbsp;&nbsp;&nbsp;&nbsp; IntPtr <FONT 
+color=#000080>z指针</FONT>=GCHandle.<FONT 
+color=#800080>ToIntPtr</FONT>(GCHandle.<FONT color=#800080>Alloc</FONT>(<FONT 
+color=#000080>z对象A</FONT>));&nbsp; </FONT><FONT 
+color=#ff0000>//---将对象转换为指针------------------</FONT></FONT></P>
+<P><FONT 
+size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string 
+z指针s=z指针+"";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Console.WriteLine("z对象A.o_序号______"+z对象A.o_序号+"____"+z指针);</FONT></P>
+<P><FONT 
+size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IntPtr 
+z指针B=new IntPtr(long.Parse(z指针s));<BR>&nbsp;&nbsp;<FONT 
+color=#008000>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C_对象类 <FONT 
+color=#000080>z对象B</FONT>=(C_对象类)GCHandle.<FONT 
+color=#800080>FromIntPtr</FONT>(<FONT 
+color=#000080>z指针B</FONT>).Target;&nbsp;&nbsp; </FONT><FONT 
+color=#ff0000>//根据指针搜索对象--------------</FONT></FONT></P>
+<P><FONT 
+size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Console.WriteLine("z对象B.o_序号______"+z对象B.o_序号);</FONT></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>Write here...&nbsp;</P></DIV>
+<DIV id=nstext>
+<HR>
+</DIV>
+<DIV class=footer>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright &copy;2018 <A href="" target=_blank></A>. 
+All Rights Reserved. </P></DIV></BODY></HTML>

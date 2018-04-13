@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>小地图</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.18283"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<P>using System;<BR>using System.Collections.Generic;<BR>using 
+UnityEngine;<BR>using UnityEngine.UI;<BR>public class C_小地图:MonoBehaviour 
+{<BR>&nbsp;&nbsp;&nbsp; public Transform 
+o_地图x最大点y,o_地图z最大点y,o_地图xz最大点y;<BR>&nbsp;public RectTransform 
+Canvas;<BR>&nbsp;&nbsp;&nbsp; RectTransform o_地图UIy;<BR>&nbsp;&nbsp;&nbsp; 
+Dictionary&lt;Transform,C_地图图标&gt; o_图标列表=new 
+Dictionary&lt;Transform,C_地图图标&gt;();<BR>&nbsp;Vector2 
+o_比例值,o_轴向纠正,v地图面积;<BR>&nbsp;Vector3 tt=new Vector3 
+(1,1,1),o_目标位置;<BR>&nbsp;&nbsp;&nbsp; float o_地图坐标系偏差;<BR>&nbsp;void 
+Start(){}<BR>&nbsp;&nbsp;&nbsp; void S_初始化() 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_地图z最大点y.DetachChildren();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_地图z最大点y.LookAt(o_地图xz最大点y);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_地图坐标系偏差=S_度数计算(o_地图xz最大点y.position-o_地图z最大点y.position);</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_地图UIy=gameObject.GetComponent&lt;RectTransform&gt;();</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; v地图面积=new 
+Vector2(Vector3.Distance(o_地图z最大点y.position,o_地图xz最大点y.position),Vector3.Distance(o_地图xz最大点y.position,o_地图x最大点y.position));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+tt=Canvas.transform.localScale;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_比例值=new 
+Vector3(v地图面积.x/(o_地图UIy.sizeDelta.x*tt.x),v地图面积.y/(o_地图UIy.sizeDelta.y*tt.y));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+this.GetInstanceID();<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;void Update() 
+{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+foreach(C_地图图标 cc in 
+o_图标列表.Values){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(cc.o_显示开关&amp;&amp;cc.o_移动开关) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+S_跟踪点2(cc);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(cc.o_旋转开关) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+cc.o_图标物体.transform.localEulerAngles=new 
+Vector3(0,0,cc.o_目标物体y.eulerAngles.y-o_地图z最大点y.eulerAngles.y);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;}<BR>&nbsp;&nbsp;&nbsp; void S_跟踪点2(C_地图图标 
+cc){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float 
+v角度=S_度数计算(cc.o_目标物体y.position-o_地图z最大点y.position)-o_地图坐标系偏差;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+float v弧度=Mathf.PI/180*v角度;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float 
+v长度=Vector3.Distance(cc.o_目标物体y.position,o_地图z最大点y.position);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+cc.o_图标物体.transform.position=new 
+Vector3(Mathf.Cos(v弧度)*v长度/o_比例值.x,Mathf.Sin(v弧度)*v长度/o_比例值.y,0)+o_地图UIy.position;<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; public void S_添加图标(Transform v目标物体,Sprite v图标,Vector2 
+v图标大小,int v边框颜色,bool v移动开关,bool v旋转开关) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(o_地图UIy==null) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+S_初始化();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; C_地图图标 nn=new 
+C_地图图标(o_地图UIy,v目标物体,v图标,v图标大小,v边框颜色,v移动开关,v旋转开关);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标列表.Add(v目标物体,nn);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(v移动开关==false) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+S_跟踪点2(nn);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; public void S_是否显示(Transform 
+v跟踪物体,bool bb) {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标列表[v跟踪物体].o_显示开关=bb;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标列表[v跟踪物体].o_图标物体.SetActive(bb);<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; public void S_移除图标(Transform 
+v跟踪物体){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Destroy(o_图标列表[v跟踪物体].o_图标物体);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标列表.Remove(v跟踪物体);&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; public void S_移除所有() 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach(C_地图图标 nn in 
+o_图标列表.Values){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(nn.o_图标物体!=null) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Destroy(nn.o_图标物体);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标列表.Clear();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; float S_度数计算(Vector3 
+vv){&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; float 
+v角度;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(vv.z&gt;0) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v角度=Vector2.Angle(new Vector2(vv.x,vv.z),new 
+Vector2(1,0));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v角度=360-Vector2.Angle(new Vector2(vv.x,vv.z),new 
+Vector2(1,0));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+v角度;<BR>&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;[Serializable]<BR>&nbsp;public class C_地图图标 {<BR>&nbsp;&nbsp;public 
+Transform o_目标物体y;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public bool 
+o_旋转开关,o_显示开关,o_移动开关;<BR>&nbsp;&nbsp;[NonSerialized]<BR>&nbsp;&nbsp;public 
+GameObject o_图标物体;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public 
+C_地图图标(Transform v小地图,Transform v跟踪物体y,Sprite vimg图标y,Vector2 v图标大小,int 
+v边框颜色,bool v移动开关,bool v旋转开关) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_目标物体y=v跟踪物体y;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_移动开关=v移动开关;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_旋转开关=v旋转开关;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_显示开关=true;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标物体=new 
+GameObject(v跟踪物体y.name,typeof(Image),typeof(Outline));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标物体.transform.SetParent(v小地图);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标物体.GetComponent&lt;Image&gt;().overrideSprite=vimg图标y;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(v边框颜色==0) { 
+//红<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标物体.GetComponent&lt;Outline&gt;().effectColor=new 
+Color(1,0.3f,0.3f);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标物体.GetComponent&lt;Outline&gt;().effectDistance=new 
+Vector2(1,1);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} else 
+if(v边框颜色==1){//蓝<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标物体.GetComponent&lt;Outline&gt;().effectColor=new 
+Color(0.3f,0.3f,1);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标物体.GetComponent&lt;Outline&gt;().effectDistance=new 
+Vector2(1,1);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}else 
+if(v边框颜色==2){//黑<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标物体.GetComponent&lt;Outline&gt;().effectColor=new 
+Color(0.3f,0.3f,0.3f);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标物体.GetComponent&lt;Outline&gt;().effectDistance=new 
+Vector2(1,1);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}else 
+if(v边框颜色==3){//无边红<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标物体.GetComponent&lt;Outline&gt;().enabled=false;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标物体.GetComponent&lt;Image&gt;().color=new 
+Color(1,0.2f,0.2f);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} else if(v边框颜色==4) 
+{//无边蓝<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标物体.GetComponent&lt;Outline&gt;().enabled=false;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标物体.GetComponent&lt;Image&gt;().color=new 
+Color(0.1f,0.1f,1);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}else if(v边框颜色==5) 
+{//无<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_图标物体.GetComponent&lt;Outline&gt;().enabled=false;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+RectTransform 
+rtt=o_图标物体.GetComponent&lt;RectTransform&gt;();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+rtt.sizeDelta=v图标大小;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+rtt.anchorMax=new 
+Vector2(1,0);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+rtt.anchorMin=new 
+Vector2(1,0);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+rtt.pivot=new 
+Vector2(0.5f,0.5f);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//o_小地图.o_地图图标.Add(v跟踪物体y,this);<BR>&nbsp;&nbsp;}<BR>&nbsp;}<BR>}</P>
+<P>&nbsp;</P></BODY></HTML>

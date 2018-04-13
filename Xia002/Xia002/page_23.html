@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>文件加密</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17924"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>文件加密</H1></DIV></DIV>
+<DIV id=nstext><BR>
+<P>using UnityEngine;<BR>using System.Collections;<BR>public class Password: 
+MonoBehaviour{<BR>&nbsp;&nbsp;&nbsp; public static string S_字符串_加密(string i_s) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string i_ss = 
+"";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string[] ss_s = new 
+string[i_s.Length];<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int i = 
+0; i &lt; i_s.Length; 
+i++){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ss_s[i] = i_s.Remove(0, 
+i);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ss_s[i] = ss_s[i].Remove(1, ss_s[i].Length - 1);</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(ss_s[i]=="0")&nbsp; 
+ss_s[i] = ss_s[i].Replace("0", 
+"dss_qos");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "1") ss_s[i] = ss_s[i].Replace("1", 
+"dss_fds");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "2") ss_s[i] = ss_s[i].Replace("2", 
+"dss_rww");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "3") ss_s[i] = ss_s[i].Replace("3", 
+"dss_jkj");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "4") ss_s[i] = ss_s[i].Replace("4", 
+"dss_qye");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "5") ss_s[i] = ss_s[i].Replace("5", 
+"dss_cvg");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "6") ss_s[i] = ss_s[i].Replace("6", 
+"dss_mhh");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "7") ss_s[i] = ss_s[i].Replace("7", 
+"dss_wef");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "8") ss_s[i] = ss_s[i].Replace("8", 
+"dss_rus");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "9") ss_s[i] = ss_s[i].Replace("9", "dss_ure");</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (ss_s[i] == 
+"a") ss_s[i] = ss_s[i].Replace("a", 
+"dss_dhf");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "b") ss_s[i] = ss_s[i].Replace("b", 
+"dss_ghe");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "c") ss_s[i] = ss_s[i].Replace("c", 
+"dss_hjk");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "d") ss_s[i] = ss_s[i].Replace("d", 
+"dss_rty");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "e") ss_s[i] = ss_s[i].Replace("e", 
+"dss_wer");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "f") ss_s[i] = ss_s[i].Replace("f", 
+"dss_iop");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "g") ss_s[i] = ss_s[i].Replace("g", 
+"dss_hnk");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "h") ss_s[i] = ss_s[i].Replace("h", 
+"dss_jkl");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "m") ss_s[i] = ss_s[i].Replace("m", 
+"dss_qwe");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "n") ss_s[i] = ss_s[i].Replace("n", 
+"dss_yhn");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "o") ss_s[i] = ss_s[i].Replace("o", 
+"dss_tgb");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "p") ss_s[i] = ss_s[i].Replace("p", 
+"dss_rfv");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "q") ss_s[i] = ss_s[i].Replace("q", 
+"dss_edc");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "r") ss_s[i] = ss_s[i].Replace("r", 
+"dss_wsx");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "s") ss_s[i] = ss_s[i].Replace("s", 
+"dss_qaz");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "t") ss_s[i] = ss_s[i].Replace("t", 
+"dss_olm");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "u") ss_s[i] = ss_s[i].Replace("u", 
+"dss_ujn");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "v") ss_s[i] = ss_s[i].Replace("v", 
+"dss_tob");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "w") ss_s[i] = ss_s[i].Replace("w", 
+"dss_rft");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "x") ss_s[i] = ss_s[i].Replace("x", 
+"dss_rtd");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "y") ss_s[i] = ss_s[i].Replace("y", 
+"dss_wea");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "z") ss_s[i] = ss_s[i].Replace("z", "dss_uhj");</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if (ss_s[i] == 
+"A") ss_s[i] = ss_s[i].Replace("A", 
+"dss_rtf");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "B") ss_s[i] = ss_s[i].Replace("B", 
+"dss_fge");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "C") ss_s[i] = ss_s[i].Replace("C", 
+"dss_omk");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "D") ss_s[i] = ss_s[i].Replace("D", 
+"dss_wcy");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "E") ss_s[i] = ss_s[i].Replace("E", 
+"dss_wtg");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "F") ss_s[i] = ss_s[i].Replace("F", 
+"dss_por");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "G") ss_s[i] = ss_s[i].Replace("G", 
+"dss_wek");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "H") ss_s[i] = ss_s[i].Replace("H", 
+"dss_qad");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "M") ss_s[i] = ss_s[i].Replace("M", 
+"dss_sdf");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "N") ss_s[i] = ss_s[i].Replace("N", 
+"dss_lkj");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "O") ss_s[i] = ss_s[i].Replace("O", 
+"dss_tre");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "P") ss_s[i] = ss_s[i].Replace("P", 
+"dss_poi");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "Q") ss_s[i] = ss_s[i].Replace("Q", 
+"dss_nbv");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "R") ss_s[i] = ss_s[i].Replace("R", 
+"dss_nhy");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "S") ss_s[i] = ss_s[i].Replace("S", 
+"dss_mnk");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "T") ss_s[i] = ss_s[i].Replace("T", 
+"dss_xdf");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "U") ss_s[i] = ss_s[i].Replace("U", 
+"dss_qwa");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "V") ss_s[i] = ss_s[i].Replace("V", 
+"dss_pom");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "W") ss_s[i] = ss_s[i].Replace("W", 
+"dss_der");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "X") ss_s[i] = ss_s[i].Replace("X", 
+"dss_bht");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "Y") ss_s[i] = ss_s[i].Replace("Y", 
+"dss_nmg");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if 
+(ss_s[i] == "Z") ss_s[i] = ss_s[i].Replace("Z", 
+"dss_pvf");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+i_ss += ss_s[i];<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+i_ss;<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; public static string 
+S_字符串_解密(string i_s){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = 
+i_s.Replace("dss_qos", "0");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = 
+i_s.Replace("dss_fds", "1");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = 
+i_s.Replace("dss_rww", "2");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = 
+i_s.Replace("dss_jkj", "3");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = 
+i_s.Replace("dss_qye", "4");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = 
+i_s.Replace("dss_cvg", "5");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = 
+i_s.Replace("dss_mhh", "6");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = 
+i_s.Replace("dss_wef", "7");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = 
+i_s.Replace("dss_rus", "8");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = 
+i_s.Replace("dss_ure", "9");</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_dhf", 
+"a");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_ghe", 
+"b");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_hjk", 
+"c");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_rty", 
+"d");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_wer", 
+"e");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_iop", 
+"f");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_hnk", 
+"g");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_jkl", 
+"h");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_qwe", 
+"m");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_yhn", 
+"n");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_tgb", 
+"o");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_rfv", 
+"p");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_edc", 
+"q");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_wsx", 
+"r");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_qaz", 
+"s");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_olm", 
+"t");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_ujn", 
+"u");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_tob", 
+"v");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_rft", 
+"w");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_rtd", 
+"x");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_wea", 
+"y");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_uhj", 
+"z");</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_rtf", 
+"A");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_fge", 
+"B");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_omk", 
+"C");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_wcy", 
+"D");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_wtg", 
+"E");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_por", 
+"F");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_wek", 
+"G");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_qad", 
+"H");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_sdf", 
+"M");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_lkj", 
+"N");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_tre", 
+"O");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_poi", 
+"P");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_nbv", 
+"Q");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_nhy", 
+"R");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_mnk", 
+"S");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_xdf", 
+"T");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_qwa", 
+"U");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_pom", 
+"V");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_der", 
+"W");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_bht", 
+"X");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_nmg", 
+"Y");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i_s = i_s.Replace("dss_pvf", 
+"Z");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+i_s;<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR></P></DIV>
+<DIV class=footer>
+<P></P></DIV></BODY></HTML>

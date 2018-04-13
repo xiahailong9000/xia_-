@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>无边框窗体拖动</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17924"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>无边框窗体拖动</H1></DIV></DIV>
+<DIV id=nstext><BR>
+<P>using UnityEngine;<BR>using System.Collections;<BR>using 
+System.Runtime.InteropServices;<BR>using System;<BR>public class ss003 : 
+MonoBehaviour {<BR>&nbsp;&nbsp;&nbsp; #region 
+系统窗口控制-------------------------------------------<BR>&nbsp;&nbsp;&nbsp; public 
+bool o_拖动开关;<BR>&nbsp;&nbsp;&nbsp; public Vector2 v0, v1, vv, o_窗口, 
+o_鼠标位置;<BR>&nbsp;&nbsp;&nbsp; public Vector4 vn;<BR>&nbsp;&nbsp;&nbsp; 
+[DllImport("user32.dll")]<BR>&nbsp;&nbsp;&nbsp; static extern IntPtr 
+SetWindowLong(IntPtr hwnd, int _nIndex, int dwNewLong);<BR>&nbsp;&nbsp;&nbsp; 
+[DllImport("user32.dll")]<BR>&nbsp;&nbsp;&nbsp; static extern bool 
+SetWindowPos(IntPtr hWnd, int hWndInsertAfter, int X, int Y, int cx, int cy, 
+uint uFlags);<BR>&nbsp;&nbsp;&nbsp; 
+[DllImport("user32.dll")]<BR>&nbsp;&nbsp;&nbsp; static extern IntPtr 
+GetForegroundWindow();<BR>&nbsp;&nbsp;&nbsp; void S_系统窗口控制(int i_宽, int i_高){ 
+//=================================================================<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_窗口 = new Vector2(i_宽, i_高);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int 
+i = Screen.resolutions.Length;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int 
+o_窗口左上角x = ((Screen.resolutions[i - 1].width) - i_宽) / 
+2;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; int o_窗口左上角y = 
+((Screen.resolutions[i - 1].height) - i_高) / 
+2;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+SetWindowLong(GetForegroundWindow(), -16, 
+0x800000);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bool result = 
+SetWindowPos(GetForegroundWindow(), 0, o_窗口左上角x, o_窗口左上角y, (int)o_窗口.x, 
+(int)o_窗口.y, 0x0040);<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; 
+[DllImport("user32.dll", EntryPoint = "GetCursorPos")]<BR>&nbsp;&nbsp;&nbsp; 
+public static extern bool GetCursorPos(ref Vector2 
+lpPoint);<BR>&nbsp;&nbsp;&nbsp; //参数说明　ref LPPOINT 
+lpPoint，LPPOINT为结构体类型，该结构接收光标的屏幕坐标<BR>&nbsp;&nbsp;&nbsp; Vector2 S_鼠标位置(Vector2 
+vv){//===============================================================================<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+GetCursorPos(ref vv);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vv = vv * 
+10000000000000000000000f;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vv = vv 
+* 100000000000000000000000f;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vv = 
+vv / 1.4f;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+vv;<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; [DllImport("user32.dll", 
+EntryPoint = "GetWindowRect")]<BR>&nbsp;&nbsp;&nbsp; public static extern IntPtr 
+GetWindowRect(IntPtr hwnd, ref Vector4 lpRect);<BR>&nbsp;&nbsp;&nbsp; private 
+static Vector4 
+S_窗口位置(){//================================================================================<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Vector4 rr = new Vector4();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+GetWindowRect(GetForegroundWindow(), ref 
+rr);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rr = rr * 
+10000000000000000000000f;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rr = rr 
+* 100000000000000000000000f;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; rr = 
+rr / 1.4f;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+rr;<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; void 
+S_鼠标拖动(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if 
+(Input.GetMouseButtonDown(0) &amp;&amp; Screen.height - Input.mousePosition.y 
+&lt; 30) { v0 = S_鼠标位置(o_鼠标位置); vn = S_窗口位置(); o_拖动开关 = true; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (Input.GetMouseButton(0) 
+&amp;&amp; 
+o_拖动开关){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v1 = S_鼠标位置(o_鼠标位置) - 
+v0;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vv = 
+new Vector2(vn.x + v1.x, vn.y + 
+v1.y);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+SetWindowPos(GetForegroundWindow(), 0, (int)vv.x, (int)vv.y, (int)o_窗口.x, 
+(int)o_窗口.y, 0x0040);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (Input.GetMouseButtonUp(0)) { 
+o_拖动开关 = false; }<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; 
+#endregion<BR>&nbsp;void Start () 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S_系统窗口控制(800, 
+600);<BR>&nbsp;}</P>
+<P>&nbsp;&nbsp;&nbsp; void Update() { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; S_鼠标拖动();<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>}</P></DIV>
+<DIV class=footer>
+<P></P></DIV></BODY></HTML>

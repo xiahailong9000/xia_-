@@ -1,0 +1,832 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.10570.1001"></HEAD>
+<BODY>
+<P>&nbsp;</P>
+<P>打开Android Studio</P>
+<P>创建一个安卓项目</P>
+<P>在创建一个Module模块</P>
+<P>File/New/New Module/Android Library</P>
+<P>&nbsp;</P>
+<P>拷贝文件classes.jar</P>
+<P>（C:\Program 
+Files\Unity\Editor\Data\PlaybackEngines\androidplayer\Variations\mono\Release\Classes\classes.jar）</P>
+<P>到Module模块的libs目录</P>
+<P><IMG src="sds.png"></P>
+<P>选中classes.jar 右键/Add As Library</P>
+<P>MainActivity.java</P><PRE style="FONT-SIZE: 16.5pt; FONT-FAMILY: '宋体'; COLOR: #a9b7c6; BACKGROUND-COLOR: #2b2b2b"><SPAN style="COLOR: #cc7832">package </SPAN>com.xia_01.aa_006<SPAN style="COLOR: #cc7832">;<BR></SPAN><SPAN style="COLOR: #cc7832">import </SPAN>android.os.Bundle<SPAN style="COLOR: #cc7832">;<BR></SPAN><SPAN style="COLOR: #cc7832">import </SPAN>com.unity3d.player.UnityPlayerActivity<SPAN style="COLOR: #cc7832">;<BR></SPAN><SPAN style="COLOR: #cc7832">public class </SPAN>MainActivity <SPAN style="COLOR: #cc7832">extends </SPAN>UnityPlayerActivity {<BR>    <SPAN style="COLOR: #bbb529">@Override<BR></SPAN><SPAN style="COLOR: #bbb529">    </SPAN><SPAN style="COLOR: #cc7832">protected void </SPAN><SPAN style="COLOR: #ffc66d">onCreate</SPAN>(Bundle savedInstanceState) {<BR>        <SPAN style="COLOR: #cc7832">super</SPAN>.onCreate(savedInstanceState)<SPAN style="COLOR: #cc7832">;<BR></SPAN><SPAN style="COLOR: #cc7832">    </SPAN>}<BR>    <SPAN style="COLOR: #cc7832">public int </SPAN><SPAN style="COLOR: #ffc66d">S_test01</SPAN>(<SPAN style="COLOR: #cc7832">int </SPAN>i2<SPAN style="COLOR: #cc7832">,int </SPAN>i3){<BR>        <SPAN style="COLOR: #cc7832">return </SPAN>i2+i3<SPAN style="COLOR: #cc7832">;<BR></SPAN><SPAN style="COLOR: #cc7832">    </SPAN>}<BR>}</PRE>
+<P>AndroidManifest.xml</P><PRE style="FONT-SIZE: 16.5pt; FONT-FAMILY: '宋体'; COLOR: #a9b7c6; BACKGROUND-COLOR: #2b2b2b"><SPAN style="COLOR: #e8bf6a">&lt;?</SPAN><SPAN style="COLOR: #bababa">xml version=</SPAN><SPAN style="COLOR: #a5c261">"1.0" </SPAN><SPAN style="COLOR: #bababa">encoding=</SPAN><SPAN style="COLOR: #a5c261">"utf-8"</SPAN><SPAN style="COLOR: #e8bf6a">?&gt;<BR></SPAN><SPAN style="COLOR: #e8bf6a">&lt;manifest </SPAN><SPAN style="COLOR: #bababa">package=</SPAN><SPAN style="COLOR: #a5c261">"com.xia_01.aa_001"<BR></SPAN><SPAN style="COLOR: #a5c261">          </SPAN><SPAN style="COLOR: #bababa">xmlns:</SPAN><SPAN style="COLOR: #9876aa">android</SPAN><SPAN style="COLOR: #bababa">=</SPAN><SPAN style="COLOR: #a5c261">"http://schemas.android.com/apk/res/android"</SPAN><SPAN style="COLOR: #e8bf6a">&gt;<BR></SPAN><SPAN style="COLOR: #e8bf6a"><BR></SPAN><SPAN style="COLOR: #e8bf6a">    &lt;application<BR></SPAN><SPAN style="COLOR: #e8bf6a">        </SPAN><SPAN style="COLOR: #9876aa">android</SPAN><SPAN style="COLOR: #bababa">:allowBackup=</SPAN><SPAN style="COLOR: #a5c261">"true"<BR></SPAN><SPAN style="COLOR: #a5c261">        </SPAN><SPAN style="COLOR: #bababa">android:icon=</SPAN><SPAN style="COLOR: #a5c261">"@mipmap/ic_launcher"<BR></SPAN><SPAN style="COLOR: #a5c261">        </SPAN><SPAN style="COLOR: #bababa">android:label=</SPAN><SPAN style="COLOR: #a5c261">"@string/app_name"<BR></SPAN><SPAN style="COLOR: #a5c261">        </SPAN><SPAN style="COLOR: #bababa">android:supportsRtl=</SPAN><SPAN style="COLOR: #a5c261">"true"<BR></SPAN><SPAN style="COLOR: #a5c261">        </SPAN><SPAN style="COLOR: #bababa">android:theme=</SPAN><SPAN style="COLOR: #a5c261">"@style/AppTheme"</SPAN><SPAN style="COLOR: #e8bf6a">&gt;<BR></SPAN><SPAN style="COLOR: #e8bf6a">        &lt;activity </SPAN><SPAN style="COLOR: #bababa">android:name=</SPAN><SPAN style="COLOR: #a5c261">".MainActivity"</SPAN><SPAN style="COLOR: #e8bf6a">&gt;<BR></SPAN><SPAN style="COLOR: #e8bf6a">            &lt;intent-filter&gt;<BR></SPAN><SPAN style="COLOR: #e8bf6a">                &lt;action </SPAN><SPAN style="COLOR: #bababa">android:name=</SPAN><SPAN style="COLOR: #a5c261">"android.intent.action.MAIN"</SPAN><SPAN style="COLOR: #e8bf6a">/&gt;<BR></SPAN><SPAN style="COLOR: #e8bf6a">                &lt;category </SPAN><SPAN style="COLOR: #bababa">android:name=</SPAN><SPAN style="COLOR: #a5c261">"android.intent.category.LAUNCHER"</SPAN><SPAN style="COLOR: #e8bf6a">/&gt;<BR></SPAN><SPAN style="COLOR: #e8bf6a">            &lt;/intent-filter&gt;<BR></SPAN><SPAN style="COLOR: #e8bf6a">        &lt;/activity&gt;<BR></SPAN><SPAN style="COLOR: #e8bf6a">    &lt;/application&gt;<BR></SPAN><SPAN style="COLOR: #e8bf6a">&lt;/manifest&gt;<BR></SPAN></PRE>
+<P>//编译工程--------------</P>
+<P>选中项目 点击 Build/make Module "bmobpay"</P>
+<P>//生成的包目录---------------</P>
+<P>项目名/build/</P>
+<P>创建unity3d项目</P>
+<P>目录位置</P>
+<P>Plugins/Android/libs</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+/res</P>
+<P align=left><IMG src="梵蒂冈地方.png"></P>
+<P>&nbsp;</P>
+<P align=left><FONT color=#000000>import 
+com.unity3d.player.UnityPlayerActivity;<BR>import 
+com.unity3d.player.UnityPlayer;<BR>public class MainActivity extends 
+UnityPlayerActivity {<BR>&nbsp;@Override<BR>&nbsp;protected void onCreate(Bundle 
+savedInstanceState) 
+{<BR>&nbsp;&nbsp;super.onCreate(savedInstanceState);<BR>&nbsp;}<BR>&nbsp;public 
+void S_001(int i2,int 
+i3){<BR>&nbsp;&nbsp;S_002(i2*i3);<BR>&nbsp;}<BR>&nbsp;public void S_002(int 
+ii){<BR>&nbsp;&nbsp;UnityPlayer.UnitySendMessage("java", "S_002", 
+ii+"");&nbsp;&nbsp;<BR>&nbsp;}<BR>}<BR></FONT></P>
+<P align=left><FONT 
+color=#ff0000>//u3d调用java包------------------------------------------</FONT></P>
+<P align=left>void S_001() {<BR>&nbsp;&nbsp;&nbsp; AndroidJavaClass jc =new 
+AndroidJavaClass("com.unity3d.player.UnityPlayer");<BR>&nbsp;&nbsp;&nbsp; 
+AndroidJavaObject jo 
+=jc.GetStatic&lt;AndroidJavaObject&gt;("currentActivity");<BR>&nbsp;&nbsp;&nbsp; 
+jo.Call("S_001",111,6);//方法名S001,参数56和50<BR>&nbsp;&nbsp;&nbsp; //int ii= 
+jo.Call&lt;int&gt;("S_001",56,50);//泛型与返回值<BR>}<BR>public void S_002(string ss) 
+{<BR>&nbsp;&nbsp;&nbsp; o_tt.text=ss;<BR>}</P>
+<P>public void S_单独java包的调用() {<BR>&nbsp;&nbsp;&nbsp;&nbsp;AndroidJavaClass 
+jc=new AndroidJavaClass("con.ssss.C_mm");<BR>&nbsp;&nbsp;&nbsp;&nbsp;int ii 
+=jc.CallStatic&lt;int&gt;("S_002",new object[] { 1,"kk",44 });<BR>}</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>//============================================================</P>
+<P>&nbsp;</P>
+<P>package com.xex.sseh.wxapi;</P>
+<P>import java.io.UnsupportedEncodingException;<BR>import 
+java.net.URLEncoder;<BR>import java.util.Iterator;<BR>import 
+java.util.Map;<BR>import java.util.Set;<BR>import java.util.SortedMap;<BR>import 
+java.util.TreeMap;</P>
+<P>import org.json.JSONObject;</P>
+<P>import com.tencent.mm.sdk.constants.ConstantsAPI;<BR>import 
+com.tencent.mm.sdk.modelbase.BaseReq;<BR>import 
+com.tencent.mm.sdk.modelbase.BaseResp;<BR>import 
+com.tencent.mm.sdk.modelmsg.SendAuth;<BR>import 
+com.tencent.mm.sdk.modelmsg.SendMessageToWX;<BR>import 
+com.tencent.mm.sdk.modelmsg.WXMediaMessage;<BR>import 
+com.tencent.mm.sdk.modelmsg.WXTextObject;<BR>import 
+com.tencent.mm.sdk.modelmsg.WXWebpageObject;<BR>import 
+com.tencent.mm.sdk.modelpay.PayReq;<BR>import 
+com.tencent.mm.sdk.openapi.IWXAPI;<BR>import 
+com.tencent.mm.sdk.openapi.IWXAPIEventHandler;<BR>import 
+com.tencent.mm.sdk.openapi.WXAPIFactory;<BR>import 
+com.unity3d.player.UnityPlayer;<BR>import 
+com.unity3d.player.UnityPlayerActivity;<BR>import 
+android.content.ComponentName;<BR>import android.content.Intent;<BR>import 
+android.os.Bundle;<BR>import android.widget.Toast;</P>
+<P>public class WXPayEntryActivity extends UnityPlayerActivity&nbsp; implements 
+IWXAPIEventHandler{&nbsp;&nbsp;<BR>&nbsp;// IWXAPI 
+是第三方app和微信通信的openapi接口<BR>&nbsp;&nbsp;&nbsp; IWXAPI api;<BR>&nbsp;&nbsp;&nbsp; 
+String appID;<BR>&nbsp;&nbsp;&nbsp; static WXPayEntryActivity 
+ccc;<BR>&nbsp;&nbsp;&nbsp; @Override<BR>&nbsp;&nbsp;&nbsp; public void 
+onCreate(Bundle savedInstanceState) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+super.onCreate(savedInstanceState);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ccc=this;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp; 
+}&nbsp;<BR>&nbsp;&nbsp;&nbsp; public static String S_消息处理(int v编号,String 
+ss){<BR>&nbsp;&nbsp;&nbsp; &nbsp;String v消息="==";<BR>&nbsp;&nbsp;&nbsp; 
+&nbsp;switch (v编号) {<BR>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;case 
+0:<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;v消息=ccc.S_0_初始化(ss);<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;case 
+1:<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;v消息=ccc.S_1_发起支付(ss);<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;case 
+2:<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;v消息=ccc.S_2_分享到微信(ss);<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;case 
+3:<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;v消息=ccc.S_3_分享到微信2(ss);<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;case 
+4:&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;try { <BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;v消息=ccc.S_4_数据打包(ss);<BR>&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;}catch (UnsupportedEncodingException e) 
+{&nbsp;&nbsp;&nbsp;&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;v消息="统一下单_异常";//输出异常信息<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;case 
+5:<BR>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;break;<BR>&nbsp;&nbsp;&nbsp; 
+&nbsp;<BR>&nbsp;&nbsp;&nbsp; &nbsp;}<BR>&nbsp;&nbsp;&nbsp; &nbsp;return 
+v消息;<BR>&nbsp;&nbsp;&nbsp; }&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp; String 
+S_0_初始化(String appid) {<BR>&nbsp;&nbsp;ccc.appID=appid;<BR>&nbsp;&nbsp;&nbsp; 
+&nbsp;ccc.api = WXAPIFactory.createWXAPI(ccc, ccc.appID, 
+false);<BR>&nbsp;&nbsp;// 将该app注册到微信<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+ccc.api.registerApp(ccc.appID);&nbsp;&nbsp;&nbsp; 
+&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp; // 
+通过WXAPIFactory工厂，获取IWXAPI的实例<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//ccc.api.handleIntent(ccc.getIntent(), ccc);<BR>&nbsp;&nbsp;&nbsp;&nbsp; return 
+"MainActivity_appid初始化化成功";<BR>&nbsp;}<BR>&nbsp;String S_1_发起支付(String 
+ss){<BR>&nbsp;&nbsp;//String url = "<A 
+href="http://wxpay.weixin.qq.com/pub_v2/app/app_pay.php?plat=android">http://wxpay.weixin.qq.com/pub_v2/app/app_pay.php?plat=android</A>";<BR>&nbsp;&nbsp;// 
+将该app注册到微信<BR>&nbsp;&nbsp;&nbsp;&nbsp; api.registerApp(appID); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+try{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;JSONObject json = new 
+JSONObject(ss); <BR>&nbsp;&nbsp;&nbsp;if(null != json &amp;&amp; 
+!json.has("retcode") ){<BR>&nbsp;&nbsp;&nbsp;&nbsp;PayReq req = new 
+PayReq();<BR>&nbsp;&nbsp;&nbsp;&nbsp;//req.appId = "wxf8b4f85f3a794e77";&nbsp; 
+// 测试用appId<BR>&nbsp;&nbsp;&nbsp;&nbsp;req.appId&nbsp;&nbsp;&nbsp;= 
+json.getString("appid");<BR>&nbsp;&nbsp;&nbsp;&nbsp;req.partnerId&nbsp;&nbsp;= 
+json.getString("partnerid");<BR>&nbsp;&nbsp;&nbsp;&nbsp;req.prepayId&nbsp;&nbsp;= 
+json.getString("prepayid");<BR>&nbsp;&nbsp;&nbsp;&nbsp;req.nonceStr&nbsp;&nbsp;= 
+json.getString("noncestr");<BR>&nbsp;&nbsp;&nbsp;&nbsp;req.timeStamp&nbsp;&nbsp;= 
+json.getString("timestamp");<BR>&nbsp;&nbsp;&nbsp;&nbsp;req.packageValue&nbsp;= 
+json.getString("package");<BR>&nbsp;&nbsp;&nbsp;&nbsp;req.sign&nbsp;&nbsp;&nbsp;= 
+json.getString("sign");<BR>&nbsp;&nbsp;&nbsp;&nbsp;req.extData&nbsp;&nbsp;&nbsp;= 
+"app data"; // optional<BR>&nbsp;&nbsp;&nbsp;&nbsp;Toast.makeText(ccc, "正常调起支付", 
+Toast.LENGTH_SHORT).show();<BR>&nbsp;&nbsp;&nbsp;&nbsp;//Toast.makeText(ccc, 
+"launch result = " + api.openWXApp(), 
+Toast.LENGTH_LONG).show();<BR>&nbsp;&nbsp;&nbsp;&nbsp;// 
+在支付之前，如果应用没有注册到微信，应该先调用IWXMsg.registerApp将应用注册到微信<BR>&nbsp;&nbsp;&nbsp;&nbsp;S_回调u3d(0,ss);<BR>&nbsp;&nbsp;&nbsp;&nbsp;ccc.api.sendReq(req);<BR>&nbsp;&nbsp;&nbsp;}else{<BR>&nbsp;&nbsp;&nbsp;&nbsp;S_回调u3d(0,"PAY_GET__返回错误"+json.getString("retmsg"));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;Toast.makeText(ccc, "返回错误"+json.getString("retmsg"), 
+Toast.LENGTH_SHORT).show();<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}catch (Exception ex) {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;ccc.S_回调u3d(0,"S_发起支付 
+_失败了:"+ex.getLocalizedMessage());<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+"S_发起支付----成功";<BR>&nbsp;}<BR>&nbsp;String S_2_分享到微信(String ss){&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//0好友或1朋友圈---url--标题--内容---<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String[] 
+sss=ss.split("&amp;");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WXWebpageObject webpage 
+= new WXWebpageObject();&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+webpage.webpageUrl = sss[1];//"这里填写链接url"================= 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; WXMediaMessage msg = new 
+WXMediaMessage(webpage);&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; msg.title = 
+sss[2];//"这里填写标题"===========================<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+msg.description = sss[3];//"这里填写内容"====================== 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //这里替换一张自己工程里的图片资源&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //Bitmap thumb = 
+BitmapFactory.decodeResource(getResources(), R.drawable.share_logo);&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; //msg.setThumbImage(thumb);&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SendMessageToWX.Req req = new 
+SendMessageToWX.Req();&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req.transaction 
+= String.valueOf(System.currentTimeMillis());&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req.message = msg;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; req.scene = 
+sss[0]=="0"?SendMessageToWX.Req.WXSceneSession:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+SendMessageToWX.Req.WXSceneTimeline;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ccc.api.sendReq(req);&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ccc.S_回调u3d(0,"分享成功了_"+ss);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+"S_2_分享到微信----成功";<BR>&nbsp;}<BR>&nbsp;String S_3_分享到微信2(String 
+v标题){&nbsp;&nbsp;<BR>&nbsp;&nbsp;WXTextObject textObj = new 
+WXTextObject();<BR>&nbsp;&nbsp;textObj.text = v标题;<BR>&nbsp;&nbsp;WXMediaMessage 
+msg = new WXMediaMessage();<BR>&nbsp;&nbsp;msg.mediaObject = 
+textObj;<BR>&nbsp;&nbsp;// 发送文本类型的消息时，title字段不起作用<BR>&nbsp;&nbsp;msg.title = 
+"将被忽略=========";<BR>&nbsp;&nbsp;msg.description = 
+v标题;<BR>&nbsp;&nbsp;SendMessageToWX.Req req = new 
+SendMessageToWX.Req();<BR>&nbsp;&nbsp;req.transaction = 
+ccc.buildTransaction("text"); // 
+transaction字段用于唯一标识一个请求<BR>&nbsp;&nbsp;req.message = 
+msg;<BR>&nbsp;&nbsp;req.scene = 
+SendMessageToWX.Req.WXSceneFavorite;<BR>&nbsp;&nbsp;req.openId = 
+"dddddddddd";//ccc.getOpenId();<BR>&nbsp;&nbsp;// 
+调用api接口发送数据到微信<BR>&nbsp;&nbsp;ccc.api.sendReq(req);<BR>&nbsp;&nbsp;return 
+"S_3_分享到微信----成功";<BR>&nbsp;}<BR>&nbsp;String buildTransaction(final String 
+type) {<BR>&nbsp;&nbsp;return (type == null) ? 
+String.valueOf(System.currentTimeMillis()) : type + 
+System.currentTimeMillis();<BR>&nbsp;}<BR>&nbsp;//String getOpenId() 
+{<BR>&nbsp;&nbsp;//EditText openIdEt = (EditText) 
+findViewById(R.id.openid_et);<BR>&nbsp;&nbsp;//return 
+openIdEt.getText().toString();<BR>&nbsp;//}<BR>&nbsp;// 
+微信发送请求到第三方应用时，会回调到该方法<BR>&nbsp;@Override<BR>&nbsp;public void onReq(BaseReq req) 
+{<BR>&nbsp;&nbsp;Toast.makeText(this, "openid = " + req.openId, 
+Toast.LENGTH_SHORT).show();&nbsp;&nbsp;<BR>&nbsp;&nbsp;switch (req.getType()) 
+{<BR>&nbsp;&nbsp;case 
+ConstantsAPI.COMMAND_GETMESSAGE_FROM_WX:<BR>&nbsp;&nbsp;&nbsp;S_回调u3d(0,"qqddddddd1116");<BR>&nbsp;&nbsp;&nbsp;S_打开应用();<BR>&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;case 
+ConstantsAPI.COMMAND_SHOWMESSAGE_FROM_WX:<BR>&nbsp;&nbsp;&nbsp;S_回调u3d(0,"qqddddddd1114");<BR>&nbsp;&nbsp;&nbsp;S_打开应用();<BR>&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;case 
+ConstantsAPI.COMMAND_LAUNCH_BY_WX:<BR>&nbsp;&nbsp;&nbsp;S_回调u3d(0,"qqddddddd1112");<BR>&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;default:<BR>&nbsp;&nbsp;&nbsp;S_回调u3d(0,"qqddddddd1113");<BR>&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;}<BR>&nbsp;}<BR>&nbsp;// 
+第三方应用发送到微信的请求处理后的响应结果，会回调到该方法<BR>&nbsp;@Override<BR>&nbsp;public void 
+onResp(BaseResp resp) {<BR>&nbsp;&nbsp;Toast.makeText(this, "openid = " + 
+resp.openId, Toast.LENGTH_SHORT).show();&nbsp;&nbsp;<BR>&nbsp;&nbsp;if 
+(resp.getType() == ConstantsAPI.COMMAND_SENDAUTH) 
+{<BR>&nbsp;&nbsp;&nbsp;Toast.makeText(this, "code = " + ((SendAuth.Resp) 
+resp).code, Toast.LENGTH_SHORT).show();<BR>&nbsp;&nbsp;}<BR>&nbsp;&nbsp;switch 
+(resp.errCode) {<BR>&nbsp;&nbsp;case 
+BaseResp.ErrCode.ERR_OK:<BR>&nbsp;&nbsp;&nbsp;S_回调u3d(0,"ddddddd111");<BR>&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;case 
+BaseResp.ErrCode.ERR_USER_CANCEL:<BR>&nbsp;&nbsp;&nbsp;S_回调u3d(0,"ddddddd222");<BR>&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;case 
+BaseResp.ErrCode.ERR_AUTH_DENIED:<BR>&nbsp;&nbsp;&nbsp;S_回调u3d(0,"ddddddd333");<BR>&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;default:<BR>&nbsp;&nbsp;&nbsp;S_回调u3d(0,"ddddddd777");<BR>&nbsp;&nbsp;&nbsp;break;<BR>&nbsp;&nbsp;}<BR>&nbsp;}<BR>&nbsp;void 
+S_回调u3d(int v编号,String ss){<BR>&nbsp;&nbsp; 
+UnityPlayer.UnitySendMessage("o_微信接口", "S_安卓回调<A href='mailto:", v编号+"@"+ss'>", 
+v编号+"@"+ss</A>);&nbsp; <BR>&nbsp;}<BR>&nbsp;void S_打开应用(){<BR>&nbsp;&nbsp;Intent 
+intent = new Intent();&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+intent.setComponent(new 
+ComponentName("org.hy","org.hy.Test222Activity"));&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; intent.setAction(Intent.ACTION_VIEW);&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; startActivity(intent);<BR>&nbsp;}</P>
+<P>&nbsp;String S_4_数据打包(String ss) throws UnsupportedEncodingException 
+{<BR>&nbsp;&nbsp;&nbsp; &nbsp;String[] sss=ss.split("@");<BR>&nbsp;&nbsp;&nbsp; 
+&nbsp;SortedMap&lt;String, String&gt; v排序字典=new TreeMap&lt;String, 
+String&gt;();<BR>&nbsp;&nbsp;&nbsp; &nbsp;for(int 
+i=0;i&lt;sss.length;i++){<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;String[] 
+sss2=sss[i].split("&amp;");<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; 
+&nbsp;v排序字典.put(sss2[0], sss2[1]);&nbsp; <BR>&nbsp;&nbsp;&nbsp; 
+&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String sign = 
+S_Sign(v排序字典);<BR>&nbsp;&nbsp;&nbsp; &nbsp;//v排序字典.put("sign", sign); 
+//------------- <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StringBuffer sb = 
+new StringBuffer();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set es = 
+v排序字典.entrySet();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Iterator it = 
+es.iterator();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while 
+(it.hasNext()) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Map.Entry entry = (Map.Entry) 
+it.next();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+String k = (String) 
+entry.getKey();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+String v = (String) 
+entry.getValue();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v=S_UrlEncode(v);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if 
+("attach".equalsIgnoreCase(k)||"body".equalsIgnoreCase(k)||"sign".equalsIgnoreCase(k)) 
+{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sb.append("&lt;"+k+"&gt;"+"&lt;![CDATA["+v+"]]&gt;&lt;/"+k+"&gt;\n"); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }else 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;sb.append("&lt;"+k+"&gt;"+v+"&lt;/"+k+"&gt;\n");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sb.append("&lt;sign&gt;"+sign+"&lt;/sign&gt;\n");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//String packageValue = sb.append("sign=" + 
+sign).toString();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String ss2 = 
+"&lt;xml&gt;\n"+sb.toString()+"&lt;/xml&gt;";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return ss2;<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;SortedMap o_参数= new 
+TreeMap();<BR>&nbsp;&nbsp;&nbsp; String S_UrlEncode(String src) throws 
+UnsupportedEncodingException {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return URLEncoder.encode(src, o_编码).replace("+", "%20");<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; String o_编码= "GBK";<BR>&nbsp;String 
+o_key="HSZ8CyyLbAAIihvFe5k2U4l6ksQ86zje";<BR>&nbsp;&nbsp;&nbsp; String 
+S_Sign(SortedMap&lt;String, String&gt; packageParams) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StringBuffer sb = new 
+StringBuffer();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set es = 
+packageParams.entrySet();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Iterator 
+it = es.iterator();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while 
+(it.hasNext()) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Map.Entry entry = (Map.Entry) 
+it.next();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+String k = (String) 
+entry.getKey();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+String v = (String) 
+entry.getValue();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if (null != v &amp;&amp; !"".equals(v) &amp;&amp; !"sign".equals(k)&amp;&amp; 
+!"key".equals(k)) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sb.append(k + "=" + v + 
+"&amp;");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sb.append("key=" + 
+o_key);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.out.println("md5 
+sb:" + sb);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; String sign = 
+MD5Util.MD5Encode(sb.toString(), o_编码).toUpperCase(); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+sign;<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;<BR>}</P>
+<P></P>
+<P>//-------------------------------------------------------------------------</P>
+<P>package wxapi;</P>
+<P>import com.tencent.mm.sdk.constants.ConstantsAPI;<BR>import 
+com.tencent.mm.sdk.modelbase.BaseReq;<BR>import 
+com.tencent.mm.sdk.modelbase.BaseResp;<BR>import 
+com.tencent.mm.sdk.openapi.IWXAPI;<BR>import 
+com.tencent.mm.sdk.openapi.IWXAPIEventHandler;<BR>import 
+com.tencent.mm.sdk.openapi.WXAPIFactory;<BR>import 
+com.xex.sseh.MainActivity;</P>
+<P>import android.app.Activity;<BR>import android.content.Intent;<BR>import 
+android.os.Bundle;</P>
+<P>public class WXEntryActivity extends Activity implements 
+IWXAPIEventHandler{&nbsp;&nbsp; <BR>&nbsp;IWXAPI api;<BR>&nbsp;public static 
+WXEntryActivity ccc;<BR>&nbsp;@Override<BR>&nbsp;&nbsp;&nbsp; protected void 
+onCreate(Bundle savedInstanceState) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+super.onCreate(savedInstanceState);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ccc=this;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+MainActivity.ccc.S_回调u3d("WXEntryActivity");<BR>&nbsp;}<BR>&nbsp;public static 
+void S_Get(){<BR>&nbsp;&nbsp;MainActivity.ccc.S_回调u3d("1111----- 
+"+MainActivity.ccc.o_AppId);<BR>&nbsp;&nbsp;ccc.api = 
+WXAPIFactory.createWXAPI(ccc, MainActivity.ccc.o_AppId, 
+false);<BR>&nbsp;&nbsp;MainActivity.ccc.S_回调u3d("1111111112==========");<BR>&nbsp;&nbsp;ccc.api.registerApp(MainActivity.ccc.o_AppId);<BR>&nbsp;&nbsp;MainActivity.ccc.S_回调u3d("11111111122222222");<BR>&nbsp;&nbsp;ccc.api.handleIntent(ccc.getIntent(), 
+ccc);<BR>&nbsp;&nbsp;MainActivity.ccc.S_回调u3d("111111111333333333");<BR>&nbsp;}<BR>&nbsp;@Override<BR>&nbsp;&nbsp;&nbsp; 
+protected void onNewIntent(Intent intent) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+super.onNewIntent(intent);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+setIntent(intent);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+api.handleIntent(intent, this);<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;// 
+微信发送请求到第三方应用时，会回调到该方法<BR>&nbsp;@Override<BR>&nbsp;public void onReq(BaseReq req) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; switch (req.getType()) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 
+ConstantsAPI.COMMAND_GETMESSAGE_FROM_WX:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;MainActivity.ccc.S_回调u3d("ConstantsAPI.COMMAND_GETMESSAGE_FROM_WX");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 
+ConstantsAPI.COMMAND_SHOWMESSAGE_FROM_WX:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;MainActivity.ccc.S_回调u3d("ConstantsAPI.COMMAND_SHOWMESSAGE_FROM_WX");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+default:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;}<BR>&nbsp;// 
+第三方应用发送到微信的请求处理后的响应结果，会回调到该方法<BR>&nbsp;@Override<BR>&nbsp;public void 
+onResp(BaseResp resp) {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; switch 
+(resp.errCode) {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 
+BaseResp.ErrCode.ERR_OK:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;MainActivity.ccc.S_回调u3d( 
+"亲，分享成功了");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 
+BaseResp.ErrCode.ERR_USER_CANCEL:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;MainActivity.ccc.S_回调u3d("取消分享");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 
+BaseResp.ErrCode.ERR_AUTH_DENIED:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;MainActivity.ccc.S_回调u3d("认证失败");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+default:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;MainActivity.ccc.S_回调u3d("errcode_unknown");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;}&nbsp;<BR>}</P>
+<P>//----------------------------------------------------</P>
+<P></P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp; &lt;activity 
+<BR>&nbsp;&nbsp;android:name=".wxapi.WXEntryActivity" 
+<BR>&nbsp;&nbsp;android:exported="true" 
+<BR>&nbsp;&nbsp;android:label="@string/app_name" 
+<BR>&nbsp;&nbsp;android:launchMode="singleTop" /&gt; <BR></P>
+<P></P>
+<P>&nbsp;</P>
+<P>//===============================================================================</P>
+<P>using System;<BR>using System.Collections;<BR>using 
+System.Collections.Generic;<BR>using System.Security.Cryptography;<BR>using 
+System.Text;<BR>using System.Xml;<BR>using UnityEngine;<BR>public class 
+C_微信支付接口:MonoBehaviour {<BR>&nbsp;&nbsp;&nbsp; const string o_统一下单URL = "<A 
+href="https://api.mch.weixin.qq.com/pay/unifiedorder">https://api.mch.weixin.qq.com/pay/unifiedorder</A>";<BR>&nbsp;&nbsp;&nbsp; 
+const string o_网页授权URL = "<A 
+href="https://api.weixin.qq.com/sns/oauth2/access_token">https://api.weixin.qq.com/sns/oauth2/access_token</A>";<BR>&nbsp;&nbsp;&nbsp; 
+const string o_订单查询URL = "<A 
+href="https://api.mch.weixin.qq.com/pay/orderquery">https://api.mch.weixin.qq.com/pay/orderquery</A>";<BR>&nbsp;&nbsp;&nbsp; 
+static C_微信支付接口 ccc;<BR>&nbsp;&nbsp;&nbsp; public static C_微信支付接口 S_Get() 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(ccc==null){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+GameObject gg = 
+GameObject.Find("o_微信支付接口");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(gg!=null){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Destroy(gg);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gg=new 
+GameObject("o_微信支付接口");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ccc=gg.AddComponent&lt;C_微信支付接口&gt;();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+ccc;<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; public void S_安卓回调(string ss) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Debug.Log(ss);<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; public void 
+S_统一下单(int v金额) {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+StartCoroutine(I_统一下单(v金额));<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; 
+IEnumerator I_统一下单(int v金额) {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string xml = C_统一下单.S_统一下单整理(v金额);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+byte[] 
+data=System.Text.Encoding.UTF8.GetBytes(xml);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+WWW www=new WWW(o_统一下单URL,data);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+yield return www;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string tt = 
+"";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(<A 
+href="http://www.error==null">www.error==null</A>) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+tt=www.text;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Debug.LogError(tt);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Debug.Log(<A 
+href="http://www.text">www.text</A>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+SortedDictionary&lt;string, string&gt; requestXML = S_XML到字段列表(<A 
+href="http://www.text">www.text</A>);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+foreach(KeyValuePair&lt;string, string&gt; k in requestXML) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(k.Key=="prepay_id") 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+tt=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Debug.Log(tt);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+C_统一下单.S_吊起微信支付(tt);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; public 
+C_订单明细 S_获取微信订单明细() {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string 
+post_data = C_订单查询.S_订单查询整理();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string request_data ="";// 
+S_WebPost(o_订单查询URL,post_data);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+C_订单明细 md = new C_订单明细();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+SortedDictionary&lt;string, string&gt; requestXML = 
+S_XML到字段列表(request_data);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+foreach(KeyValuePair&lt;string, string&gt; k in requestXML) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+switch(k.Key) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"retuen_code":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.result_code=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"return_msg":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.return_msg=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"appid":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.appid=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"mch_id":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.mch_id=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"nonce_str":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.nonce_str=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"sign":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.sign=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"result_code":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.result_code=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"err_code":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.err_code=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"err_code_des":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.err_code_des=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"trade_state":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.trade_state=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"device_info":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.device_info=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"openid":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.openid=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"is_subscribe":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.is_subscribe=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"trade_type":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.trade_type=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"bank_type":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.bank_type=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"total_fee":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.total_fee=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"coupon_fee":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.coupon_fee=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"fee_type":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.fee_type=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"transaction_id":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.transaction_id=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"out_trade_no":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.out_trade_no=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"attach":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.attach=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+case 
+"time_end":<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+md.time_end=k.Value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+default:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return md;<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; public static string 
+S_Get微信签名(SortedDictionary&lt;string,string&gt; v列表) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//key设置路径：微信商户平台(pay.weixin.qq.com)--&gt;账户设置--&gt;API安全--&gt;密钥设置<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string 
+key="192006250b4c09247ec02edce69f6a2d";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+int i = 0;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string sign = 
+string.Empty;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StringBuilder sb = 
+new StringBuilder();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+foreach(KeyValuePair&lt;string, string&gt; temp in v列表) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(temp.Value==""||temp.Value==null||temp.Key.ToLower()=="sign") 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+continue;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+i++;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sb.Append(temp.Key.Trim()+"="+temp.Value.Trim()+"&amp;");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sb.Append("key="+key.Trim()+"");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sign=S_GetMD5(sb.ToString(),"utf-8");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return sign;<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; public static string 
+S_GetMD5(string encypStr,string charset) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string 
+retStr;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MD5CryptoServiceProvider 
+m5 = new 
+MD5CryptoServiceProvider();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//创建md5对象<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; byte[] 
+inputBye;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; byte[] 
+outputBye;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//使用GB2312编码方式把字符串转化为字节数组．<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; try 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+inputBye=Encoding.GetEncoding(charset).GetBytes(encypStr);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} catch(Exception ex) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+inputBye=Encoding.GetEncoding("GB2312").GetBytes(encypStr);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+outputBye=m5.ComputeHash(inputBye);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+retStr=System.BitConverter.ToString(outputBye);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+retStr=retStr.Replace("-","").ToUpper();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return retStr;<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; public static 
+string S_随机串() {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.Random 
+random = new System.Random();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return 
+S_GetMD5(random.Next(1000).ToString(),"GBK").ToLower().Replace("s","S");<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; public static string S_Get时间截() 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TimeSpan ts = 
+DateTime.UtcNow-new 
+DateTime(1970,1,1,0,0,0,0);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+Convert.ToInt64(ts.TotalSeconds).ToString();<BR>&nbsp;&nbsp;&nbsp; 
+}//自1970年以来的秒数<BR>&nbsp;&nbsp;&nbsp; SortedDictionary&lt;string,string&gt; 
+S_XML到字段列表(string xmlstring) {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+SortedDictionary&lt;string, string&gt; sParams = new 
+SortedDictionary&lt;string,string&gt;();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+try {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+XmlDocument doc = new 
+XmlDocument();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+doc.LoadXml(xmlstring);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+XmlElement root = 
+doc.DocumentElement;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+int len = 
+root.ChildNodes.Count;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+for(int i = 0;i&lt;len;i++) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string name = 
+root.ChildNodes[i].Name;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(!sParams.ContainsKey(name)) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sParams.Add(name.Trim(),root.ChildNodes[i].InnerText.Trim());<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } catch { 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+sParams;<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; public class C_统一下单 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #region 
+MyRegion<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_应用ID="wx6b82f53daeeec518",<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_商户号="15197507036",<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_签名="0CB01533B8C1EF103065174F50BCA001",<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_商品描述="千里飞雪002",<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_商户订单号="1415659990",<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_终端IP="123.25.26.123",<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_通知地址="<A 
+href="http://wxpay.weixin.qq.com/pub_v2/pay/notify.v2.php">http://wxpay.weixin.qq.com/pub_v2/pay/notify.v2.php</A>",<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_交易类型="APP"; 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+#endregion<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static C_统一下单 
+ccc;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static string 
+S_统一下单整理(int v金额) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(ccc==null) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ccc=new 
+C_统一下单();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string 
+xml = 
+string.Empty;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+SortedDictionary&lt;string, string&gt; v列表 = new 
+SortedDictionary&lt;string,string&gt;();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("appid",ccc.o_应用ID);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("body",ccc.o_商品描述);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("mch_id",ccc.o_商户号);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("nonce_str",S_随机串());<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("notify_url",ccc.o_通知地址);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("out_trade_no",ccc.o_商户订单号);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("spbill_create_ip",ccc.o_终端IP);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("total_fee",v金额.ToString());<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("trade_type",ccc.o_交易类型);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ccc.o_签名=S_Get微信签名(v列表);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("sign",ccc.o_签名);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//拼接成XML请求数据<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+StringBuilder ssb = new 
+StringBuilder();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+foreach(KeyValuePair&lt;string, string&gt; k in v列表) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(k.Key=="attach"||k.Key=="body"||k.Key=="sign") 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ssb.Append("&lt;"+k.Key+"&gt;&lt;![CDATA["+k.Value+"]]&gt;&lt;/"+k.Key+"&gt;");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} else 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ssb.Append("&lt;"+k.Key+"&gt;"+k.Value+"&lt;/"+k.Key+"&gt;");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+xml=string.Format("&lt;xml&gt;{0}&lt;/xml&gt;",ssb.ToString());<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+byte[] byteA = 
+Encoding.UTF8.GetBytes(xml);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return 
+Encoding.GetEncoding("GBK").GetString(byteA);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static void 
+S_吊起微信支付(string prepay_id) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(ccc==null) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ccc=new 
+C_统一下单();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+SortedDictionary&lt;string, string&gt; v列表 = new 
+SortedDictionary&lt;string,string&gt;();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("appid",ccc.o_应用ID);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("partnerid",ccc.o_商户号);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("prepayid",prepay_id);//预支付交易会话ID(微信返回的支付交易会话ID)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("package","Sign=WXPay");//扩展字段(暂填写固定值Sign=WXPay)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("noncestr",S_随机串());//随机字符串<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("timestamp",S_Get时间截());//时间戳<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ccc.o_签名=S_Get微信签名(v列表);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v列表.Add("sign",ccc.o_签名);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+StringBuilder ssb = new 
+StringBuilder();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+foreach(KeyValuePair&lt;string, string&gt; k in v列表) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ssb.Append(k.Value+"&amp;");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string 
+ss=ssb.ToString();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ss=ss.Remove(ss.Length-1);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+AndroidJavaClass jc =new 
+AndroidJavaClass("com.unity3d.player.UnityPlayer");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+AndroidJavaObject jo 
+=jc.GetStatic&lt;AndroidJavaObject&gt;("currentActivity");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//jo.Call("S_002","56,50");//泛型与返回值<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+jo.Call("S_吊起微信支付",ss);//泛型与返回值<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; public class C_订单查询 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+公共号ID(微信分配的公众账号 ID)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+appid = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+商户号(微信支付分配的商户号)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+mch_id = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+微信订单号，优先使用<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+transaction_id = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+商户系统内部订单号<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+out_trade_no = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 随机字符串，不长于 32 
+位<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+nonce_str = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+签名，参与签名参数：appid，mch_id，transaction_id，out_trade_no，nonce_str，key<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+/// &lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+sign = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; static C_订单查询 
+ccc;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static string 
+S_订单查询整理() 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(ccc==null) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ccc=new 
+C_订单查询();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string 
+return_string = 
+string.Empty;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+SortedDictionary&lt;string, string&gt; sParams = new 
+SortedDictionary&lt;string,string&gt;();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sParams.Add("appid",ccc.appid);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sParams.Add("mch_id",ccc.mch_id);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sParams.Add("transaction_id",ccc.transaction_id);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sParams.Add("out_trade_no",ccc.out_trade_no);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sParams.Add("nonce_str",ccc.nonce_str);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ccc.sign=S_Get微信签名(sParams);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sParams.Add("sign",ccc.sign);</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//拼接成XML请求数据<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+StringBuilder sbPay = new 
+StringBuilder();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+foreach(KeyValuePair&lt;string, string&gt; k in sParams) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(k.Key=="attach"||k.Key=="body"||k.Key=="sign") 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sbPay.Append("&lt;"+k.Key+"&gt;&lt;![CDATA["+k.Value+"]]&gt;&lt;/"+k.Key+"&gt;");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} else 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+sbPay.Append("&lt;"+k.Key+"&gt;"+k.Value+"&lt;/"+k.Key+"&gt;");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return_string=string.Format("&lt;xml&gt;{0}&lt;/xml&gt;",sbPay.ToString().TrimEnd(','));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return return_string;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; public class C_订单明细 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+返回状态码，SUCCESS/FAIL 
+此字段是通信标识，非交易标识，交易是否成功需要查看trade_state来判断<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+/// &lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+return_code = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+返回信息返回信息，如非空，为错误原因 签名失败 参数格式校验错误<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+/// &lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+return_msg = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+公共号ID(微信分配的公众账号 ID)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+appid = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+商户号(微信支付分配的商户号)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+mch_id = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+随机字符串，不长于32位<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+nonce_str = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+签名<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+sign = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+业务结果,SUCCESS/FAIL<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+result_code = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+错误代码<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+err_code = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+错误代码描述<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+err_code_des = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+交易状态<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+///SUCCESS—支付成功<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+///REFUND—转入退款<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+///NOTPAY—未支付<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+///CLOSED—已关闭<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+///REVOKED—已撤销<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+///USERPAYING--用户支付中<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+///NOPAY--未支付(输入密码或确认支付超时) 
+PAYERROR--支付失败(其他原因，如银行返回失败)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+trade_state = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+微信支付分配的终端设备号<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+device_info = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+用户在商户appid下的唯一标识<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+openid = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+用户是否关注公众账号，Y-关注，N-未关注，仅在公众账号类型支付有效<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+/// &lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+is_subscribe = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+交易类型,JSAPI、NATIVE、MICROPAY、APP<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+trade_type = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+银行类型，采用字符串类型的银行标识<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+bank_type = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+订单总金额，单位为分<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+total_fee = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+现金券支付金额&lt;=订单总金额，订单总金额-现金券金额为现金支付金额<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+/// &lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+coupon_fee = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 货币类型，符合ISO 
+4217标准的三位字母代码，默认人民币：CNY<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+fee_type = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+微信支付订单号<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+transaction_id = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+商户系统的订单号，与请求一致。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+out_trade_no = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+商家数据包，原样返回<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+attach = "";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+&lt;summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /// 
+支付完成时间，格式为yyyyMMddhhmmss，如2009年12月27日9点10分10秒表示为20091227091010。<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+/// 时区为GMT+8 beijing。该时间取自微信支付服务器<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+/// &lt;/summary&gt;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+time_end = "";<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR></P>
+<P><BR></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></BODY></HTML>

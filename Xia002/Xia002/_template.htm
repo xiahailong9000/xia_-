@@ -1,0 +1,415 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>{$$PAGE_TITLE$$}</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 8.00.7601.19104"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>&nbsp; 
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>{$$TITLE$$}</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>{$$PAGE_TITLE$$}</H1></DIV></DIV>
+<DIV id=nstext>&nbsp;</DIV>
+<DIV><FONT color=#ff0000 size=3></FONT>&nbsp;</DIV>
+<DIV><FONT color=#ff0000 
+size=3>//微软GUID----------------------------------------</FONT></DIV>
+<DIV><FONT color=#000000 size=3>System.Guid.NewGuid().ToString()</FONT></DIV>
+<DIV><FONT color=#ff0000 
+size=3>//c#随机数-------------------------------------------------------------------------------</FONT></DIV>
+<DIV><FONT size=3>Random ran = new Random();<BR>int dd = ran.Next(100, 
+999);</FONT></DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT color=#ff0000 
+size=3>//批量随机不重复-----------------------------</FONT></DIV>
+<DIV><FONT size=3 face=微软雅黑>int z房间号=0;<BR>Random ran = new Random();<BR>do 
+{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp; z房间号=ran.Next(9000);<BR>&nbsp;&nbsp;&nbsp; 
+Console.WriteLine(z房间号);<BR>} while(z房间号&lt;8900);</FONT></DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT color=#ff0000 
+size=3>//计时器----------------------------------------------------------------------------------------------</FONT></DIV>
+<DIV><FONT size=3>Stopwatch ww = new 
+Stopwatch();<BR>ww.Start();<BR>ww.Stop();<BR>Console.WriteLine(ww.ElapsedMilliseconds);</FONT></DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT color=#ff0000 
+size=3>///VS2013去除代码中的所有空行------------------------</FONT></DIV>
+<DIV><FONT color=#000000 size=3>ctrl+H 打开替换框</FONT></DIV>
+<DIV><FONT size=3>^(?([^\r\n])\s)*\r?$\r?\n</FONT></DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT size=3>^(?([^\r\n])\s)*\r?$\r?\n</FONT></DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT size=3>^(?([^\r\n])\s)*\r?$\r?\n</FONT></DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><SPAN 
+style="TEXT-ALIGN: justify; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">[\t]*//[^\n]*\n</SPAN></DIV>
+<DIV><SPAN 
+style="TEXT-ALIGN: justify; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="TEXT-ALIGN: justify; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 16px/28px 'Microsoft Yahei', 微软雅黑, arial, 宋体, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">[\t]*//[^\n]*\n</SPAN></SPAN></DIV>
+<DIV><FONT size=3></FONT>&nbsp;</DIV>
+<DIV><FONT color=#ff0000 size=3>//获取所有进程----------------------</FONT></DIV>
+<DIV><FONT size=3 face=微软雅黑>&nbsp;Process[] ps = 
+Process.GetProcesses();</FONT><BR><FONT size=3>&nbsp; </FONT></DIV>
+<P><FONT size=3><FONT 
+color=#ff0000>//文件操作有关类的命名空间--------------------------------------------------------------------------<BR></FONT>using 
+System.IO; <BR>Path//------------操作路径<BR>Directory//----------操作目录<BR>File 
+//--------------操作文件<BR>DirectoryInFo<BR>FileInFo<BR><FONT 
+color=#ff0000>//文件流-----------------------------------------------------------------------------------------</FONT><BR>using(FileStream 
+o_文件流 = new FileStream("d:\\mm.avi", FileMode.Open)){<BR>&nbsp;&nbsp;&nbsp; 
+byte[] o_字符s = new byte[1024];<BR>&nbsp;&nbsp;&nbsp; int o_读取个数 =&nbsp; 
+o_文件流.Read(o_字符s, 0, o_字符s.Length); //将读取的文件保存到字符数组中<BR>&nbsp;&nbsp;&nbsp; 
+string o_字符窜 = Encoding.Default.GetString(o_字节s); 
+//将字节数组转化为字符串;<BR>&nbsp;&nbsp;&nbsp; byte[] o_字节2s = 
+Encoding.UTF8.GetBytes(o_字符窜);&nbsp; //将字符窜转化为字节数组<BR>}<BR><FONT 
+color=#ff0000>void S_大文件流拷贝(){&nbsp; 
+//--------------------------------------------------------------------</FONT><BR>&nbsp;&nbsp;&nbsp; 
+FileStream o_文件流_读 = new FileStream(@"d:\1.mp4", 
+FileMode.Open);<BR>&nbsp;&nbsp;&nbsp; FileStream o_文件流_写 = new 
+FileStream(@"d:\2.mp4", FileMode.Create);<BR>&nbsp;&nbsp;&nbsp; byte[] i_字节s = 
+new byte[1024 * 1024];<BR>&nbsp;&nbsp;&nbsp; int i_字节长度 = 
+0;<BR>&nbsp;&nbsp;&nbsp; do{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+i_字节长度 = o_文件流_读.Read(i_字节s, 0, 
+i_字节s.Length);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_文件流_写.Write(i_字节s, 0, i_字节长度);<BR>&nbsp;&nbsp;&nbsp; }while (i_字节长度 == 
+i_字节s.Length);<BR>&nbsp;&nbsp;&nbsp; o_文件流_写.Dispose();<BR>&nbsp;&nbsp;&nbsp; 
+o_文件流_读.Dispose();<BR>&nbsp;&nbsp;&nbsp; Console.Write("拷贝成功");<BR>}</FONT></P>
+<P><FONT size=3><FONT 
+color=#ff0000>//文件加密------------------------</FONT><BR>using(FileStream o_文件流 = 
+new FileStream("D:\\1.txt", FileMode.Open)){<BR>&nbsp;&nbsp;&nbsp; byte[] o_字符s 
+= new byte[1024];<BR>&nbsp;&nbsp;&nbsp; int o_读取个数 =&nbsp; o_文件流.Read(o_字符s, 0, 
+o_字符s.Length); <BR>&nbsp;&nbsp;&nbsp; for (int i = 0; i &lt; o_读取个数;i++ 
+){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; o_字符s[i] = (byte)(255 - 
+o_字符s[i]);<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; using (FileStream ff = 
+new FileStream("d:\\2.txt", 
+FileMode.Create)){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ff.Write(o_字符s, 
+0, o_读取个数);<BR>&nbsp;&nbsp;&nbsp; }<BR>}</FONT></P>
+<P><FONT size=3><FONT color=#ff0000>//文件传输 
+开头识别符(通信协议)------------------------------------------------------</FONT><BR>byte[] 
+S_发送消息(){<BR>&nbsp;&nbsp;&nbsp; byte[] bb = 
+System.IO.File.ReadAllBytes("o_路径");<BR>&nbsp;&nbsp;&nbsp; byte[] bb2 = new 
+byte[bb.Length + 1];<BR>&nbsp;&nbsp;&nbsp; bb.CopyTo(bb2, 
+1);<BR>&nbsp;&nbsp;&nbsp; bb2[0] = 1;<BR>&nbsp;&nbsp;&nbsp; return 
+bb2;<BR>&nbsp;&nbsp;&nbsp; }<BR>void S_接收消息(byte[] bb){<BR>&nbsp;&nbsp;&nbsp; 
+switch (bb[0]){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 
+0:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//要执行的代码<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; case 
+1:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//要执行的代码<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+break;<BR>&nbsp;&nbsp;&nbsp; }</FONT></P>
+<P><FONT size=3><FONT 
+color=#ff0000>//多线程--------------------------------------------------------------------------------------------</FONT><BR>using 
+System.Threading;</FONT></P>
+<P><FONT size=3>Thread dd = new Thread(S_方法);<BR>dd.IsBackground = 
+true;//设置线程为后台线程;<BR>dd.Name = 
+"dd夏海龙";<BR>dd.Start();//启动线程<BR>dd.Abort();//强行退出线程</FONT></P>
+<P><FONT size=3>void S_方法(){<BR>&nbsp;&nbsp; lock (this) { 
+//单线程代码锁;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+命令；<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Thread.Sleep(500);//当前线程暂停500毫秒<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Thread 
+hh = Thread.CurrentThread;//获取当前线程<BR>&nbsp;&nbsp; 
+}<BR>}<BR>TextBox.CheckForIllegalCrossThreadCalls = 
+false;//关闭控件的跨线程检查</FONT></P>
+<P><FONT size=3><FONT 
+color=#ff0000>//多参数的调用---------------------------------------------</FONT><BR>Thread 
+hh2 = new Thread(new ParameterizedThreadStart(delegate { S_方法("参数001", "参数002"); 
+}));<BR>hh2.Start();</FONT></P>
+<P><BR><FONT size=3><FONT 
+color=#ff0000>//委托--------------------------------------------------------------------------------------------------</FONT><BR>delegate 
+void ss();<BR>ss k =new ss( 方法名);<BR>k+=方法2;<BR>k();</FONT></P>
+<P><BR><FONT 
+size=3>//弹出框------------------------------------------------------------<BR>MessageBox.Show("ddddd");</FONT></P>
+<P><BR><FONT 
+size=3>//打开外部应用程序-------------------------------------------------------------------------------------<BR>System.Diagnostics.Process.Start(@"C:\Users\gff.exe 
+");</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT 
+size=3>//绘画操作有关命名空间----------------------------------------------------------------------------<BR>using 
+System.Drawing;</FONT></P>
+<P><FONT size=3>string path = @"C:\Users\Administrator\Desktop\";<BR>Image img = 
+new Bitmap(path+"ss.jpg");<BR>Image img2 = new Bitmap(path + 
+"ss2.jpg");<BR>Graphics g = Graphics.FromImage(img);<BR>g.DrawImage(img2, new 
+PointF(10, 10));<BR>g.DrawString("哈哈的", new Font("微软雅黑", 30), Brushes.Red, new 
+PointF(10, 10));<BR>img.Save(path + "ss2.jpg");</FONT></P>
+<P><BR><FONT size=3><FONT 
+color=#ff0000>//哈希表--可变数组-------------------------------------------------------</FONT><BR>Hashtable 
+hh = new Hashtable();<BR>hh.Add("u", "ddd001");//添加<BR>hh["ss"] 
+="eeeeeeee";&nbsp; //添加<BR>hh["u"] ="eee";&nbsp;&nbsp;&nbsp;&nbsp; 
+//修改<BR>string ss = hh["u"]; //根据键来找键值<BR>hh.Remove("u"); 
+//移除<BR>hh.ContainsKey("abc") <FONT 
+color=#000080>//判断建(key)是否存在，存在返回真;</FONT><BR>hh.Count&nbsp;&nbsp; 
+//长度</FONT></P>
+<P><FONT size=3>foreach (var c in hh.Values/Keys){&nbsp; //遍历<BR>&nbsp; 
+print(c.ToString());<BR>}</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT color=#ff0000 size=3>//字典判断是否存在并取值-----------------------</FONT></P>
+<P><FONT size=3>string ss = "";<BR>if(z字典.TryGetValue("ccc",out ss)==true) 
+{<BR>&nbsp;&nbsp;&nbsp; Console.WriteLine(ss);<BR>} else {<BR>&nbsp;&nbsp;&nbsp; 
+Console.WriteLine("ccc 不存在---------");<BR>}</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3>z字典.Values.ElementAt&lt;string&gt;(5)&nbsp; <FONT 
+color=#008000>//--------------根据索引获取字典中的元素-----------Ling------------------------------</FONT></FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3>//Dictionary&lt;string, C_玩家&gt; <FONT 
+color=#ff0000>----------------字典-----------------------------</FONT></FONT></P>
+<P><FONT color=#ff0000 size=3><FONT color=#000000>//SortedDictionary&lt;string, 
+C_玩家&gt;</FONT><FONT color=#000000> </FONT><FONT 
+color=#ff0000>---排序字典-------</FONT></FONT></P>
+<P><FONT size=3><FONT color=#000000>//ConcurrentDictionary</FONT>&nbsp; 
+&lt;string, C_玩家&gt;<FONT color=#000000>&nbsp; </FONT><FONT 
+color=#ff0000>//并发字典-------------------</FONT></FONT></P>
+<P><SPAN 
+style="WIDOWS: 1; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 14px/26px Simsun; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(68,68,68); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><FONT 
+size=3><FONT face=微软雅黑><FONT color=#000000>Lookup</FONT><FONT 
+color=#000000>&lt;string, C_玩家&gt;</FONT><FONT color=#000000> </FONT><FONT 
+color=#ff0000>---排序字典-------</FONT></FONT></FONT></SPAN></P>
+<P><FONT size=3>foreach (KeyValuePair&lt;string, C_玩家&gt; kk in 
+匹配房间){<BR>&nbsp;&nbsp; Console.WriteLine(kk.Key + "&nbsp;&nbsp;&nbsp; " + 
+kk.Value);<BR>&nbsp;}</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3>void S_字典健值排序&lt;T&gt;(Dictionary&lt;int,T&gt; vdd) 
+{&nbsp;&nbsp; <FONT 
+color=#ff0000>//------字典健值排序-------------------</FONT><BR>&nbsp;&nbsp;&nbsp; 
+if(vdd.Count&gt;0) {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+List&lt;KeyValuePair&lt;int,T&gt;&gt; lst=new 
+List&lt;KeyValuePair&lt;int,T&gt;&gt;(vdd);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+lst.Sort(delegate(KeyValuePair&lt;int,T&gt; s2,KeyValuePair&lt;int,T&gt; s1) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+s2.Key.CompareTo(s1.Key);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+});<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+vdd.Clear();<BR>&nbsp;&nbsp;&nbsp; }<BR>}</FONT></P>
+<P><FONT size=3>Dictionary&lt;string,GameObject&gt; v物体列表=new 
+Dictionary&lt;string,GameObject&gt;(); <FONT 
+color=#ff0000>//字典转化为List&lt;T&gt;------<BR></FONT>List&lt;GameObject&gt; 
+v物体组=new List&lt;GameObject&gt;(v物体列表.Values);</FONT></P>
+<P>&nbsp;</P>
+<P><BR><FONT size=3><FONT 
+color=#ff0000>//动态数组-----------------------------------------------------------------------<BR></FONT>int[] 
+ii = { 2, 6, 65, 12, 4 };<BR>ArrayList ll = new 
+ArrayList();<BR>ll.Add(1);//添加<BR>ll[0] = 100; //修改值--<BR>ll.RemoveAt(0); 
+//删除<BR>ll.Add("ddd");//添加字符串<BR>ll.AddRange(ii);//添加数组--</FONT></P>
+<P><FONT size=3>bool bb = ll.Contains("ddd"); //判断"ddd"是否存在 ，存在返回真;</FONT></P>
+<P><FONT size=3>int i_长度 = ll.Capacity;<BR>for (int i = 0; i &lt; ll.Count; 
+i++){<BR>&nbsp;&nbsp;&nbsp; print("ddd" + ll[i]);<BR>}</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT color=#ff0000 size=3>//Ling排序-------------------using 
+System.Linq;------------------------</FONT></P>
+<P><FONT size=3>void S_List排序(List&lt;GameObject&gt; v列表,GameObject v目标点) 
+{&nbsp;<FONT color=#ff0000>//点的距离排序</FONT><FONT 
+color=#ff0000>（OrderBy升序排列，OrderByDescending降序排列)------------------</FONT><BR>&nbsp;&nbsp;&nbsp;&nbsp;List&lt;GameObject&gt; 
+x字典2=v列表.OrderBy(c =&gt; 
+Vector3.Distance(c.transform.position,v目标点.transform.position)).ToList();<BR>}</FONT></P>
+<P><FONT color=#008000 size=3>XXX.RemoveAll(x =&gt; x==null); <FONT 
+color=#ff0000>//清空所有空元素--------------</FONT></FONT></P>
+<P>&nbsp;</P>
+<P><FONT color=#ff0000 
+size=3>//去除重复数据----------------------------------------</FONT></P>
+<P><FONT color=#000000 size=3>List&lt;int&gt; ss1= 
+ss.Distinct().ToList();</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT color=#ff0000 
+size=3>//并发动态数组------------------------------------</FONT></P>
+<P><FONT size=3>Queue&lt;string&gt; z动态数组=new 
+Queue&lt;string&gt;();<BR>z动态数组.Enqueue("ddddddddddd");//添加值--到末尾<BR>z动态数组.Enqueue("ddddddd333dddd");<BR>z动态数组.Enqueue("dddd");<BR>string 
+ss = z动态数组.Dequeue();//取出队列的第一个值--<BR>string ss2 = 
+z动态数组.Dequeue();<BR>Console.WriteLine(z动态数组.Count+&nbsp; "_____&nbsp; 
+"+ss+"&nbsp; _____"+ss2);</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3><FONT 
+color=#ff0000>//计时器--------------------------------------------------</FONT><BR>int 
+im1 = System.Environment.TickCount;<BR>//要监测的代码<BR>int im2 = 
+System.Environment.TickCount;<BR>int im3 = im2 - im1;//单位是毫秒</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT color=#ff0000 
+size=3>//-----------------------md5加密-----------------------------</FONT></P>
+<P><FONT size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static string 
+S_md5(string 
+ss){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; using 
+(MD5 m5 = 
+MD5.Create()){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+byte[] bb = 
+Encoding.UTF8.GetBytes(ss);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+bb = 
+m5.ComputeHash(bb);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+m5.Clear();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+StringBuilder bb5 = new 
+StringBuilder();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+for (int i = 0; i &lt; bb.Length; 
+i++){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+bb5.Append(bb[i].ToString("x2"));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return 
+bb5.ToString();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3>public static string <FONT color=#ff0000>S_消除中文字符</FONT>(string 
+str) {&nbsp;&nbsp;<FONT color=#ff0000>//---------------------</FONT></FONT></P>
+<P><FONT size=3>&nbsp;&nbsp;&nbsp; if(Regex.IsMatch(str, @"[\u4e00-\u9fa5]")) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StringBuilder ssb=new 
+StringBuilder();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var 
+charS=str.ToCharArray();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for(int 
+i=0; i&lt;charS.Length; i++) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if(charS[i]&gt;=0x4e00&amp;&amp;charS[i]&lt;=0x9fa5) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+byte[] bb=&nbsp; 
+BitConverter.GetBytes(charS[i]);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ssb.Append(bb[0]+556);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ssb.Append(bb[1]+556);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} else 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ssb.Append(charS[i]);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+} <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+str=ssb.ToString();<BR>&nbsp;&nbsp;&nbsp; } else 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Console.WriteLine("不包含中文__"+str);<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; 
+return str;<BR>}</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3>sealed </FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT color=#ff0000 
+size=3>//-------------win窗体TreeView---------------------------------------------</FONT></P>
+<P><FONT size=3>&nbsp;&nbsp;void S_输出(string ss,int ii) 
+{<BR>&nbsp;&nbsp;&nbsp;if(ii==0) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;S_输出2(ss,Color.FromArgb(255,255,255));<BR>&nbsp;&nbsp;&nbsp;} 
+else if(ii==1) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;S_输出2(ss,Color.FromArgb(0,0,255));<BR>&nbsp;&nbsp;&nbsp;} 
+else if(ii==2) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;S_输出2(ss,Color.FromArgb(0,0,0));<BR>&nbsp;&nbsp;&nbsp;} 
+else if(ii==3) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;S_输出2(ss,Color.FromArgb(255,0,0));<BR>&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;<BR>&nbsp;&nbsp;}<BR>&nbsp;&nbsp;void 
+S_输出2(string ss,Color cc){<BR>&nbsp;&nbsp;&nbsp;if 
+(o_TreeView.Nodes.Count&gt;50){<BR>&nbsp;&nbsp;&nbsp;&nbsp;o_TreeView.Nodes.RemoveAt(0);<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;TreeNode 
+nn=new TreeNode();<BR>&nbsp;&nbsp;&nbsp;int 
+ii=this.o_TreeView.Nodes.Add(nn);<BR>&nbsp;&nbsp;&nbsp;TreeNode 
+n=this.o_TreeView.Nodes[ii];<BR>&nbsp;&nbsp;&nbsp;n.Text=ss;<BR>&nbsp;&nbsp;&nbsp;n.ForeColor=cc;<BR>&nbsp;&nbsp;}</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT color=#ff0000 
+size=3>//-----------------C#控制台文字颜色改变---------------------------------------</FONT></P>
+<P><FONT size=3>Console.BackgroundColor=ConsoleColor.Blue; 
+//设置背景色<BR>Console.ForegroundColor = ConsoleColor.White; 
+//设置前景色，即字体颜色<BR>Console.WriteLine("第一行白蓝.");<BR>Console.ResetColor(); 
+//将控制台的前景色和背景色设为默认值<BR>Console.BackgroundColor=ConsoleColor.Green;<BR>Console.ForegroundColor 
+= ConsoleColor.DarkGreen;<BR>string value = "第三行 
+绿暗绿";<BR>Console.WriteLine(value.PadRight(Console.WindowWidth-value.Length)); 
+//设置一整行的背景色<BR></FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3>&nbsp;&nbsp;public static void S_输出(string ss,int ii) 
+{<BR>&nbsp;&nbsp;&nbsp;if(ii==0) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;Console.ForegroundColor=ConsoleColor.Cyan;//绿色<BR>&nbsp;&nbsp;&nbsp;}else 
+if(ii==1) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;Console.ForegroundColor=ConsoleColor.White;//白色<BR>&nbsp;&nbsp;&nbsp;} 
+else if(ii==2) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;Console.ForegroundColor=ConsoleColor.Yellow;//黄色<BR>&nbsp;&nbsp;&nbsp;} 
+else if(ii==3) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;Console.ForegroundColor=ConsoleColor.Red;//红色<BR>&nbsp;&nbsp;&nbsp;}<BR>&nbsp;&nbsp;&nbsp;Console.WriteLine(DateTime.Now.ToString("hh:mm:ss")+"--&gt; 
+"+ss);<BR>&nbsp;&nbsp;}</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT color=#ff0000 
+size=3>//------------<EM>lock单链锁</EM>------------------------------------------------------------------------</FONT></P>
+<P><FONT size=3>&nbsp;public static C_file Ccc{<BR>&nbsp;&nbsp;&nbsp; 
+get{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lock 
+(typeof(C_file)){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if (ccc == 
+null){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+GameObject gg = new 
+GameObject("代码_C_file");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ccc = 
+gg.AddComponent&lt;C_file&gt;();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+ccc;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>}</FONT></P><PRE style="TEXT-ALIGN: left; PADDING-BOTTOM: 0px; WIDOWS: 1; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 12px/18px 'Courier New'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(0,0,0); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px"><SPAN style="PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.5 !important; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 'Courier New' !important; COLOR: rgb(0,0,255); FONT-SIZE: 12px !important; PADDING-TOP: 0px"><FONT color=#000000 size=3 face=微软雅黑>try {<BR>&nbsp;&nbsp;&nbsp; Monitor.Enter(obj);<BR>&nbsp;&nbsp;&nbsp; //代码块();<BR>} catch(Exception ex) {</FONT></SPAN></PRE><PRE style="TEXT-ALIGN: left; PADDING-BOTTOM: 0px; WIDOWS: 1; TEXT-TRANSFORM: none; TEXT-INDENT: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 12px/18px 'Courier New'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(0,0,0); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px"><SPAN style="PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.5 !important; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 'Courier New' !important; COLOR: rgb(0,0,255); FONT-SIZE: 12px !important; PADDING-TOP: 0px"><FONT color=#000000 size=3 face=微软雅黑>} finally {<BR>&nbsp;&nbsp;&nbsp; Monitor.Exit(obj);<BR>}</FONT></SPAN><SPAN style="PADDING-BOTTOM: 0px; LINE-HEIGHT: 1.5 !important; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: 'Courier New' !important; COLOR: rgb(0,0,0); FONT-SIZE: 12px !important; PADDING-TOP: 0px"><FONT size=3 face=微软雅黑></FONT></SPAN></PRE>
+<DIV class=footer>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P 
+style="TEXT-ALIGN: left; PADDING-BOTTOM: 0px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; MARGIN: 10px auto; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 12px/18px verdana, 'ms song', 宋体, Arial, 微软雅黑, Helvetica, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(0,0,0); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px"><FONT 
+color=#ff0000 
+size=3>//Monitor的常用属性和方法：--------------------------------------</FONT></P>
+<P 
+style="TEXT-ALIGN: left; PADDING-BOTTOM: 0px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; MARGIN: 10px auto; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 12px/18px verdana, 'ms song', 宋体, Arial, 微软雅黑, Helvetica, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(0,0,0); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px"><FONT 
+size=3>Enter(Object) 在指定对象上获取排他锁。</FONT></P>
+<P 
+style="TEXT-ALIGN: left; PADDING-BOTTOM: 0px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; MARGIN: 10px auto; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 12px/18px verdana, 'ms song', 宋体, Arial, 微软雅黑, Helvetica, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(0,0,0); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px"><FONT 
+size=3>Exit(Object) 释放指定对象上的排他锁。</FONT></P>
+<P 
+style="TEXT-ALIGN: left; PADDING-BOTTOM: 0px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; MARGIN: 10px auto; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 12px/18px verdana, 'ms song', 宋体, Arial, 微软雅黑, Helvetica, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(0,0,0); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px"><FONT 
+size=3>IsEntered 确定当前线程是否保留指定对象锁。</FONT></P>
+<P 
+style="TEXT-ALIGN: left; PADDING-BOTTOM: 0px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; MARGIN: 10px auto; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 12px/18px verdana, 'ms song', 宋体, Arial, 微软雅黑, Helvetica, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(0,0,0); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px"><FONT 
+size=3>Pulse 通知等待队列中的线程锁定对象状态的更改。</FONT></P>
+<P 
+style="TEXT-ALIGN: left; PADDING-BOTTOM: 0px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; MARGIN: 10px auto; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 12px/18px verdana, 'ms song', 宋体, Arial, 微软雅黑, Helvetica, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(0,0,0); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px"><FONT 
+size=3>PulseAll 通知所有的等待线程对象状态的更改。</FONT></P>
+<P 
+style="TEXT-ALIGN: left; PADDING-BOTTOM: 0px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; MARGIN: 10px auto; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 12px/18px verdana, 'ms song', 宋体, Arial, 微软雅黑, Helvetica, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(0,0,0); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px"><FONT 
+size=3>TryEnter(Object) 试图获取指定对象的排他锁。</FONT></P>
+<P 
+style="TEXT-ALIGN: left; PADDING-BOTTOM: 0px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; MARGIN: 10px auto; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 12px/18px verdana, 'ms song', 宋体, Arial, 微软雅黑, Helvetica, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(0,0,0); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px"><FONT 
+size=3>TryEnter(Object, Boolean) 尝试获取指定对象上的排他锁，并自动设置一个值，指示是否得到了该锁。</FONT></P>
+<P 
+style="TEXT-ALIGN: left; PADDING-BOTTOM: 0px; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; MARGIN: 10px auto; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 12px/18px verdana, 'ms song', 宋体, Arial, 微软雅黑, Helvetica, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(0,0,0); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px"><FONT 
+size=3>Wait(Object) 释放对象上的锁并阻止当前线程，直到它重新获取该锁。</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT color=#ff0000 
+size=3>//在C#里编写非托管代码---------------------------------------</FONT></P><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><FONT color=#000000 size=3>项目属性—》生成—》允许不安全代码. (必须勾选)</FONT></PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><FONT color=#000000 size=3>unsafe{<BR>   里面是带指针操作<BR>}</FONT></PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><FONT color=#000000 size=3></FONT>&nbsp;</PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><FONT color=#ff0000 size=3><STRONG>&nbsp;//时间转换-----------------------------</STRONG></FONT></PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><FONT color=#000000 size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static void S_时间运算(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DateTime v当前时间 = DateTime.Now;  <FONT color=#ff0000>//当前时间<BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DateTime v时间=new DateTime(2016,5,31,23,30,12);  <FONT color=#ff0000>//创建时间<BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string ss=v时间.ToString("yyyy,MM,dd,HH,mm,ss");   //<FONT color=#ff0000>时间输出<BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DateTime v时间2 = v时间.AddDays(60);  //<FONT color=#ff0000>时间</FONT><FONT color=#ff0000>加减运算</FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</FONT></PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><FONT color=#000000 size=3>       if(DateTime.Compare(v时间,v时间2)&gt;=0) {    <FONT color=#ff0000>//时间比大小<BR></FONT>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("v时间&nbsp;&nbsp; &gt;=&nbsp;&nbsp; v时间2");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } else {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine("v时间&nbsp;&nbsp; &lt;&nbsp;&nbsp; v时间2");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Console.WriteLine(S_时间差值(v时间,v时间2));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static string S_<FONT color=#ff0000>时间差值</FONT>(DateTime v开始时间, DateTime v结束时间){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TimeSpan v开始 = new TimeSpan(v开始时间.Ticks);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TimeSpan v结束 = new TimeSpan(v结束时间.Ticks);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TimeSpan ts = v结束.Subtract(v开始);//Subtract(相减)//Add(相加)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ts=ts.Duration();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return ts.Days.ToString()+"天"+ts.Hours.ToString()+"小时"+ts.Minutes.ToString()+"分钟"+ts.Seconds.ToString()+"秒";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</FONT></PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><SPAN style="TEXT-ALIGN: left; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(250,247,239); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 14px/14px verdana, 'ms song', Arial, Helvetica, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(57,57,57); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><FONT color=#000000>Days //天</FONT></SPAN></PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><SPAN style="TEXT-ALIGN: left; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(250,247,239); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 14px/14px verdana, 'ms song', Arial, Helvetica, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(57,57,57); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><FONT color=#000000>Hours //小时</FONT></SPAN></PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><SPAN style="TEXT-ALIGN: left; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(250,247,239); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 14px/14px verdana, 'ms song', Arial, Helvetica, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(57,57,57); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="TEXT-ALIGN: left; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(250,247,239); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 14px/14px verdana, 'ms song', Arial, Helvetica, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(57,57,57); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><FONT color=#000000>Minutes //分钟</FONT></SPAN></SPAN></PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><SPAN style="TEXT-ALIGN: left; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(250,247,239); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 14px/14px verdana, 'ms song', Arial, Helvetica, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(57,57,57); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="TEXT-ALIGN: left; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(250,247,239); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 14px/14px verdana, 'ms song', Arial, Helvetica, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(57,57,57); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="TEXT-ALIGN: left; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(250,247,239); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 14px/14px verdana, 'ms song', Arial, Helvetica, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(57,57,57); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><FONT color=#000000>Seconds //秒</FONT></SPAN></SPAN></SPAN></PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><SPAN style="TEXT-ALIGN: left; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(250,247,239); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 14px/14px verdana, 'ms song', Arial, Helvetica, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(57,57,57); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="TEXT-ALIGN: left; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(250,247,239); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 14px/14px verdana, 'ms song', Arial, Helvetica, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(57,57,57); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><FONT color=#000000>Milliseconds //毫秒</FONT></SPAN></SPAN></PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><SPAN style="TEXT-ALIGN: left; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(250,247,239); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 14px/14px verdana, 'ms song', Arial, Helvetica, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(57,57,57); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="TEXT-ALIGN: left; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(250,247,239); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 14px/14px verdana, 'ms song', Arial, Helvetica, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(57,57,57); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"></SPAN></SPAN>&nbsp;</PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><SPAN style="TEXT-ALIGN: left; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(250,247,239); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 14px/14px verdana, 'ms song', Arial, Helvetica, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(57,57,57); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><SPAN style="TEXT-ALIGN: left; WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(250,247,239); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 14px/14px verdana, 'ms song', Arial, Helvetica, sans-serif; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(57,57,57); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><FONT color=#ff0000 size=3>string ss=&nbsp; now.ToString("yyyy,MM,dd,HH,mm,ss,fff");&nbsp;&nbsp; //精确到毫秒-----------------------------</FONT></SPAN></SPAN></PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><FONT color=#ff0000 size=3><STRONG>&nbsp;//类型转发-----------------------------------</STRONG></FONT></PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><STRONG><FONT color=#ff0000 size=3></FONT></STRONG>&nbsp;</PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><FONT color=#000000 size=3 face=微软雅黑><FONT color=#ff0000>//格林威志时间戳----//精确到毫秒---------------------------------------</FONT><BR><FONT color=#ff0000><FONT color=#000000>long</FONT> </FONT>格林威志时间戳= Convert.ToInt32((DateTime.Now-new DateTime(1970,1,1,8,0,0)).TotalSeconds);<BR></FONT></PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><FONT color=#000000 size=3 face=微软雅黑></FONT></PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><FONT color=#000000></FONT>&nbsp;</PRE><PRE style="PADDING-BOTTOM: 0px; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(243,255,236); TEXT-INDENT: 0px; MARGIN: 0px 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT: 14px/24px arial, 'courier new', courier, 宋体, monospace, 'Microsoft YaHei'; WORD-WRAP: break-word; WHITE-SPACE: pre-wrap; LETTER-SPACING: normal; COLOR: rgb(51,51,51); WORD-SPACING: 0px; PADDING-TOP: 0px; -webkit-text-stroke-width: 0px" class="best-text mb-10" accuse="aContent"><FONT color=#000000 size=3></FONT>&nbsp;</PRE>
+<P><FONT color=#ff0000 
+size=4><STRONG>//-集合的----模糊查询-------------------------------------------------------------------------</STRONG></FONT></P>
+<P><FONT size=3>using System.Linq;</FONT></P>
+<P><FONT color=#000000 size=3 face=微软雅黑>&nbsp;&nbsp;&nbsp; public static 
+List&lt;string&gt; S_模糊查询(this IEnumerable&lt;string&gt; z集合,string z关键词) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IEnumerable&lt;string&gt; z数组 = 
+from ss in 
+z集合<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+where 
+ss.Contains(z关键词)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+select ss;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+z数组.ToList();<BR>&nbsp;&nbsp;&nbsp; }</FONT></P>
+<P><FONT size=3 face=微软雅黑></FONT>&nbsp;</P>
+<P><FONT color=#ff0000 size=3 
+face=微软雅黑>//根据域名获取IP--------------------------------------</FONT></P>
+<P><FONT size=3 face=微软雅黑>string web = "<A 
+href="http://www.aaa9000.com">www.aaa9000.com</A>";<BR>IPHostEntry host = 
+Dns.GetHostByName(web);<BR>IPAddress ip = host.AddressList[0];<BR>web = 
+ip.ToString();</FONT></P>
+<P><FONT size=3 face=微软雅黑></FONT>&nbsp;</P>
+<P><FONT color=#ff0000 size=3 face=微软雅黑>//对象相加-----------------<FONT 
+color=#000080>operator</FONT>-----------</FONT></P>
+<P><FONT size=3 face=微软雅黑>&nbsp;&nbsp;&nbsp; public class C_mm 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public string 
+o_ss;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public C_mm(string ss) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_ss=ss;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Console.WriteLine(o_ss);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; public static C_mm 
+operator+(C_mm a,C_mm b) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+new C_mm(a.o_ss+"_______"+b.o_ss);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; }</FONT></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P><FONT color=#ff0000><FONT face=微软雅黑><FONT size=3>编辑模式下资源的处理---<SPAN 
+style="WIDOWS: 2; TEXT-TRANSFORM: none; FONT-STYLE: normal; TEXT-INDENT: 0px; DISPLAY: inline !important; FONT-FAMILY: 'Source Code Pro', monospace; WHITE-SPACE: pre; ORPHANS: 2; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(51,51,51); FONT-SIZE: 14px; FONT-WEIGHT: normal; WORD-SPACING: 0px; -webkit-text-stroke-width: 0px; font-variant-ligatures: normal; font-variant-caps: normal"><FONT 
+color=#ff00ff><STRONG>AssetDatabase</STRONG></FONT></SPAN></FONT></FONT></FONT></P>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></DIV></BODY></HTML>

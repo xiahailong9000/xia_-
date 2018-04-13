@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>时间加密</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17924"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>时间加密</H1></DIV></DIV>
+<DIV id=nstext><BR>
+<P>using System;</P>
+<P>using UnityEngine;</P>
+<P>using System.Collections;</P>
+<P>public class TimePassword : MonoBehaviour{<BR>&nbsp;&nbsp;&nbsp; private int 
+timepassword;</P>
+<P><BR>&nbsp;&nbsp;&nbsp;&nbsp;void 
+Start(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; timepassword = 
+int.Parse(System.DateTime.Now.ToString("yyyyMMddHHmmss").Substring(0,8));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if (timepassword &gt; 
+20141205)<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Application.Quit();<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp; }</P>
+<P>}</P></DIV>
+<DIV class=footer>
+<P></P></DIV></BODY></HTML>

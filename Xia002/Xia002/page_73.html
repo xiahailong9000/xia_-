@@ -1,0 +1,690 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>List</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.18098"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>键值对 
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap></TD></TR></TBODY></TABLE></DIV></DIV>
+<P><FONT size=3><FONT color=#008000>#include &lt;map&gt;<BR></FONT>#include 
+&lt;sstream&gt;<BR>using namespace std;<BR><FONT 
+color=#808000></FONT></FONT></P>
+<P><FONT size=3><FONT color=#808000>class C_mm {<BR>public:<BR>&nbsp;string 
+name;<BR>&nbsp;C_mm();<BR>&nbsp;C_mm(string 
+ss);<BR>&nbsp;~C_mm();<BR>private:<BR>};<BR>C_mm::C_mm() {}<BR>C_mm::C_mm(string 
+ss) {<BR>&nbsp;name = ss;<BR>&nbsp;printf("创建对象成功，姓名是: 
+%s\n",name.c_str());<BR>}<BR>C_mm::~C_mm() {}</FONT></FONT></P><FONT 
+size=3><FONT color=#808000></FONT>
+<P><BR><FONT color=#ff0000>map&lt;string,C_mm*&gt; o_对象列表;</FONT></P>
+<P></FONT>&nbsp;</P>
+<P><FONT size=3>void main() {<BR><FONT color=#008000>&nbsp;&nbsp; for(int i = 0; 
+i &lt; 20;i++){<BR>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;stringstream 
+ss;<BR>&nbsp;&nbsp; &nbsp; &nbsp;ss &lt;&lt; i;<BR>&nbsp;&nbsp; &nbsp; 
+&nbsp;C_mm cc = C_mm(ss.str());<BR>&nbsp;&nbsp; &nbsp; &nbsp;o_对象列表[ss.str()] = 
+&amp;cc;<BR>&nbsp;&nbsp; }</FONT><BR><FONT 
+color=#800080>&nbsp;&nbsp;&nbsp;&nbsp;if(o_对象列表.count("5")==1) { //判断键是否存在, 
+存在返回1不存在返回0<BR>&nbsp;&nbsp; &nbsp; &nbsp;printf("键'5'存在&nbsp; 键值姓名为: 
+%s\n\n",C_mm(*o_对象列表["5"]).name.c_str());<BR>&nbsp; &nbsp;} else 
+{<BR>&nbsp;&nbsp; &nbsp; &nbsp;printf("键'5'不存在\n\n");<BR>&nbsp;&nbsp; 
+}</FONT><BR>&nbsp;</FONT></P>
+<P><FONT size=3><FONT color=#008000>&nbsp;&nbsp; printf("键值对的长度为&nbsp; 
+%d\n\n",o_对象列表.size());</FONT> </FONT></P>
+<P><FONT size=3><FONT color=#800080>&nbsp;&nbsp; 
+for(map&lt;string,C_mm*&gt;::iterator it = o_对象列表.begin(); it != o_对象列表.end(); 
+it++) {&nbsp; //遍历<BR>&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;printf("键:%s&nbsp;&nbsp;&nbsp; 键值地址: %d\n 
+",it-&gt;first.c_str(),it-&gt;second);<BR>&nbsp;&nbsp; }</FONT><BR>&nbsp;&nbsp; 
+while(true) {}<BR>}</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P 
+style="LIST-STYLE-TYPE: none; WORD-WRAP: normal; BORDER-TOP: 0px; BORDER-RIGHT: 0px; WHITE-SPACE: normal; WORD-SPACING: 0px; BORDER-BOTTOM: 0px; TEXT-TRANSFORM: none; WORD-BREAK: normal; COLOR: rgb(70,70,70); PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; FONT: 14px/21px Arial; PADDING-LEFT: 0px; MARGIN: 0px 0px 5px; BORDER-LEFT: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+style="FONT-FAMILY: 'Courier New'"><FONT 
+size=3>Map是c++的一个标准容器，她提供了很好一对一的关系，在一些程序中建立一个map可以起到事半功倍的效果，总结了一些map基本简单实用的操作！<BR>1.&nbsp;<WBR>map最基本的构造函数；<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;map&lt;string 
+, int 
+&gt;mapstring;&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;map&lt;int 
+,string &gt;mapint;<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;map&lt;sring, 
+char&gt;mapstring;&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;map&lt; 
+char ,string&gt;mapchar;<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;map&lt;char 
+,int&gt;mapchar;&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;map&lt;int 
+,char &gt;mapint；</FONT></SPAN></SPAN></P>
+<P 
+style="LIST-STYLE-TYPE: none; WORD-WRAP: normal; BORDER-TOP: 0px; BORDER-RIGHT: 0px; WHITE-SPACE: normal; WORD-SPACING: 0px; BORDER-BOTTOM: 0px; TEXT-TRANSFORM: none; WORD-BREAK: normal; COLOR: rgb(70,70,70); PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; FONT: 14px/21px Arial; PADDING-LEFT: 0px; MARGIN: 0px 0px 5px; BORDER-LEFT: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+style="FONT-FAMILY: 'Courier New'"><FONT 
+size=3>2.&nbsp;<WBR>map添加数据；</FONT></SPAN></SPAN></P>
+<P 
+style="LIST-STYLE-TYPE: none; WORD-WRAP: normal; BORDER-TOP: 0px; BORDER-RIGHT: 0px; WHITE-SPACE: normal; WORD-SPACING: 0px; BORDER-BOTTOM: 0px; TEXT-TRANSFORM: none; WORD-BREAK: normal; COLOR: rgb(70,70,70); PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; FONT: 14px/21px Arial; PADDING-LEFT: 0px; MARGIN: 0px 0px 5px; BORDER-LEFT: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+style="FONT-FAMILY: 'Courier New'"><FONT 
+size=3>&nbsp;<WBR>&nbsp;<WBR>&nbsp;map&lt;int ,string&gt; 
+maplive;&nbsp;<WBR>&nbsp;<WBR><BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;1.maplive.insert(<SPAN 
+style="WORD-WRAP: normal; WORD-BREAK: normal; COLOR: rgb(255,51,0)">pair&lt;int,string&gt;</SPAN>(102,"aclive"));<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;2.maplive.insert(<SPAN 
+style="WORD-WRAP: normal; WORD-BREAK: normal; COLOR: rgb(255,51,0)">map&lt;int,string&gt;::value_type</SPAN>(321,"hai"));<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;3, 
+maplive[112]="April";//map中最简单最常用的插入添加！<BR>3，map中元素的查找：</FONT></SPAN></SPAN></P>
+<P 
+style="LIST-STYLE-TYPE: none; WORD-WRAP: normal; BORDER-TOP: 0px; BORDER-RIGHT: 0px; WHITE-SPACE: normal; WORD-SPACING: 0px; BORDER-BOTTOM: 0px; TEXT-TRANSFORM: none; WORD-BREAK: normal; COLOR: rgb(70,70,70); PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; FONT: 14px/21px Arial; PADDING-LEFT: 0px; MARGIN: 0px 0px 5px; BORDER-LEFT: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+style="FONT-FAMILY: 'Courier New'"><FONT 
+size=3>&nbsp;<WBR>&nbsp;<WBR>&nbsp;find()函数返回一个迭代器指向键值为key的元素，如果没找到就返回指向map尾部的迭代器。&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR></FONT></SPAN></SPAN></P>
+<P 
+style="LIST-STYLE-TYPE: none; WORD-WRAP: normal; BORDER-TOP: 0px; BORDER-RIGHT: 0px; WHITE-SPACE: normal; WORD-SPACING: 0px; BORDER-BOTTOM: 0px; TEXT-TRANSFORM: none; WORD-BREAK: normal; COLOR: rgb(0,0,0); PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; FONT: 14px/21px Arial; PADDING-LEFT: 0px; MARGIN: 0px 0px 5px; BORDER-LEFT: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+style="FONT-FAMILY: 'Courier New'"><FONT size=3><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;map&lt;int ,string &gt;::iterator 
+l_it;;&nbsp;</SPAN><WBR><BR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="WORD-WRAP: normal; WORD-BREAK: normal; COLOR: rgb(255,0,0)">l_it=maplive.find(112);</SPAN><BR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">if(l_it==maplive.end())</SPAN><BR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;cout&lt;&lt;"we do not find 
+112"&lt;&lt;endl;</SPAN><BR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;else cout&lt;&lt;"wo find 
+112"&lt;&lt;endl;</SPAN><BR><SPAN 
+style="COLOR: rgb(70,70,70)">4,map中元素的删除：</SPAN><BR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;如果删除112；</SPAN><BR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;map&lt;int ,string &gt;::iterator 
+l_it;;</SPAN><BR><SPAN style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;l_it=maplive.find(112);</SPAN><BR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;if(l_it==maplive.end())</SPAN><BR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;cout&lt;&lt;"we do not find 
+112"&lt;&lt;endl;</SPAN><BR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;else&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><SPAN 
+style="WORD-WRAP: normal; WORD-BREAK: normal"><SPAN 
+style="COLOR: rgb(255,0,0)">maplive.erase(l_it);</SPAN></SPAN><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;//delete 112;</SPAN><BR><SPAN 
+style="COLOR: rgb(70,70,70)">5,map中 swap的用法：</SPAN><BR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;Map中的swap不是一个容器中的元素交换，而是两个容器交换；</SPAN><BR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;</SPAN><WBR><SPAN 
+style="COLOR: rgb(70,70,70)">&nbsp;For example：</SPAN></FONT></SPAN></SPAN></P>
+<P 
+style="LIST-STYLE-TYPE: none; WORD-WRAP: normal; BORDER-TOP: 0px; BORDER-RIGHT: 0px; WHITE-SPACE: normal; WORD-SPACING: 0px; BORDER-BOTTOM: 0px; TEXT-TRANSFORM: none; WORD-BREAK: normal; COLOR: rgb(70,70,70); PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; FONT: 14px/21px simsun; PADDING-LEFT: 0px; MARGIN: 0px 0px 5px; BORDER-LEFT: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(248,236,216); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><FONT 
+size=3></FONT></P>
+<DIV class="dp-highlighter bg_cpp" 
+style="OVERFLOW: auto; WIDTH: 936px; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; PADDING-TOP: 1px; FONT: 12px/26px Consolas, 'Courier New', Courier, mono, serif; MARGIN: 18px 0px; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(231,229,220); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">
+<DIV class=bar style="PADDING-LEFT: 45px">
+<DIV class=tools 
+style="COLOR: silver; PADDING-BOTTOM: 10px; PADDING-TOP: 3px; FONT: 9px Verdana, Geneva, Arial, Helvetica, sans-serif; PADDING-LEFT: 10px; BORDER-LEFT: rgb(108,226,108) 3px solid; PADDING-RIGHT: 8px; BACKGROUND-COLOR: rgb(248,248,248)"><FONT 
+size=3><B>[cpp]</B><SPAN class=Apple-converted-space>&nbsp;</SPAN></FONT><A 
+onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;" 
+title="view plain" class=ViewSource 
+style="FONT-SIZE: 9px; TEXT-DECORATION: none; BORDER-TOP: medium none; HEIGHT: 16px; BORDER-RIGHT: medium none; WIDTH: 16px; BACKGROUND-IMAGE: url(http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/images/default/ico_plain.gif); BORDER-BOTTOM: medium none; BACKGROUND-POSITION: 0% 0%; COLOR: rgb(160,160,160); PADDING-BOTTOM: 1px; PADDING-TOP: 1px; PADDING-LEFT: 1px; MARGIN: 0px 10px 0px 0px; BORDER-LEFT: medium none; DISPLAY: inline-block; PADDING-RIGHT: 1px; TEXT-INDENT: -2000px" 
+href="http://blog.csdn.net/gneveek/article/details/7798732#"><FONT size=3>view 
+plain</FONT></A><A 
+onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;" title=copy 
+class=CopyToClipboard 
+style="FONT-SIZE: 9px; TEXT-DECORATION: none; BORDER-TOP: medium none; HEIGHT: 16px; BORDER-RIGHT: medium none; WIDTH: 16px; BACKGROUND-IMAGE: url(http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/images/default/ico_copy.gif); BORDER-BOTTOM: medium none; BACKGROUND-POSITION: 0% 0%; COLOR: rgb(160,160,160); PADDING-BOTTOM: 1px; PADDING-TOP: 1px; PADDING-LEFT: 1px; MARGIN: 0px 10px 0px 0px; BORDER-LEFT: medium none; DISPLAY: inline-block; PADDING-RIGHT: 1px; TEXT-INDENT: -2000px" 
+href="http://blog.csdn.net/gneveek/article/details/7798732#"><FONT 
+size=3>copy</FONT></A>
+<DIV 
+style="HEIGHT: 18px; WIDTH: 18px; POSITION: absolute; LEFT: 484px; Z-INDEX: 99; TOP: 1090px"><FONT 
+size=3><EMBED id=ZeroClipboardMovie_1 name=ZeroClipboardMovie_1 
+type=application/x-shockwave-flash align=middle 
+pluginspage=http://www.macromedia.com/go/getflashplayer height=18 width=18 
+src=http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf 
+wmode="transparent" flashvars="id=1&amp;width=18&amp;height=18" 
+allowfullscreen="false" allowscriptaccess="always" bgcolor="#ffffff" 
+quality="best" menu="false" loop="false"></FONT></DIV></DIV></DIV>
+<OL class=dp-cpp 
+style="LIST-STYLE-TYPE: decimal; BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px 0px 1px 45px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255)">
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3><SPAN class=preprocessor 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: gray; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">#include&nbsp;&lt;map&gt;</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3><SPAN class=preprocessor 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: gray; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">#include&nbsp;&lt;iostream&gt;</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;</FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3><SPAN class=keyword 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(0,102,153); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">using</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;</SPAN><SPAN 
+  class=keyword 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(0,102,153); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">namespace</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;std;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;</FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3><SPAN class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;main(&nbsp;)&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>{&nbsp;&nbsp;</FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map&nbsp;&lt;<SPAN class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;&nbsp;m1,&nbsp;m2,&nbsp;m3;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map&nbsp;&lt;<SPAN class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;::iterator&nbsp;m1_Iter;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;</FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m1.insert&nbsp;(&nbsp;pair&nbsp;&lt;<SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;&nbsp;&nbsp;(&nbsp;1,&nbsp;10&nbsp;)&nbsp;);&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m1.insert&nbsp;(&nbsp;pair&nbsp;&lt;<SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;&nbsp;&nbsp;(&nbsp;2,&nbsp;20&nbsp;)&nbsp;);&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m1.insert&nbsp;(&nbsp;pair&nbsp;&lt;<SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;&nbsp;&nbsp;(&nbsp;3,&nbsp;30&nbsp;)&nbsp;);&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m2.insert&nbsp;(&nbsp;pair&nbsp;&lt;<SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;&nbsp;&nbsp;(&nbsp;10,&nbsp;100&nbsp;)&nbsp;);&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m2.insert&nbsp;(&nbsp;pair&nbsp;&lt;<SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;&nbsp;&nbsp;(&nbsp;20,&nbsp;200&nbsp;)&nbsp;);&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;m3.insert&nbsp;(&nbsp;pair&nbsp;&lt;<SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;&nbsp;&nbsp;(&nbsp;30,&nbsp;300&nbsp;)&nbsp;);&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;</FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;<SPAN class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"The&nbsp;original&nbsp;map&nbsp;m1&nbsp;is:"</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;<SPAN class=keyword 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(0,102,153); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">for</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;(&nbsp;m1_Iter&nbsp;=&nbsp;m1.begin(&nbsp;);&nbsp;m1_Iter&nbsp;!=&nbsp;m1.end(&nbsp;);&nbsp;m1_Iter++&nbsp;)&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;<SPAN 
+  class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"&nbsp;"</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&lt;&lt;&nbsp;m1_Iter-&gt;second;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&nbsp;&nbsp;&lt;&lt;&nbsp;<SPAN 
+  class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"."</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&lt;&lt;&nbsp;endl;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;</FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;<SPAN class=comment 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: rgb(0,130,0); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">//&nbsp;This&nbsp;is&nbsp;the&nbsp;member&nbsp;function&nbsp;version&nbsp;of&nbsp;swap</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;<SPAN class=comment 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: rgb(0,130,0); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">//m2&nbsp;is&nbsp;said&nbsp;to&nbsp;be&nbsp;the&nbsp;argument&nbsp;map;&nbsp;m1&nbsp;the&nbsp;target&nbsp;map</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;m1.swap(&nbsp;m2&nbsp;);&nbsp;&nbsp;</FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;</FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;<SPAN class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"After&nbsp;swapping&nbsp;with&nbsp;m2,&nbsp;map&nbsp;m1&nbsp;is:"</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;<SPAN class=keyword 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(0,102,153); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">for</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;(&nbsp;m1_Iter&nbsp;=&nbsp;m1.begin(&nbsp;);&nbsp;m1_Iter&nbsp;!=&nbsp;m1.end(&nbsp;);&nbsp;m1_Iter++&nbsp;)&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;<SPAN 
+  class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"&nbsp;"</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&lt;&lt;&nbsp;m1_Iter&nbsp;-&gt;&nbsp;second;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&nbsp;&lt;&lt;&nbsp;<SPAN 
+  class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"."</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&lt;&lt;&nbsp;endl;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;<SPAN class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"After&nbsp;swapping&nbsp;with&nbsp;m2,&nbsp;map&nbsp;m2&nbsp;is:"</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;<SPAN class=keyword 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(0,102,153); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">for</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;(&nbsp;m1_Iter&nbsp;=&nbsp;m2.begin(&nbsp;);&nbsp;m1_Iter&nbsp;!=&nbsp;m2.end(&nbsp;);&nbsp;m1_Iter++&nbsp;)&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;<SPAN 
+  class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"&nbsp;"</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&lt;&lt;&nbsp;m1_Iter&nbsp;-&gt;&nbsp;second;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&nbsp;&lt;&lt;&nbsp;<SPAN 
+  class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"."</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&lt;&lt;&nbsp;endl;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;<SPAN class=comment 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: rgb(0,130,0); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">//&nbsp;This&nbsp;is&nbsp;the&nbsp;specialized&nbsp;template&nbsp;version&nbsp;of&nbsp;swap</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;swap(&nbsp;m1,&nbsp;m3&nbsp;);&nbsp;&nbsp;</FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;</FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;<SPAN class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"After&nbsp;swapping&nbsp;with&nbsp;m3,&nbsp;map&nbsp;m1&nbsp;is:"</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;<SPAN class=keyword 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(0,102,153); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">for</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;(&nbsp;m1_Iter&nbsp;=&nbsp;m1.begin(&nbsp;);&nbsp;m1_Iter&nbsp;!=&nbsp;m1.end(&nbsp;);&nbsp;m1_Iter++&nbsp;)&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;<SPAN 
+  class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"&nbsp;"</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&lt;&lt;&nbsp;m1_Iter&nbsp;-&gt;&nbsp;second;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&nbsp;&nbsp;&lt;&lt;&nbsp;<SPAN 
+  class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"."</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&lt;&lt;&nbsp;endl;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;<SPAN class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"After&nbsp;swapping&nbsp;with&nbsp;m3,&nbsp;map&nbsp;m3&nbsp;is:"</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;<SPAN class=keyword 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(0,102,153); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">for</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;(&nbsp;m1_Iter&nbsp;=&nbsp;m3.begin(&nbsp;);&nbsp;m1_Iter&nbsp;!=&nbsp;m3.end(&nbsp;);&nbsp;m1_Iter++&nbsp;)&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;<SPAN 
+  class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"&nbsp;"</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&lt;&lt;&nbsp;m1_Iter&nbsp;-&gt;&nbsp;second;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&nbsp;&nbsp;&lt;&lt;&nbsp;<SPAN 
+  class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"."</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&lt;&lt;&nbsp;endl;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>}&nbsp;&nbsp;</FONT></SPAN></LI></OL></DIV>
+<P><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><FONT 
+size=3><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px 'Comic Sans MS'; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="FONT-SIZE: 14px; COLOR: rgb(70,70,70); LINE-HEIGHT: 21px">6.map的sort问题：</SPAN><BR 
+style="FONT-SIZE: 14px; COLOR: rgb(70,70,70); LINE-HEIGHT: 21px"><SPAN 
+style="FONT-SIZE: 14px; COLOR: rgb(70,70,70); LINE-HEIGHT: 21px">&nbsp;</SPAN><WBR 
+style="FONT-SIZE: 14px; COLOR: rgb(70,70,70); LINE-HEIGHT: 21px"><SPAN 
+style="FONT-SIZE: 14px; COLOR: rgb(70,70,70); LINE-HEIGHT: 21px">&nbsp;Map中的元素是自动按key升序排序,所以不能对map用sort函数：</SPAN><BR 
+style="FONT-SIZE: 14px; COLOR: rgb(70,70,70); LINE-HEIGHT: 21px"><SPAN 
+style="FONT-SIZE: 14px; COLOR: rgb(70,70,70); LINE-HEIGHT: 21px">&nbsp;</SPAN><WBR 
+style="FONT-SIZE: 14px; COLOR: rgb(70,70,70); LINE-HEIGHT: 21px"><SPAN 
+style="FONT-SIZE: 14px; COLOR: rgb(70,70,70); LINE-HEIGHT: 21px">&nbsp;For 
+example：</SPAN></SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"></FONT></P>
+<P 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; FONT: 14px/26px Arial; PADDING-LEFT: 0px; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><FONT 
+size=3></FONT></P>
+<P 
+style="LIST-STYLE-TYPE: none; WORD-WRAP: normal; BORDER-TOP: 0px; BORDER-RIGHT: 0px; WHITE-SPACE: normal; WORD-SPACING: 0px; BORDER-BOTTOM: 0px; TEXT-TRANSFORM: none; WORD-BREAK: normal; COLOR: rgb(70,70,70); PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; FONT: 14px/21px simsun; PADDING-LEFT: 0px; MARGIN: 0px 0px 5px; BORDER-LEFT: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(248,236,216); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="FONT-SIZE: 14px; FONT-FAMILY: simsun; COLOR: rgb(70,70,70); LINE-HEIGHT: 21px; BACKGROUND-COLOR: rgb(248,236,216)"><FONT 
+size=3></FONT></SPAN></P>
+<DIV class="dp-highlighter bg_cpp" 
+style="OVERFLOW: auto; WIDTH: 936px; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; PADDING-TOP: 1px; FONT: 12px/26px Consolas, 'Courier New', Courier, mono, serif; MARGIN: 18px 0px; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(231,229,220); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">
+<DIV class=bar style="PADDING-LEFT: 45px">
+<DIV class=tools 
+style="COLOR: silver; PADDING-BOTTOM: 10px; PADDING-TOP: 3px; FONT: 9px Verdana, Geneva, Arial, Helvetica, sans-serif; PADDING-LEFT: 10px; BORDER-LEFT: rgb(108,226,108) 3px solid; PADDING-RIGHT: 8px; BACKGROUND-COLOR: rgb(248,248,248)"><FONT 
+size=3><B>[cpp]</B><SPAN class=Apple-converted-space>&nbsp;</SPAN></FONT><A 
+onclick="dp.sh.Toolbar.Command('ViewSource',this);return false;" 
+title="view plain" class=ViewSource 
+style="FONT-SIZE: 9px; TEXT-DECORATION: none; BORDER-TOP: medium none; HEIGHT: 16px; BORDER-RIGHT: medium none; WIDTH: 16px; BACKGROUND-IMAGE: url(http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/images/default/ico_plain.gif); BORDER-BOTTOM: medium none; BACKGROUND-POSITION: 0% 0%; COLOR: rgb(160,160,160); PADDING-BOTTOM: 1px; PADDING-TOP: 1px; PADDING-LEFT: 1px; MARGIN: 0px 10px 0px 0px; BORDER-LEFT: medium none; DISPLAY: inline-block; PADDING-RIGHT: 1px; TEXT-INDENT: -2000px" 
+href="http://blog.csdn.net/gneveek/article/details/7798732#"><FONT size=3>view 
+plain</FONT></A><A 
+onclick="dp.sh.Toolbar.Command('CopyToClipboard',this);return false;" title=copy 
+class=CopyToClipboard 
+style="FONT-SIZE: 9px; TEXT-DECORATION: none; BORDER-TOP: medium none; HEIGHT: 16px; BORDER-RIGHT: medium none; WIDTH: 16px; BACKGROUND-IMAGE: url(http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/images/default/ico_copy.gif); BORDER-BOTTOM: medium none; BACKGROUND-POSITION: 0% 0%; COLOR: rgb(160,160,160); PADDING-BOTTOM: 1px; PADDING-TOP: 1px; PADDING-LEFT: 1px; MARGIN: 0px 10px 0px 0px; BORDER-LEFT: medium none; DISPLAY: inline-block; PADDING-RIGHT: 1px; TEXT-INDENT: -2000px" 
+href="http://blog.csdn.net/gneveek/article/details/7798732#"><FONT 
+size=3>copy</FONT></A>
+<DIV 
+style="HEIGHT: 18px; WIDTH: 18px; POSITION: absolute; LEFT: 484px; Z-INDEX: 99; TOP: 2066px"><FONT 
+size=3><EMBED id=ZeroClipboardMovie_2 name=ZeroClipboardMovie_2 
+type=application/x-shockwave-flash align=middle 
+pluginspage=http://www.macromedia.com/go/getflashplayer height=18 width=18 
+src=http://static.blog.csdn.net/scripts/ZeroClipboard/ZeroClipboard.swf 
+wmode="transparent" flashvars="id=2&amp;width=18&amp;height=18" 
+allowfullscreen="false" allowscriptaccess="always" bgcolor="#ffffff" 
+quality="best" menu="false" loop="false"></FONT></DIV></DIV></DIV>
+<OL class=dp-cpp 
+style="LIST-STYLE-TYPE: decimal; BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px 0px 1px 45px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255)">
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3><SPAN class=preprocessor 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: gray; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">#include&nbsp;&lt;map&gt;</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3><SPAN class=preprocessor 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: gray; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&nbsp;#include&nbsp;&lt;iostream&gt;</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;<SPAN class=keyword 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(0,102,153); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">using</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;</SPAN><SPAN 
+  class=keyword 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(0,102,153); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">namespace</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;std;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;<SPAN class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;main(&nbsp;)&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;{&nbsp;&nbsp;</FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;map&nbsp;&lt;<SPAN class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;&nbsp;m1;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;map&nbsp;&lt;<SPAN class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;::iterator&nbsp;m1_Iter;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;m1.insert&nbsp;(&nbsp;pair&nbsp;&lt;<SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;&nbsp;&nbsp;(&nbsp;1,&nbsp;20&nbsp;)&nbsp;);&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;m1.insert&nbsp;(&nbsp;pair&nbsp;&lt;<SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;&nbsp;&nbsp;(&nbsp;4,&nbsp;40&nbsp;)&nbsp;);&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;m1.insert&nbsp;(&nbsp;pair&nbsp;&lt;<SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;&nbsp;&nbsp;(&nbsp;3,&nbsp;60&nbsp;)&nbsp;);&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;m1.insert&nbsp;(&nbsp;pair&nbsp;&lt;<SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;&nbsp;&nbsp;(&nbsp;2,&nbsp;50&nbsp;)&nbsp;);&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;m1.insert&nbsp;(&nbsp;pair&nbsp;&lt;<SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;&nbsp;&nbsp;(&nbsp;6,&nbsp;40&nbsp;)&nbsp;);&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;m1.insert&nbsp;(&nbsp;pair&nbsp;&lt;<SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">,&nbsp;</SPAN><SPAN 
+  class=datatypes 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(46,139,87); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">int</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&gt;&nbsp;&nbsp;(&nbsp;7,&nbsp;30&nbsp;)&nbsp;);&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;<SPAN class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"The&nbsp;original&nbsp;map&nbsp;m1&nbsp;is:"</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&lt;&lt;endl;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;<SPAN class=keyword 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; FONT-WEIGHT: bold; COLOR: rgb(0,102,153); PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">for</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&nbsp;(&nbsp;m1_Iter&nbsp;=&nbsp;m1.begin(&nbsp;);&nbsp;m1_Iter&nbsp;!=&nbsp;m1.end(&nbsp;);&nbsp;m1_Iter++&nbsp;)&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;&nbsp;m1_Iter-&gt;first&lt;&lt;<SPAN 
+  class=string 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: blue; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">"&nbsp;"</SPAN><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px">&lt;&lt;m1_Iter-&gt;second&lt;&lt;endl;&nbsp;&nbsp;</SPAN></FONT></SPAN></LI>
+  <LI class=alt 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: ; PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>&nbsp;&nbsp;&nbsp;&nbsp;</FONT></SPAN></LI>
+  <LI 
+  style="BORDER-TOP-STYLE: none; LIST-STYLE-TYPE: decimal-leading-zero; LIST-STYLE-POSITION: outside; BORDER-BOTTOM-STYLE: none; COLOR: rgb(92,92,92); PADDING-BOTTOM: 0px !important; PADDING-TOP: 0px !important; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 10px !important; MARGIN: 0px; BORDER-LEFT: rgb(108,226,108) 3px solid; LINE-HEIGHT: 17px; PADDING-RIGHT: 3px !important; BACKGROUND-COLOR: rgb(248,248,248)"><SPAN 
+  style="BORDER-TOP: medium none; BORDER-RIGHT: medium none; BORDER-BOTTOM: medium none; COLOR: black; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; MARGIN: 0px; BORDER-LEFT: medium none; PADDING-RIGHT: 0px"><FONT 
+  size=3>}&nbsp;&nbsp;</FONT></SPAN></LI></OL></DIV>
+<P><FONT size=3><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"></FONT>&nbsp;</P>
+<P 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; FONT: 14px/26px Arial; PADDING-LEFT: 0px; MARGIN: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><FONT 
+size=3></FONT></P>
+<P 
+style="LIST-STYLE-TYPE: none; WORD-WRAP: normal; BORDER-TOP: 0px; BORDER-RIGHT: 0px; WHITE-SPACE: normal; WORD-SPACING: 0px; BORDER-BOTTOM: 0px; TEXT-TRANSFORM: none; WORD-BREAK: normal; COLOR: rgb(70,70,70); PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; FONT: 14px/21px Arial; PADDING-LEFT: 0px; MARGIN: 0px 0px 5px; BORDER-LEFT: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+style="FONT-FAMILY: 'Courier New'"><FONT size=3>The original map m1 
+is:<BR>&nbsp;<WBR>&nbsp;1 20<BR>&nbsp;<WBR>&nbsp;2 50<BR>&nbsp;<WBR>&nbsp;3 
+60<BR>&nbsp;<WBR>&nbsp;4 40<BR>&nbsp;<WBR>&nbsp;6 40<BR>&nbsp;<WBR>&nbsp;7 
+30<BR>&nbsp;<WBR>&nbsp;请按任意键继续. . .</FONT></SPAN></SPAN></P>
+<P 
+style="LIST-STYLE-TYPE: none; WORD-WRAP: normal; BORDER-TOP: 0px; BORDER-RIGHT: 0px; WHITE-SPACE: normal; WORD-SPACING: 0px; BORDER-BOTTOM: 0px; TEXT-TRANSFORM: none; WORD-BREAK: normal; COLOR: rgb(70,70,70); PADDING-BOTTOM: 0px; TEXT-ALIGN: left; PADDING-TOP: 0px; FONT: 14px/21px Arial; PADDING-LEFT: 0px; MARGIN: 0px 0px 5px; BORDER-LEFT: 0px; LETTER-SPACING: normal; PADDING-RIGHT: 0px; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="BACKGROUND-COLOR: rgb(255,255,255)"><SPAN 
+style="FONT-FAMILY: 'Courier New'"><FONT 
+size=3>7，&nbsp;<WBR>&nbsp;<WBR>&nbsp;map的基本操作函数：<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>C++ 
+Maps是一种关联式容器，包含“关键字/值”对<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;begin()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;返回指向map头部的迭代器<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;clear(）&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;删除所有元素<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;count()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;返回指定元素出现的次数<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;empty()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;如果map为空则返回true<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;end()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;&nbsp;<WBR>返回指向map末尾的迭代器<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>equal_range()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;返回特殊条目的迭代器对<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>erase()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;删除一个元素<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;find()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;&nbsp;<WBR>查找一个元素<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;get_allocator()&nbsp;<WBR>&nbsp;返回map的配置器<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;insert()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;插入元素<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;key_comp()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;返回比较元素key的函数<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;lower_bound()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;返回键值&gt;=给定元素的第一个位置<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>max_size()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;返回可以容纳的最大元素个数<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;rbegin()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;返回一个指向map尾部的逆向迭代器<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;rend()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;返回一个指向map头部的逆向迭代器<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;size()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;返回map中元素的个数<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;swap()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;交换两个map<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;upper_bound()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;返回键值&gt;给定元素的第一个位置<BR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;value_comp()&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;<WBR>&nbsp;返回比较元素value的函数</FONT></SPAN></SPAN></P>
+<P><FONT size=3><BR class=Apple-interchange-newline></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&nbsp;</P></BODY></HTML>

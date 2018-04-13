@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>mxl操作</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17924"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>mxl操作</H1></DIV></DIV>
+<DIV id=nstext><BR>
+<P>using UnityEngine;<BR>using System.Collections;<BR>using System.Xml;<BR>using 
+System.Xml.Linq;<BR>using System.IO;<BR>using System;<BR>public class C_xml : 
+MonoBehaviour {<BR>&nbsp;&nbsp;&nbsp; string o_读取的消息 = "";<BR>&nbsp;&nbsp;&nbsp; 
+Vector2 cc = new Vector2(44, 66);<BR>&nbsp;&nbsp;&nbsp; /* 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; * xn 代表一个结点<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+xn.Name;//这个结点的名称<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+xn.Value;//这个结点的值<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+xn.ChildNodes;//这个结点的所有子结点<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+xn.ParentNode;//这个结点的父结点<BR>　　 　XmlNodeList nn = 
+xml.SelectNodes("节点名称");//获取同名同级节点集合<BR>&nbsp;&nbsp;&nbsp;&nbsp; * if 
+(root.HasChildNodes) { } //判断该节点下是否有子节点<BR>&nbsp;&nbsp;&nbsp;&nbsp; * 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; * <BR>&nbsp;&nbsp;&nbsp;&nbsp; * using 
+System.Xml;<BR>&nbsp;&nbsp;&nbsp; //初始化一个xml实例<BR>&nbsp;&nbsp;&nbsp; XmlDocument 
+xml=new XmlDocument();</P>
+<P>&nbsp;&nbsp;&nbsp; //导入指定xml文件<BR>&nbsp;&nbsp;&nbsp; 
+xml.Load(path);<BR>&nbsp;&nbsp;&nbsp; 
+xml.Load(HttpContext.Current.Server.MapPath("~/file/bookstore.xml"));</P>
+<P>&nbsp;&nbsp;&nbsp; //指定一个节点<BR>&nbsp;&nbsp;&nbsp; XmlNode 
+root=xml.SelectSingleNode("/root");</P>
+<P>&nbsp;&nbsp;&nbsp; //获取节点下所有直接子节点<BR>&nbsp;&nbsp;&nbsp; XmlNodeList 
+childlist=root.ChildNodes;</P>
+<P>&nbsp;&nbsp;&nbsp; //判断该节点下是否有子节点<BR>&nbsp;&nbsp;&nbsp; 
+root.HasChildNodes;</P>
+<P>&nbsp;&nbsp;&nbsp; //获取同名同级节点集合<BR>&nbsp;&nbsp;&nbsp; XmlNodeList 
+nodelist=xml.SelectNodes("/Root/News");</P>
+<P>&nbsp;&nbsp;&nbsp; //生成一个新节点<BR>&nbsp;&nbsp;&nbsp; XmlElement 
+node=xml.CreateElement("News");</P>
+<P>&nbsp;&nbsp;&nbsp; //将节点加到指定节点下，作为其子节点<BR>&nbsp;&nbsp;&nbsp; 
+root.AppendChild(node);</P>
+<P>&nbsp;&nbsp;&nbsp; //将节点加到指定节点下某个子节点前<BR>&nbsp;&nbsp;&nbsp; 
+root.InsertBefore(node,root.ChildeNodes[i]);</P>
+<P>&nbsp;&nbsp;&nbsp; //为指定节点的新建属性并赋值<BR>&nbsp;&nbsp;&nbsp; 
+node.SetAttribute("id","11111");</P>
+<P>&nbsp;&nbsp;&nbsp; //为指定节点添加子节点<BR>&nbsp;&nbsp;&nbsp; 
+root.AppendChild(node);</P>
+<P>&nbsp;&nbsp;&nbsp; //获取指定节点的指定属性值<BR>&nbsp;&nbsp;&nbsp; string 
+id=node.Attributes["id"].Value;</P>
+<P>&nbsp;&nbsp;&nbsp; //获取指定节点中的文本<BR>&nbsp;&nbsp;&nbsp; string 
+content=node.InnerText;</P>
+<P>&nbsp;&nbsp;&nbsp; //保存XML文件<BR>&nbsp;&nbsp;&nbsp; string 
+path=Server.MapPath("~/file/bookstore.xml");<BR>&nbsp;&nbsp;&nbsp; 
+xml.Save(path);<BR>&nbsp;&nbsp;&nbsp; //or use 
+:xml.Save(HttpContext.Current.Server.MapPath("~/file/bookstore.xml")); 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp; */<BR>&nbsp;&nbsp;&nbsp; void Start () 
+{}<BR>&nbsp;&nbsp;&nbsp; void 
+OnGUI(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (GUI.Button(new 
+Rect(5, 35, 120, 25), 
+"保存xml")){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string path = 
+S_打开系统窗口.S_Save路径();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+S_创建xml文件(path);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #region 
+读取xml------------------------------------------------<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if (GUI.Button(new Rect(5, 5, 120, 25), 
+"读取xml")){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string path = 
+S_打开系统窗口.S_Open路径();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_读取的消息 = S_读取xml(path);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GUILayout.BeginArea(new 
+Rect(130, 5, 300, 400));//面板集开始<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+GUILayout.Button("xml信息");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.cc 
+= GUILayout.BeginScrollView(this.cc);&nbsp;&nbsp; 
+//自适应滚动条面板<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+GUILayout.TextArea(o_读取的消息, 
+GUILayout.ExpandHeight(true));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+GUILayout.Button("xml信息3");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+GUILayout.EndScrollView();&nbsp; 
+//从下面排列<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+GUILayout.Button("xml信息4");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+GUILayout.EndArea();//面板集结束 <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+#endregion<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; #region 
+创建xml-------------------------------------------------------------------------------------<BR>&nbsp;&nbsp;&nbsp; 
+private void S_创建xml文件(string 
+path){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlDocument xmlDoc = new 
+XmlDocument(); //创建类型声明节点<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode 
+node = xmlDoc.CreateXmlDeclaration("1.0", "utf-8", 
+"");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+xmlDoc.AppendChild(node);//创建根节点<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+XmlNode root = 
+xmlDoc.CreateElement("root");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+xmlDoc.AppendChild(root);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for (int 
+i = 0; i &lt; 20; 
+i++){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string ssss = (UnityEngine.Random.Range(1f, 
+500.0f)).ToString("0000.0000");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+S_创建节点(xmlDoc, root, "mm__" + i.ToString("00"), ssss + 
+"___");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+S_创建节点(xmlDoc, root, "mm__" + i.ToString("00"), 
+Password.S_字符串_加密(ssss));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+try{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+xmlDoc.Save(path);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }catch 
+(Exception 
+e){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+print(e.Message);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; public void S_创建节点(XmlDocument 
+xmlDoc, XmlNode i_root, string name, string 
+value){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlElement node = 
+xmlDoc.CreateElement(name);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+node.SetAttribute("id", "11");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+node.SetAttribute("df", "t6");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+node.InnerText = value;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+i_root.AppendChild(node);<BR>&nbsp;&nbsp;&nbsp; } </P></DIV>
+<DIV class=footer>
+<P>&nbsp;&nbsp;&nbsp; #endregion<BR>&nbsp;&nbsp;&nbsp; #region 
+读取xml---------------------------------------------------------------------------------------<BR>&nbsp;&nbsp;&nbsp; 
+private string S_读取xml(string path) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; string s = 
+"";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlDocument xx = new 
+XmlDocument();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+xx.Load(path);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode nn = 
+xx.SelectSingleNode("root");<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+XmlNodeList nns = nn.ChildNodes;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+foreach (XmlNode x in 
+nns){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s += 
+"节点名:" + x.Name + "@ id :"+ x.Attributes["id"].Value + "@ 节点值:" + 
+Password.S_字符串_解密(x.InnerText) + 
+"\n";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return s;<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; <BR>&nbsp;&nbsp;&nbsp; 
+#endregion<BR>}<BR></P></DIV></BODY></HTML>

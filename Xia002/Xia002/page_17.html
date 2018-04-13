@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>打开次数加密</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17924"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>打开次数加密</H1></DIV></DIV>
+<DIV id=nstext><BR>
+<P>using UnityEngine;<BR>using System.Collections;<BR>using 
+System.Xml;<BR>public class mm : MonoBehaviour{<BR>&nbsp;&nbsp;&nbsp; public 
+string o_项目名称y ="ss001";<BR>&nbsp;&nbsp;&nbsp; string 
+path;<BR>&nbsp;&nbsp;&nbsp; string ip ="##";<BR>&nbsp;void Start 
+(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; path = 
+@System.Environment.CurrentDirectory + "\\" + o_项目名称y + 
+"_Data\\Mono\\etc\\mono\\mconfig\\mconfig.xml";<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+XmlDocument xml = new 
+XmlDocument();//声明xml<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+try{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+xml.Load(path);//按路径读xml文件<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}catch{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Application.Quit();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; XmlNode root = 
+xml.SelectSingleNode("config");//指向根节点<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+XmlNode xn = 
+root.SelectSingleNode("serv_ip");//指向根节点下的serv_ip节点<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ip = xn.InnerText;//读出里面的值 注意读取的是string 
+需要类型转换的话自己做<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+//修改：<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xn.InnerText = 
+S_加点(ip);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+xml.Save(path);//保存更改到路径<BR>&nbsp;}&nbsp;<BR>&nbsp;void Update () 
+{}<BR>&nbsp;&nbsp;&nbsp; string S_加点(string 
+ss){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+try{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+string[] s = 
+ss.Split("."[0]);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+int sa = 
+int.Parse(s[3]);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+if (sa &gt; 4) 
+Application.Quit();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+s[3] = (sa + 
+1).ToString();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+ss = s[0] + "." + s[1] + "." + s[2] + "." + 
+s[3];<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}catch{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Application.Quit(); <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return ss;<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>}</P></DIV>
+<DIV class=footer>
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>&lt;config&gt;<BR>&nbsp; &lt;serv_ip&gt;192.168.2.2&lt;/serv_ip&gt;<BR>&nbsp; 
+&lt;connect_time&gt;70&lt;/connect_time&gt;<BR>&nbsp; 
+&lt;refresh_time&gt;90&lt;/refresh_time&gt;<BR>&nbsp; 
+&lt;serv_port&gt;2222&lt;/serv_port&gt;<BR>&lt;/config&gt;</P></DIV></BODY></HTML>

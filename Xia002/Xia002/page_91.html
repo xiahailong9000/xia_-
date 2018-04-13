@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>UI拖动</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.18212"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY><FONT size=3>using UnityEngine;<BR>using UnityEngine.UI;<BR>public class 
+C_mm : MonoBehaviour {<BR>&nbsp;&nbsp;&nbsp; public Button 
+o_呵呵,o_看看;<BR>&nbsp;void Start () 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+C_UI拖动.S_Add(o_呵呵.gameObject);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+C_UI拖动.S_Add(o_看看.gameObject);&nbsp;&nbsp;&nbsp; <BR>&nbsp;}<BR>&nbsp;void 
+Update () {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+C_UI拖动.S_拖动检查();<BR>&nbsp;}<BR>}<BR>public class C_UI拖动 {<BR>&nbsp;&nbsp;&nbsp; 
+public static bool o_拖动检查开关,o_拖动开关=true;<BR>&nbsp;&nbsp;&nbsp; public static 
+Vector3 o_按下位置,o_面板初始位置,o_面板零点位置;<BR>&nbsp;&nbsp;&nbsp; public static GameObject 
+o_面板;<BR>&nbsp;&nbsp;&nbsp; public static void S_Add(GameObject v面板) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(o_拖动开关) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+C_UGUI.Get(v面板).o_按下=delegate(GameObject go) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_面板=v面板;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_按下位置=Input.mousePosition;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_面板初始位置=v面板.transform.position;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_拖动检查开关=true;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+v面板.GetComponent&lt;RectTransform&gt;().SetSiblingIndex(4000);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+};<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+C_UGUI.Get(v面板).o_抬起=delegate(GameObject go) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_拖动检查开关=false;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+};<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; public static void S_拖动检查() 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(o_拖动检查开关&amp;&amp;o_面板) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_面板.transform.position=o_面板初始位置+Input.mousePosition-o_按下位置;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR></FONT></BODY></HTML>

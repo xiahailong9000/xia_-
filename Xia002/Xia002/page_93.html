@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>特效_序列图</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.18315"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>特效_序列图</H1></DIV></DIV>
+<DIV id=nstext><BR>
+<P><FONT size=2>using UnityEngine;<BR>using System.Collections;<BR>public class 
+C_序列图 : MonoBehaviour {<BR>&nbsp;&nbsp;&nbsp; public int 
+o_x,o_y;<BR>&nbsp;&nbsp;&nbsp; MeshRenderer o_mm;<BR>&nbsp;&nbsp;&nbsp; float 
+offset;<BR>&nbsp;void Start () {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_mm=gameObject.GetComponent&lt;MeshRenderer&gt;();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_mm.material.SetTextureScale("_MainTex",new 
+Vector2(1.00f/o_x,1.000f/o_y));<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+StartCoroutine(I_gg()); <BR>&nbsp;}<BR>&nbsp;void Update () 
+{<BR>&nbsp;}<BR>&nbsp;&nbsp;&nbsp; Vector2 vv;<BR>&nbsp;&nbsp;&nbsp; IEnumerator 
+I_gg() {<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for(int i=0;i&lt;o_y;i++) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for(int 
+n=0;n&lt;o_x;n++) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+vv=new 
+Vector2((n+0.0f)/o_x,(i+0.0f)/o_y);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+o_mm.material.SetTextureOffset("_MainTex",vv);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+yield return new 
+WaitForSeconds(0.02f);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StartCoroutine(I_gg());&nbsp; 
+<BR>&nbsp;&nbsp;&nbsp; }<BR>}<BR></FONT></P></DIV></BODY></HTML>

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>烘焙贴图大小控制</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17924"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>烘焙贴图大小控制</H1></DIV></DIV>
+<DIV id=nstext><BR>
+<P>using UnityEngine;<BR>using UnityEditor;</P>
+<P>public class ss_烘焙尺寸 : MonoBehaviour{<BR>&nbsp;&nbsp;&nbsp; static int ii = 
+512;<BR>&nbsp;&nbsp;&nbsp; [MenuItem("Window/Ligh_烘焙尺寸/256 
+烘焙")]<BR>&nbsp;&nbsp;&nbsp; static void 
+i256(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ii = 
+256;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ss();<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; [MenuItem("Window/Ligh_烘焙尺寸/512 
+烘焙")]<BR>&nbsp;&nbsp;&nbsp; static void i512() 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ii = 
+512;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ss();<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; [MenuItem("Window/Ligh_烘焙尺寸/1024 
+烘焙")]<BR>&nbsp;&nbsp;&nbsp; static void 
+i1024(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ii = 
+1024;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ss();<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; [MenuItem("Window/Ligh_烘焙尺寸/2048 
+烘焙")]<BR>&nbsp;&nbsp;&nbsp; static void 
+i2048(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ii = 
+2048;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ss();<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; [MenuItem("Window/Ligh_烘焙尺寸/4096 
+烘焙")]<BR>&nbsp;&nbsp;&nbsp; static void 
+i4096(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ii = 
+4096;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ss();<BR>&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;static void ss(){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+LightmapEditorSettings.maxAtlasHeight = 
+ii;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+LightmapEditorSettings.maxAtlasWidth = 
+ii;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Lightmapping.Clear();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Lightmapping.Bake();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print("烘焙尺寸为 
+-- "+ii.ToString()+" --");<BR>&nbsp;}<BR>}<BR></P></DIV>
+<DIV class=footer>
+<P></P></DIV></BODY></HTML>

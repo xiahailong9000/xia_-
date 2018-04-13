@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>夏海龙方法</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.17924"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>夏海龙方法</H1></DIV></DIV>
+<DIV id=nstext><BR>
+<P>using UnityEngine;<BR>using System.Collections;<BR>using 
+System.Collections.Generic;<BR>using System.Linq;</P>
+<P>public&nbsp; class xia : MonoBehaviour {<BR>&nbsp;void Start () 
+{}<BR>&nbsp;void Update () {}<BR>&nbsp;&nbsp;&nbsp; #region 夏海龙的方法 
+--------------------------------------<BR>&nbsp;<BR>&nbsp;&nbsp;&nbsp; public 
+static string[] S_添加字符串(string[] list, string 
+key){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List&lt;string&gt; l = 
+list.ToList();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+l.Add(key);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+l.ToArray();<BR>&nbsp;&nbsp;&nbsp; }//向数组中添加字符串<BR>&nbsp;&nbsp;&nbsp; public 
+static string[] S_删除字符串(string[] list, string key) { 
+<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List&lt;string&gt; l = new 
+List&lt;string&gt;();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; foreach 
+(string s in list) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (s != 
+key)l.Add(s);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } return 
+l.ToArray(); <BR>&nbsp;&nbsp;&nbsp; }//向数组中删除字符串<BR>&nbsp;&nbsp;&nbsp; public 
+static GameObject[] S_添加模型(GameObject[] list, GameObject 
+key){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List&lt;GameObject&gt; l = 
+list.ToList();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+l.Add(key);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+l.ToArray();<BR>&nbsp;&nbsp;&nbsp; }//向数组中添加物体<BR>&nbsp;&nbsp;&nbsp; public 
+static GameObject[] S_删除模型(GameObject[] list, GameObject 
+key){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List&lt;GameObject&gt; l = 
+new List&lt;GameObject&gt;();<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+foreach (GameObject s in list) 
+{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if (s != 
+key) l.Add(s);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; } return 
+l.ToArray();<BR>&nbsp;&nbsp;&nbsp; }//向数组中删除物体<BR>&nbsp;&nbsp;&nbsp; public 
+static GameObject[] S_获取所有子物体(GameObject 
+oo){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Transform[] tts = 
+oo.GetComponentsInChildren&lt;Transform&gt;(true); 
+//获取子物体的所有变换<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; GameObject[] oos = 
+new GameObject[tts.Length];<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for 
+(int i = 0; i &lt; tts.Length; 
+i++){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+oos[i] = tts[i].gameObject;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; oos = S_删除模型(oos, 
+oo);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+oos;<BR>&nbsp;&nbsp;&nbsp; }&nbsp; //获取所有子物体<BR>&nbsp;&nbsp;&nbsp; public static 
+bool S_字符串是否存在(string[] array, string 
+s){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List&lt;string&gt; list = new 
+List&lt;string&gt;(array);<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if 
+(list.Contains(s)){<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return true;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}else{<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+return false;<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+}<BR>&nbsp;&nbsp;&nbsp; }<BR>&nbsp;&nbsp;&nbsp; #endregion<BR>}<BR></P></DIV>
+<DIV class=footer>
+<P></P></DIV></BODY></HTML>

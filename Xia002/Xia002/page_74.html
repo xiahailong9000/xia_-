@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>类型转换</TITLE>
+<META content="text/html; charset=gb2312" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 11.00.9600.18125"><LINK rel=stylesheet 
+href="_template.css"></HEAD>
+<BODY>
+<DIV id=nsbanner>
+<DIV id=bannerrow1>
+<TABLE class=bannerparthead>
+  <TBODY>
+  <TR id=hdr>
+    <TD class=runninghead noWrap>wwwwww</TD></TR></TBODY></TABLE></DIV>
+<DIV id=titlerow>
+<H1 class=dtH1>类型转换</H1></DIV></DIV>
+<DIV id=nstext><BR>
+<P><FONT 
+size=4>//---------int----&gt;string--------------------------------------------<BR></FONT><FONT 
+size=3>#include &lt;string&gt;&nbsp; <BR><FONT color=#008000>#include 
+&lt;sstream&gt;&nbsp; <BR></FONT>using namespace std;</FONT></P>
+<P><FONT size=3><BR>void main() {<BR><FONT 
+color=#800000>&nbsp;&nbsp;stringstream ssm;<BR>&nbsp;&nbsp;ssm &lt;&lt; 1122 
+;<BR>&nbsp;&nbsp;string s = ssm.str(); </FONT></FONT></P>
+<P><FONT size=3>&nbsp;&nbsp;printf("%s\n",s.c_str());<BR>&nbsp;&nbsp;while(true) 
+{}<BR>}</FONT></P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><FONT size=3></FONT>&nbsp;</P>
+<P><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">string类的大部分函数：</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">begin</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">得到指向字符串开头的Iterator</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">end</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">得到指向字符串结尾的Iterator</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">rbegin</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">得到指向反向字符串开头的Iterator</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">rend</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">得到指向反向字符串结尾的Iterator</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">size</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">得到字符串的大小</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">length</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">和size函数功能相同</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">max_size</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">字符串可能的最大大小</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">capacity</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">在不重新分配内存的情况下，字符串可能的大小</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">empty</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">判断是否为空</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">operator[]</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">取第几个元素，相当于数组</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">c_str</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">取得C风格的const 
+char* 字符串</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">data</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">取得字符串内容地址</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">operator=</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">赋值操作符</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">reserve</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">预留空间</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">swap</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">交换函数</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">insert</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">插入字符</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">append</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">追加字符</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">push_back</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">追加字符</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">operator+=</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">+= 
+操作符</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">erase</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">删除字符串</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">clear</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">清空字符容器中所有内容</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">resize</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">重新分配空间</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">assign</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">和赋值操作符一样</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">replace</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">替代</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">copy</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">字符串到空间</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">find</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">查找</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">rfind</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">反向查找</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">find_first_of</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">查找包含子串中的任何字符，返回第一个位置</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">find_first_not_of</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">查找不包含子串中的任何字符，返回第一个位置</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">find_last_of</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">查找包含子串中的任何字符，返回最后一个位置</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">find_last_not_of</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">查找不包含子串中的任何字符，返回最后一个位置</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">substr</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">得到字串</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">compare</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">比较字符串</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">operator+</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">字符串链接</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">operator==</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">判断是否相等</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">operator!=</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">判断是否不等于</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">operator&lt;</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">判断是否小于</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">operator&gt;&gt;</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">从输入流中读入字符串</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">operator&lt;&lt;</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">字符串写入输出流</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">getline</SPAN><SPAN 
+style="WHITE-SPACE: pre; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"> 
+</SPAN><SPAN 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px">从输入流中读入一行</SPAN><BR 
+style="WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; COLOR: rgb(0,0,0); TEXT-ALIGN: left; FONT: 14px/26px Arial; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; -webkit-text-stroke-width: 0px"></P></DIV></BODY></HTML>
